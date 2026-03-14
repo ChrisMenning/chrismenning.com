@@ -7,7 +7,7 @@
   <meta name="description" content="{{ description or 'Software developer, electronic musician, maker. Green Bay, WI.' }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300&family=Share+Tech+Mono&family=Oxanium:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 <header>
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Chris Menning — home">
+      <a href="{{ '/' | url }}" class="nav-logo" aria-label="Chris Menning — home">
         <svg class="nav-logo-mark" viewBox="0 0 44 22" fill="none" aria-hidden="true">
           <polyline points="1,11 7,11 11,3 15,19 19,11 25,11 29,3 33,19 37,11 43,11"
             stroke="#d4a820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -25,9 +25,9 @@
         <span class="nav-logo-name">Chris Menning</span>
       </a>
       <ul class="nav-links" role="list">
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="{{ '/projects/' | url }}">Projects</a></li>
+        <li><a href="{{ '/about/' | url }}">About</a></li>
+        <li><a href="{{ '/contact/' | url }}">Contact</a></li>
       </ul>
     </div>
   </nav>

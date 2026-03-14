@@ -17,6 +17,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/css/");
 
   return {
+    // Set to "/" when using a custom domain; set to "/chrismenning.com/" for
+    // the default GitHub Pages subdirectory URL.
+    pathPrefix: "/chrismenning.com/",
     dir: {
       input: "src",
       output: "_site",
