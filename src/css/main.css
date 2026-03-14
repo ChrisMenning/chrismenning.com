@@ -796,7 +796,7 @@ h1.hud-name .gold { color: var(--gold); }
   max-width: 1020px;
   margin: 0 auto;
 }
-.project-content { max-width: 620px; }
+.project-content { max-width: 100%; }
 .project-content p {
   font-size: 1rem; font-weight: 300;
   line-height: 1.85; color: var(--warm-gray);
