@@ -15,6 +15,22 @@ The sequel to Polarity Ball, released October 18, 2018 for Gear VR and Oculus Go
 
 The name fits. Rubicon was the point of no return: more technically ambitious, harder to build, and a more committed statement about what the physics system could actually do.
 
+<figure class="project-figure">
+  <img src="{{ '/img/polarity-ball-rubicon/38974684_690704797971180_7738335833828098048_n.webp' | url }}" alt="Polarity Ball Rubicon — level environment" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/polarity-ball-rubicon/38974733_1144374729021141_6408534562221064192_n.webp' | url }}" alt="Polarity Ball Rubicon — magnetic physics interaction" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/polarity-ball-rubicon/38974745_2085543728143237_922859330833743872_n.webp' | url }}" alt="Polarity Ball Rubicon — 3DOF controller gameplay" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/polarity-ball-rubicon/38982619_341014279976144_1349810566461390848_n.webp' | url }}" alt="Polarity Ball Rubicon — level geometry" loading="lazy">
+</figure>
+
 ## What changed from the original
 
 The first Polarity Ball was controlled entirely by touchpad — you looked at things to target them. Rubicon added 3DOF controller support, which meant the magnetic interaction could now be aimed spatially in three dimensions. That opened up puzzle designs that weren't possible before, and it required rebuilding a significant portion of the interaction layer to support both input modes simultaneously.

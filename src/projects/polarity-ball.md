@@ -15,6 +15,18 @@ A VR game for Gear VR and Oculus Go built in **Unity** and **C#** using the Ocul
 
 The most satisfying part of building it was getting Unity's physics engine to behave like a real magnetic system. Magnetism doesn't exist natively in Unity — you simulate it by calculating force vectors between objects based on distance and polarity, then applying them frame by frame. Getting that to feel physically convincing in VR, where your sense of space is heightened, required a lot of iteration.
 
+<figure class="project-figure">
+  <img src="{{ '/img/polarity-ball/12138842_708846572623135_3646880589576929280_n.webp' | url }}" alt="Polarity Ball — VR level with magnetic field visualization" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/polarity-ball/12386302_1621071608198528_617560458294984704_n.webp' | url }}" alt="Polarity Ball — ball navigating a custom gravity environment" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/polarity-ball/12410271_709409465889407_8078884830110023680_n.webp' | url }}" alt="Polarity Ball — polarity mechanics in action" loading="lazy">
+</figure>
+
 ## Technical details
 
 - **Engine:** Unity
