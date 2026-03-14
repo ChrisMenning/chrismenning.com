@@ -19,7 +19,7 @@ description: Software, hardware, and music projects by Chris Menning.
   <div class="page-body">
     <div class="project-grid">
       {%- for project in collections.projects | sort(false, false, "data.order") %}
-      <a href="{{ project.url }}" class="project-card" aria-label="{{ project.data.title }}">
+      <a href="{{ project.url | url }}" class="project-card" aria-label="{{ project.data.title }}">
         <div class="project-card-num">{{ project.data.order | padZero }} //</div>
         <div class="project-card-title">{{ project.data.title }}</div>
         <div class="project-card-meta">

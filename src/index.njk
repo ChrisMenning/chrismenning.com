@@ -126,7 +126,7 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
     <div class="hero-cards-inner">
       {%- for project in collections.projects | sort(false, false, "data.order") %}
       {%- if project.data.featured %}
-      <a href="/projects/{{ project.fileSlug }}/" class="mini-card" aria-label="{{ project.data.title }} project">
+      <a href="{{ project.url | url }}" class="mini-card" aria-label="{{ project.data.title }} project">
         <div class="mini-card-num">{{ project.data.order | padZero }} //</div>
         <div class="mini-card-title">{{ project.data.title }}</div>
         <div class="mini-card-desc">{{ project.data.summary }}</div>
