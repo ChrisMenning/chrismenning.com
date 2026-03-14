@@ -55,6 +55,16 @@ layout: base.njk
                 {%- endfor %}
               </div>
             </div>
+            {%- if github or bandcamp %}
+            <div class="panel-rule" aria-hidden="true"></div>
+            <div class="panel-section">
+              <div class="panel-label">// links</div>
+              <div class="lcd">
+                {%- if github %}<a href="{{ github }}" rel="noopener noreferrer" style="color:#88ffb0;text-decoration:none;" aria-label="GitHub repository">GitHub →</a><br>{%- endif %}
+                {%- if bandcamp %}<a href="{{ bandcamp }}" rel="noopener noreferrer" style="color:#88ffb0;text-decoration:none;" aria-label="Bandcamp">Bandcamp →</a>{%- endif %}
+              </div>
+            </div>
+            {%- endif %}
           </div>
           <div class="panel-footer-stripe" aria-hidden="true"></div>
         </div>

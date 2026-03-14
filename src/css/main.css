@@ -777,6 +777,43 @@ h1.hud-name .gold { color: var(--gold); }
 }
 .project-content p:last-child { margin-bottom: 0; }
 .project-content strong { color: var(--parchment); font-weight: 600; }
+.project-content ul,
+.project-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--warm-gray);
+}
+.project-content li {
+  font-size: 1rem; font-weight: 300;
+  line-height: 1.85; margin-bottom: 0.25rem;
+}
+.project-content a {
+  color: var(--gold); text-decoration: none;
+  border-bottom: 1px solid rgba(212,168,32,0.3);
+  transition: border-color 0.15s, color 0.15s;
+}
+.project-content a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
+.project-content a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.project-figure {
+  margin: 2rem 0;
+  border: 1px solid var(--panel-mid);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--void);
+}
+.project-figure img {
+  display: block; width: 100%; height: auto;
+  max-height: 480px; object-fit: cover;
+  object-position: center top;
+}
+.project-figure figcaption {
+  font-family: var(--f-mono); font-size: 0.52rem;
+  letter-spacing: 0.12em; color: var(--ghost);
+  padding: 0.6rem 0.85rem;
+  border-top: 1px solid var(--panel-mid);
+  background: var(--panel-dark);
+  font-style: normal;
+}
 .project-content h2 {
   font-family: var(--f-body); font-weight: 700;
   font-size: 1.1rem; letter-spacing: 0.02em;
