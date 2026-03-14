@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Menning — Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400&family=Share+Tech+Mono&family=Oxanium:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   STYLE GUIDE CHROME
+   ═══════════════════════════════════════ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #121008;
+  font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #f0ebe0;
+}
+
+/* Sidebar nav */
+.sg-nav {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 200px;
+  background: #0a0806;
+  border-right: 1px solid #1e1a14;
+  padding: 2rem 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sg-nav-logo {
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid #1e1a14;
+  margin-bottom: 1.5rem;
+}
+
+.sg-nav-logo-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #3a3028;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.sg-nav-logo-name {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #d4a820;
+}
+
+.sg-nav a {
+  display: block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #3a3028;
+  text-decoration: none;
+  padding: 0.55rem 1.5rem;
+  transition: color 0.15s, background 0.15s;
+  border-left: 2px solid transparent;
+}
+
+.sg-nav a:hover {
+  color: #d4a820;
+  background: rgba(212,168,32,0.05);
+  border-left-color: #d4a820;
+}
+
+.sg-nav-group {
+  margin-bottom: 1.5rem;
+}
+
+.sg-nav-group-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #2a2018;
+  padding: 0 1.5rem 0.4rem;
+  display: block;
+}
+
+/* Main content */
+.sg-main {
+  margin-left: 200px;
+}
+
+/* Section wrapper */
+.sg-section {
+  padding: 4rem;
+  border-bottom: 1px solid #1e1a14;
+  max-width: 1000px;
+}
+
+.sg-section:last-child { border-bottom: none; }
+
+/* Section header */
+.sg-section-eyebrow {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #d4a820;
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
+}
+
+.sg-section-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #f0ebe0;
+  margin-bottom: 0.5rem;
+}
+
+.sg-section-desc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #5a4a38;
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+}
+
+/* Sub-label within a section */
+.sg-sub-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #3a3028;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1e1a14;
+  display: block;
+}
+
+/* Usage rule blocks */
+.usage-block {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.usage-block .use-icon {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.usage-block.do   .use-icon { color: #50e030; }
+.usage-block.dont .use-icon { color: #cc2010; }
+.usage-block.note .use-icon { color: #d4a820; }
+
+.usage-block .use-text {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.usage-block.do   .use-text { color: #6a8a68; }
+.usage-block.dont .use-text { color: #8a5a50; }
+.usage-block.note .use-text { color: #6a5a38; }
+
+/* ═══════════════════════════════════════
+   SECTION 1: PALETTE
+   ═══════════════════════════════════════ */
+
+.palette-group { margin-bottom: 2.5rem; }
+
+.swatch-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 160px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.swatch-color { height: 80px; position: relative; }
+
+.swatch-role-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.45rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  background: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,0.5);
+  border-radius: 1px;
+}
+
+.swatch-info {
+  background: #0f0c08;
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid #1e1a14;
+}
+
+.swatch-name {
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: #c0b090;
+  margin-bottom: 0.15rem;
+}
+
+.swatch-hex {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: #3a3028;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.swatch-desc {
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: #3a3028;
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 2: TYPOGRAPHY
+   ═══════════════════════════════════════ */
+
+.type-specimen-dark {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  padding: 2.5rem 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.type-row {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid #1a1610;
+}
+.type-row:first-child { padding-top: 0; }
+.type-row:last-child  { padding-bottom: 0; border-bottom: none; }
+
+.type-meta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: #2a2418;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.type-meta::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #1a1610;
+}
+
+/* The actual type specimens */
+.t-display {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #f0ebe0;
+}
+.t-display .gold { color: #d4a820; }
+
+.t-h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #f0ebe0;
+  line-height: 1.1;
+}
+
+.t-h2 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #c0b090;
+}
+
+.t-body {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #a09080;
+  max-width: 520px;
+}
+.t-body strong { color: #f0ebe0; font-weight: 600; }
+
+/* Ghost drop cap */
+.t-body-dropcap::first-letter {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 800;
+  font-size: 6.5em;
+  line-height: 0.68;
+  float: left;
+  margin-right: 0.04em;
+  margin-top: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px #d4a820;
+}
+
+.t-caption {
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #5a4a38;
+  line-height: 1.6;
+}
+
+.t-mono {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 2;
+  color: #4a8a50;
+  letter-spacing: 0.06em;
+}
+.t-mono .hi  { color: #80e890; }
+.t-mono .dim { color: #2a4a2e; }
+
+.t-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #4a3a28;
+}
+
+/* Type scale table */
+.type-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 1.5rem;
+}
+
+.type-table th {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2a2418;
+  padding: 0.6rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #1e1a14;
+  background: #0a0806;
+}
+
+.type-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #1a1610;
+  vertical-align: middle;
+}
+
+.type-table tr:last-child td { border-bottom: none; }
+
+.type-table tr.highlight { background: rgba(212,168,32,0.04); }
+
+.td-role {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: #3a3028;
+  white-space: nowrap;
+}
+
+.td-role.gold { color: #d4a820; }
+
+.td-face { color: #a09080; font-size: 0.82rem; }
+
+.td-spec {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  color: #3a3028;
+  letter-spacing: 0.06em;
+}
+
+.td-use { color: #5a4a38; font-size: 0.78rem; font-weight: 300; }
+
+.td-sample { color: #6a5a48; font-size: 0.75rem; font-style: italic; }
+
+/* ═══════════════════════════════════════
+   SECTION 3: DETAIL ELEMENTS
+   ═══════════════════════════════════════ */
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.detail-card {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.detail-preview {
+  padding: 1.75rem 2rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.detail-caption {
+  padding: 0.65rem 1rem;
+  background: #0a0806;
+  border-top: 1px solid #1a1610;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #2a2418;
+  line-height: 1.6;
+}
+
+/* Speed stripe */
+.stripe-speed {
+  height: 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+}
+.stripe-speed::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(
+    to right,
+    #8a1a08 0%,
+    #8a1a08 calc(33% - 6px),
+    #d4a820 calc(33% - 6px),
+    #d4a820 calc(33%),
+    #c07010 calc(33%),
+    #c07010 calc(66% - 6px),
+    #d4a820 calc(66% - 6px),
+    #d4a820 calc(66%),
+    #8a1a08 calc(66%),
+    #8a1a08 100%
+  );
+  transform: skewX(-20deg) scaleX(1.3);
+}
+
+/* Hazard stripe */
+.stripe-hazard {
+  height: 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+}
+.stripe-hazard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    #d4a820 0px, #d4a820 7px,
+    #1a1610 7px, #1a1610 14px
+  );
+}
+
+/* LED indicators */
+.led-row { display: flex; align-items: center; gap: 6px; }
+.led {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.led.g   { background: #50e030; box-shadow: 0 0 6px #50e030, 0 0 12px rgba(80,224,48,0.35); }
+.led.y   { background: #d4a820; box-shadow: 0 0 6px #d4a820, 0 0 12px rgba(212,168,32,0.35); }
+.led.r   { background: #cc2010; box-shadow: 0 0 6px #cc2010, 0 0 12px rgba(204,32,16,0.35); }
+.led.off { background: #1e1a14; border: 1px solid #2a2418; }
+.led-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: #3a3028;
+  margin-left: 0.4rem;
+}
+
+/* Tape labels */
+.tape {
+  background: #d4a820;
+  color: #0a0806;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+}
+.tape.r1 { transform: rotate(-1.5deg); }
+.tape.r2 { transform: rotate(1deg); }
+.tape.r3 { transform: rotate(-0.8deg); }
+
+/* Project card */
+.card-demo {
+  background: #141008;
+  border: 1px solid #2a2418;
+  border-left: 3px solid #d4a820;
+  border-radius: 2px;
+  padding: 1rem 1.25rem;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.card-demo::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent #d4a820 transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card-demo:hover { border-color: #d4a820; }
+.card-demo:hover::after { opacity: 1; }
+
+.card-demo-num {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  color: #3a3028;
+  margin-bottom: 0.4rem;
+}
+
+.card-demo-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #f0ebe0;
+  margin-bottom: 0.35rem;
+}
+
+.card-demo-body {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #5a4a38;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* Project tags */
+.tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid;
+  border-radius: 1px;
+}
+
+.tag.software    { color: #5898c8; border-color: #182840; }
+.tag.music       { color: #d4a820; border-color: #4a3808; }
+.tag.hardware    { color: #68a848; border-color: #204018; }
+.tag.vr          { color: #9868c8; border-color: #381858; }
+.tag.open-source { color: #c07010; border-color: #4a2808; }
+
+/* Ghost drop cap demo in a paragraph context */
+.dropcap-context {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  padding: 2rem 2.5rem;
+}
+
+.dropcap-context p {
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #a09080;
+  max-width: 520px;
+}
+
+.dropcap-context p + p { margin-top: 1.25rem; }
+.dropcap-context p strong { color: #f0ebe0; font-weight: 600; }
+
+.dropcap-context p.dc::first-letter {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 800;
+  font-size: 6.5em;
+  line-height: 0.68;
+  float: left;
+  margin-right: 0.04em;
+  margin-top: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px #d4a820;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 4: COPY VOICE
+   ═══════════════════════════════════════ */
+
+.voice-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.voice-col {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.voice-col-header {
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid #1e1a14;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.voice-col.do   .voice-col-header { color: #50e030; background: rgba(80,224,48,0.04); border-bottom-color: rgba(80,224,48,0.1); }
+.voice-col.dont .voice-col-header { color: #cc2010; background: rgba(204,32,16,0.04); border-bottom-color: rgba(204,32,16,0.1); }
+
+.voice-col ul {
+  list-style: none;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.voice-col li {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.5;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.voice-col li::before {
+  position: absolute;
+  left: 0;
+  font-size: 0.7rem;
+  top: 0.05em;
+}
+
+.voice-col.do   li { color: #6a8a68; }
+.voice-col.do   li::before { content: '→'; color: #2a6028; }
+.voice-col.dont li { color: #8a6058; }
+.voice-col.dont li::before { content: '×'; color: #6a2018; }
+
+/* Example copy blocks */
+.copy-example {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.copy-example-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid #1e1a14;
+}
+
+.copy-example-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.copy-example.good .copy-example-label { color: #50e030; }
+.copy-example.bad  .copy-example-label { color: #cc2010; }
+
+.copy-example-text {
+  padding: 1rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.copy-example.good .copy-example-text { color: #6a7a68; }
+.copy-example.bad  .copy-example-text { color: #7a5a50; text-decoration: line-through; text-decoration-color: rgba(204,32,16,0.3); }
+
+/* ═══════════════════════════════════════
+   SECTION 5: PHOTOGRAPHY
+   ═══════════════════════════════════════ */
+
+.photo-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.photo-rule {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+}
+
+.photo-rule-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #d4a820;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.photo-rule-title::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: #d4a820;
+  opacity: 0.4;
+}
+
+.photo-rule-body {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #5a4a38;
+}
+
+.photo-rule-body strong { color: #8a7a68; font-weight: 500; }
+
+/* ═══════════════════════════════════════
+   SECTION 6: SITE STRUCTURE
+   ═══════════════════════════════════════ */
+
+.sitemap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sitemap-page {
+  background: #0f0c08;
+  border: 1px solid #1e1a14;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sitemap-page-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #1a1610;
+  background: #0a0806;
+}
+
+.sitemap-page-num {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  color: #2a2418;
+}
+
+.sitemap-page-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #d4a820;
+}
+
+.sitemap-page-url {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  color: #2a2418;
+  margin-left: auto;
+}
+
+.sitemap-page-body {
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.sitemap-col-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2a2418;
+  margin-bottom: 0.5rem;
+}
+
+.sitemap-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sitemap-items li {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: #5a4a38;
+  line-height: 1.5;
+  padding-left: 0.8rem;
+  position: relative;
+}
+
+.sitemap-items li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #2a2418;
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAV -->
+<nav class="sg-nav">
+  <div class="sg-nav-logo">
+    <span class="sg-nav-logo-label">// Style Guide</span>
+    <span class="sg-nav-logo-name">CM</span>
+  </div>
+
+  <div class="sg-nav-group">
+    <span class="sg-nav-group-label">Foundation</span>
+    <a href="#color">Color Palette</a>
+    <a href="#type">Typography</a>
+  </div>
+
+  <div class="sg-nav-group">
+    <span class="sg-nav-group-label">Components</span>
+    <a href="#details">Detail Elements</a>
+    <a href="#dropcap">Drop Cap</a>
+  </div>
+
+  <div class="sg-nav-group">
+    <span class="sg-nav-group-label">Guidelines</span>
+    <a href="#voice">Copy Voice</a>
+    <a href="#photo">Photography</a>
+    <a href="#structure">Site Structure</a>
+  </div>
+</nav>
+
+<main class="sg-main">
+
+<!-- ═══════════════════════
+     PAGE HEADER
+     ═══════════════════════ -->
+<div class="sg-section" style="background:#0a0806; border-bottom: 3px solid #d4a820; padding: 3rem 4rem;">
+  <div style="font-family:'Share Tech Mono',monospace;font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:#3a3028;margin-bottom:0.6rem;">// chrismenning.com</div>
+  <div style="font-family:'Oxanium',sans-serif;font-weight:800;font-size:2.5rem;letter-spacing:-0.01em;text-transform:uppercase;color:#f0ebe0;margin-bottom:0.25rem;">Style Guide <span style="color:#d4a820;">v1.0</span></div>
+  <p style="font-size:0.85rem;font-weight:300;color:#3a3028;line-height:1.6;max-width:560px;">This document defines the complete visual language for chrismenning.com. Every decision is sourced from the actual objects — the gear, the projects, the photographs — not invented from the outside in. Use this as the single reference for all design and development decisions.</p>
+</div>
+
+
+<!-- ═══════════════════════
+     01 · COLOR
+     ═══════════════════════ -->
+<div class="sg-section" id="color">
+  <div class="sg-section-eyebrow">01 // Foundation</div>
+  <div class="sg-section-title">Color Palette</div>
+  <div class="sg-section-desc">Extracted from the objects themselves — the near-black of synth panels and rack units, the warm wood of the cyberdeck, the TD-3 gold, the green of gear LEDs. Not invented from the outside in.</div>
+
+  <!-- Backgrounds -->
+  <span class="sg-sub-label">Backgrounds & Surfaces</span>
+  <div class="swatch-row" style="margin-bottom:2rem;">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0a0806;">
+        <div class="swatch-role-badge">deepest bg</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Void</div>
+        <div class="swatch-hex">#0A0806</div>
+        <div class="swatch-desc">Nav, page header. Deepest surface.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0f0c08;">
+        <div class="swatch-role-badge">main bg</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Panel Black</div>
+        <div class="swatch-hex">#0F0C08</div>
+        <div class="swatch-desc">Primary background. Warm black — not pure, slightly brown.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1a1610;">
+        <div class="swatch-role-badge">card bg</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Panel Dark</div>
+        <div class="swatch-hex">#1A1610</div>
+        <div class="swatch-desc">Project cards, secondary surfaces.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2a2418;">
+        <div class="swatch-role-badge">border</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Panel Mid</div>
+        <div class="swatch-hex">#2A2418</div>
+        <div class="swatch-desc">Borders, dividers, rules.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#5a3e28;">
+        <div class="swatch-role-badge">accent surface</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Cigar Wood</div>
+        <div class="swatch-hex">#5A3E28</div>
+        <div class="swatch-desc">Warm accent surfaces. From the cyberdeck.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accents -->
+  <span class="sg-sub-label">Accent Colors</span>
+  <div class="swatch-row" style="margin-bottom:2rem;">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#d4a820;">
+        <div class="swatch-role-badge" style="color:rgba(0,0,0,0.5);">★ primary</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">TD-3 Gold</div>
+        <div class="swatch-hex">#D4A820</div>
+        <div class="swatch-desc">Primary accent. From the TD-3 and tape labels. Warm, not pure yellow.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#c07010;">
+        <div class="swatch-role-badge">hover / depth</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Amber Burn</div>
+        <div class="swatch-hex">#C07010</div>
+        <div class="swatch-desc">Hover states, depth shift of gold.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#8a1a08;">
+        <div class="swatch-role-badge">stripe red</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Stripe Red</div>
+        <div class="swatch-hex">#8A1A08</div>
+        <div class="swatch-desc">Speed stripe only. Dark red flank.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#50e030;">
+        <div class="swatch-role-badge">led only</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">LED Green</div>
+        <div class="swatch-hex">#50E030</div>
+        <div class="swatch-desc">Status LEDs only. Never as a general accent.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#cc2010;">
+        <div class="swatch-role-badge">alert / led</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Danger Red</div>
+        <div class="swatch-hex">#CC2010</div>
+        <div class="swatch-desc">Alert LED, warning states. The "Shock Hazard" energy.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text -->
+  <span class="sg-sub-label">Text Scale</span>
+  <div class="swatch-row" style="margin-bottom:2rem;">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#f0ebe0; border:1px solid #2a2418;">
+        <div class="swatch-role-badge" style="color:rgba(0,0,0,0.4);">primary text</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Parchment</div>
+        <div class="swatch-hex">#F0EBE0</div>
+        <div class="swatch-desc">Headlines, strong emphasis on dark.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#a09080; border:1px solid #2a2418;">
+        <div class="swatch-role-badge" style="color:rgba(0,0,0,0.4);">body text</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm Gray</div>
+        <div class="swatch-hex">#A09080</div>
+        <div class="swatch-desc">Body copy, descriptions.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#5a4a38; border:1px solid #2a2418;">
+        <div class="swatch-role-badge">dim / meta</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dim Brown</div>
+        <div class="swatch-hex">#5A4A38</div>
+        <div class="swatch-desc">Metadata, secondary labels, captions.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#3a3028; border:1px solid #2a2418;">
+        <div class="swatch-role-badge">ghost / nav</div>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ghost</div>
+        <div class="swatch-hex">#3A3028</div>
+        <div class="swatch-desc">Nav labels, inactive states, system text.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usage rules -->
+  <span class="sg-sub-label">Color Usage Rules</span>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">Use #D4A820 TD-3 Gold as the single primary accent across all interactive and highlighted elements.</span></div>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">Keep LED Green (#50E030) exclusively for status indicator dots. Never use it as a general accent or hover color.</span></div>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">Maintain the warm-black hierarchy: Void → Panel Black → Panel Dark → Panel Mid for layered depth.</span></div>
+  <div class="usage-block dont"><span class="use-icon">×</span><span class="use-text">Never use pure black (#000000) or pure white (#FFFFFF). Every color should carry a warm brown undertone.</span></div>
+  <div class="usage-block dont"><span class="use-icon">×</span><span class="use-text">Don't introduce new accent colors. The palette is intentionally closed.</span></div>
+  <div class="usage-block note"><span class="use-icon">◆</span><span class="use-text">Danger Red (#CC2010) appears only in LED indicators and the speed stripe. It is not a general call-to-action or highlight color.</span></div>
+</div>
+
+
+<!-- ═══════════════════════
+     02 · TYPOGRAPHY
+     ═══════════════════════ -->
+<div class="sg-section" id="type" style="background:#0d0a06;">
+  <div class="sg-section-eyebrow">02 // Foundation</div>
+  <div class="sg-section-title">Typography</div>
+  <div class="sg-section-desc">Three typefaces, each with a distinct job. Oxanium for impact moments only. Archivo for all reading and headings. Share Tech Mono for the machine voice. They must never swap roles.</div>
+
+  <div class="type-specimen-dark">
+
+    <div class="type-row">
+      <div class="type-meta">Display — Oxanium ExtraBold 800 — Hero name and drop caps ONLY</div>
+      <div class="t-display">Chris<br><span class="gold">Menning</span></div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">H1 — Archivo Bold 700 — Section headings, page titles</div>
+      <div class="t-h1">Projects / About / Contact</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">H2 — Archivo Bold 700 — Card titles, project names, subsections</div>
+      <div class="t-h2">Nature Oracle &nbsp;·&nbsp; Tome Reader &nbsp;·&nbsp; Disaster Preparedness Club</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">Body — Archivo Light 300 — Descriptions, bio, about text</div>
+      <div class="t-body">I write software, make electronic music on vintage gear, and run a home network that doesn't report back to anyone. I'm a big believer in <strong>open source</strong> and technology that stays in the hands of the people using it.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">Body with Drop Cap — Oxanium ghost letterform — First paragraph of bio and About page only</div>
+      <div class="t-body t-body-dropcap">I came to software development in my 30s. The instinct that runs through everything — the home lab, the music, the hardware — is the same: understand how it works, and own what you build.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">Mono — Share Tech Mono Regular — Labels, tags, metadata, nav, system readouts</div>
+      <div class="t-mono">
+        <span class="dim">LOC  // </span><span class="hi">Green Bay, WI</span><br>
+        <span class="dim">CODE // </span><span>C# · Salesforce Apex · Python</span><br>
+        <span class="dim">GEAR // </span><span>Vintage Synths · DAWless · TD-3</span><br>
+        <span class="dim">NET  // </span><span class="hi">Self-Hosted · Open Source</span>
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">Label — Share Tech Mono — Section numbers, eyebrows, navigation items</div>
+      <div class="t-label">02 // Projects &nbsp;&nbsp; Software · Music · Hardware · Open Source</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">Caption — Archivo Light Italic — Photo captions, footnotes</div>
+      <div class="t-caption">Nature Oracle — Hanimex Vista Viewer II, Raspberry Pi Zero, custom Python. Green Bay, WI, 2024.</div>
+    </div>
+
+  </div>
+
+  <!-- Type scale table -->
+  <span class="sg-sub-label" style="margin-top:2rem;">Type Scale Reference</span>
+  <table class="type-table">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Typeface</th>
+        <th>Size / Style</th>
+        <th>Where Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td><span class="td-role gold">DISPLAY</span></td>
+        <td class="td-face" style="font-family:'Oxanium',sans-serif;font-weight:800;">Oxanium ExtraBold 800</td>
+        <td class="td-spec">clamp(3.5rem, 7vw, 6.5rem) · uppercase</td>
+        <td class="td-use">Hero name + drop caps only. Two uses maximum per page.</td>
+      </tr>
+      <tr>
+        <td><span class="td-role">H1</span></td>
+        <td class="td-face">Archivo Bold 700</td>
+        <td class="td-spec">1.6rem · uppercase · tracking +0.01em</td>
+        <td class="td-use">Page section headings: Projects, About, Contact</td>
+      </tr>
+      <tr>
+        <td><span class="td-role">H2</span></td>
+        <td class="td-face">Archivo Bold 700</td>
+        <td class="td-spec">1.1–1.3rem · uppercase · tracking +0.02em</td>
+        <td class="td-use">Project card titles, subsection headings</td>
+      </tr>
+      <tr>
+        <td><span class="td-role">BODY</span></td>
+        <td class="td-face">Archivo Light 300</td>
+        <td class="td-spec">1rem · 1.85 line-height</td>
+        <td class="td-use">All descriptive copy, bio, project descriptions, about</td>
+      </tr>
+      <tr class="highlight">
+        <td><span class="td-role gold">DROP CAP</span></td>
+        <td class="td-face" style="font-family:'Oxanium',sans-serif;font-weight:800;">Oxanium 800 ghost</td>
+        <td class="td-spec">6.5em · transparent · 1px #D4A820 stroke</td>
+        <td class="td-use">First letter of bio paragraph + About page intro only</td>
+      </tr>
+      <tr>
+        <td><span class="td-role">MONO</span></td>
+        <td class="td-face" style="font-family:'Share Tech Mono',monospace;">Share Tech Mono</td>
+        <td class="td-spec">0.6–0.75rem · tracking +0.12em</td>
+        <td class="td-use">Navigation, tags, labels, metadata, system readouts</td>
+      </tr>
+      <tr>
+        <td><span class="td-role">CAPTION</span></td>
+        <td class="td-face">Archivo Light Italic 300</td>
+        <td class="td-spec">0.82rem · 1.6 line-height</td>
+        <td class="td-use">Photo captions, footnotes, tape label text</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Typography rules -->
+  <span class="sg-sub-label" style="margin-top:2rem;">Typography Rules</span>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">Use Oxanium only for the hero name and drop caps. Maximum two Oxanium appearances per page. Its impact depends on rarity.</span></div>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">All navigation, section numbers, tags, and metadata use Share Tech Mono. This is the "machine voice" — it should feel like a label on a piece of equipment.</span></div>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">Headings are always uppercase. Body copy is always sentence case. Never mix these within the same level.</span></div>
+  <div class="usage-block dont"><span class="use-icon">×</span><span class="use-text">Do not use Oxanium for section headings, card titles, navigation, or any text that appears more than twice on a page.</span></div>
+  <div class="usage-block dont"><span class="use-icon">×</span><span class="use-text">Do not use Archivo for labels, tags, or metadata. Mono text and body text must remain visually distinct.</span></div>
+  <div class="usage-block note"><span class="use-icon">◆</span><span class="use-text">Google Fonts load order: Oxanium → Archivo → Share Tech Mono. Archivo is the fallback for Oxanium if the font fails to load — acceptable degradation.</span></div>
+</div>
+
+
+<!-- ═══════════════════════
+     03 · DETAIL ELEMENTS
+     ═══════════════════════ -->
+<div class="sg-section" id="details">
+  <div class="sg-section-eyebrow">03 // Components</div>
+  <div class="sg-section-title">Detail Elements</div>
+  <div class="sg-section-desc">The recurring motifs that give the design personality. Each one has a traceable source in the actual objects and photographs. Use them consistently and don't invent new ones.</div>
+
+  <div class="detail-grid" style="margin-bottom:2rem;">
+
+    <!-- Speed stripe -->
+    <div class="detail-card">
+      <div class="detail-preview">
+        <div class="stripe-speed" style="height:14px;"></div>
+        <div class="stripe-speed" style="height:9px;opacity:0.7;"></div>
+        <div class="stripe-speed" style="height:5px;opacity:0.4;"></div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;color:#3a3028;letter-spacing:0.1em;margin-top:0.25rem;">Full · Medium · Accent weights</div>
+      </div>
+      <div class="detail-caption">
+        Speed Stripe — 3-tone skewed 20° · Red #8A1A08 flanks · Gold #D4A820 pinstripes · Orange #C07010 center<br>
+        Use: top page banner · section dividers · panel accent (small weight only)
+      </div>
+    </div>
+
+    <!-- Hazard stripe -->
+    <div class="detail-card">
+      <div class="detail-preview">
+        <div class="stripe-hazard" style="height:14px;"></div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div class="stripe-hazard" style="width:48px;height:10px;flex-shrink:0;"></div>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:0.55rem;color:#5a4a38;letter-spacing:0.12em;">SHOCK HAZARD</span>
+        </div>
+      </div>
+      <div class="detail-caption">
+        Hazard Stripe — 45° repeating gold/dark — Sourced from cyberdeck hinge tape<br>
+        Use: hardware project accents · warning callouts only · never as decoration
+      </div>
+    </div>
+
+    <!-- LED indicators -->
+    <div class="detail-card">
+      <div class="detail-preview" style="gap:10px;">
+        <div class="led-row">
+          <div class="led g"></div><div class="led g"></div>
+          <div class="led y"></div><div class="led off"></div>
+          <div class="led off"></div>
+          <span class="led-text">OPERATIONAL</span>
+        </div>
+        <div class="led-row">
+          <div class="led r"></div><div class="led off"></div>
+          <div class="led off"></div><div class="led off"></div>
+          <div class="led off"></div>
+          <span class="led-text">STANDBY</span>
+        </div>
+        <div class="led-row">
+          <div class="led g"></div><div class="led y"></div>
+          <div class="led y"></div><div class="led y"></div>
+          <div class="led r"></div>
+          <span class="led-text">ACTIVE</span>
+        </div>
+      </div>
+      <div class="detail-caption">
+        LED Indicators — Green #50E030 · Gold #D4A820 · Red #CC2010 · Off #1E1A14<br>
+        Use: hero status panel only · 3–5 dots per row · never scattered decoratively
+      </div>
+    </div>
+
+    <!-- Tape labels -->
+    <div class="detail-card">
+      <div class="detail-preview" style="flex-direction:row;flex-wrap:wrap;gap:8px;align-items:center;">
+        <div class="tape r1">ch 1-A</div>
+        <div class="tape r2">SCALE -5/+7</div>
+        <div class="tape r3">ch 2</div>
+        <div class="tape r1">GATE</div>
+        <div class="tape r2">TD-3 GOLD</div>
+      </div>
+      <div class="detail-caption">
+        Tape Labels — #D4A820 bg · #0A0806 text · Share Tech Mono · slight rotation ±1–2°<br>
+        Use: photo captions · project metadata · gear identification callouts
+      </div>
+    </div>
+
+    <!-- Project card -->
+    <div class="detail-card">
+      <div class="detail-preview">
+        <div class="card-demo">
+          <div class="card-demo-num">001 //</div>
+          <div class="card-demo-title">Nature Oracle</div>
+          <div class="card-demo-body">Repurposed film slide viewer housing a Raspberry Pi Zero. Queries NASA, iNaturalist, and other APIs as a passive info display.</div>
+          <div class="tag-row">
+            <span class="tag hardware">Hardware</span>
+            <span class="tag software">Software</span>
+            <span class="tag open-source">Open Source</span>
+          </div>
+        </div>
+      </div>
+      <div class="detail-caption">
+        Project Card — #1A1610 bg · #2A2418 border · 3px #D4A820 left accent · corner triangle on hover<br>
+        Use: project grid only · always includes index number · always includes at least one tag
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="detail-card">
+      <div class="detail-preview" style="gap:10px;">
+        <div class="tag-row">
+          <span class="tag software">Software</span>
+          <span class="tag music">Music</span>
+          <span class="tag hardware">Hardware</span>
+          <span class="tag vr">VR</span>
+          <span class="tag open-source">Open Source</span>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:0.52rem;color:#2a2418;line-height:1.9;margin-top:0.25rem;">
+          Software    → #5898C8 / #182840<br>
+          Music       → #D4A820 / #4A3808<br>
+          Hardware    → #68A848 / #204018<br>
+          VR          → #9868C8 / #381858<br>
+          Open Source → #C07010 / #4A2808
+        </div>
+      </div>
+      <div class="detail-caption">
+        Project Tags — Share Tech Mono · 0.5rem · colored text + matching dark border · no background fill<br>
+        Use: project cards only · filter buttons in project grid · maximum 3 tags per card
+      </div>
+    </div>
+
+  </div>
+
+  <span class="sg-sub-label">Detail Element Rules</span>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">The speed stripe appears at full weight (14px) at the very top of the page, medium weight (9px) as a section divider, and accent weight (5px) inside panels. These three sizes are the only uses.</span></div>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">Tape labels rotate between -2° and +2° only. Larger rotations look accidental rather than intentional.</span></div>
+  <div class="usage-block dont"><span class="use-icon">×</span><span class="use-text">Do not add new tag categories. The five defined tags (Software, Music, Hardware, VR, Open Source) cover all projects. If a new project genuinely needs a new tag, revisit the whole system.</span></div>
+  <div class="usage-block dont"><span class="use-icon">×</span><span class="use-text">Do not use the hazard stripe as decoration. It appears only where it references the cyberdeck hinge — hardware projects and warning callouts.</span></div>
+</div>
+
+
+<!-- ═══════════════════════
+     04 · DROP CAP
+     ═══════════════════════ -->
+<div class="sg-section" id="dropcap" style="background:#0d0a06;">
+  <div class="sg-section-eyebrow">04 // Components</div>
+  <div class="sg-section-title">Drop Cap</div>
+  <div class="sg-section-desc">The ghost outline drop cap is the most distinctive typographic detail on the site. It connects the hero name treatment to the body text — both use Oxanium, both use the outline approach. Use it exactly twice: hero bio and About page intro.</div>
+
+  <div class="dropcap-context" style="margin-bottom:1.5rem;">
+    <p class="dc">I came to software development in my 30s. The instinct that runs through everything — the home lab, the music, the hardware — is the same: understand how it works, and own what you build.</p>
+    <p>I work as a software developer and SharePoint admin in Green Bay, writing <strong>C# .NET web apps</strong>, <strong>Salesforce Apex</strong>, and untangling permissions issues that nobody else wants to touch. I believe in helping people develop skills — which is how I ended up supporting technical education.</p>
+    <p>The DIY instinct runs through everything I make. The home lab is built on open source tools I control. The music is made on machines I own outright, with no subscription that can be revoked.</p>
+  </div>
+
+  <span class="sg-sub-label">Implementation</span>
+  <div style="background:#0a0806;border:1px solid #1e1a14;border-radius:2px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+    <div style="font-family:'Share Tech Mono',monospace;font-size:0.62rem;color:#3a3028;line-height:2.2;letter-spacing:0.06em;">
+      p.drop-cap::first-letter {<br>
+      &nbsp;&nbsp;font-family: 'Oxanium', sans-serif;<br>
+      &nbsp;&nbsp;font-weight: 800;<br>
+      &nbsp;&nbsp;font-size: 6.5em;<br>
+      &nbsp;&nbsp;line-height: 0.68;<br>
+      &nbsp;&nbsp;float: left;<br>
+      &nbsp;&nbsp;margin-right: 0.04em;<br>
+      &nbsp;&nbsp;margin-top: 0;<br>
+      &nbsp;&nbsp;color: transparent;<br>
+      &nbsp;&nbsp;-webkit-text-stroke: 1px #d4a820;<br>
+      }
+    </div>
+  </div>
+
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">Apply to the first paragraph of the hero bio and the first paragraph of the About page. These are the only two uses on the entire site.</span></div>
+  <div class="usage-block do"><span class="use-icon">→</span><span class="use-text">The paragraph must begin with a capital letter. Never apply to a paragraph beginning with a number, quote mark, or lowercase word.</span></div>
+  <div class="usage-block dont"><span class="use-icon">×</span><span class="use-text">Do not apply to project description paragraphs, contact copy, or any other section. Scarcity is what makes it work.</span></div>
+  <div class="usage-block note"><span class="use-icon">◆</span><span class="use-text">The -webkit-text-stroke approach has near-universal browser support as of 2024. Test in Firefox and Safari — rendering differs slightly but is acceptable.</span></div>
+</div>
+
+
+<!-- ═══════════════════════
+     05 · COPY VOICE
+     ═══════════════════════ -->
+<div class="sg-section" id="voice">
+  <div class="sg-section-eyebrow">05 // Guidelines</div>
+  <div class="sg-section-title">Copy Voice</div>
+  <div class="sg-section-desc">The design can be undermined by the wrong words. These rules apply to every piece of copy on the site — bio, project descriptions, labels, metadata, everything.</div>
+
+  <div class="voice-columns" style="margin-bottom:2rem;">
+    <div class="voice-col do">
+      <div class="voice-col-header">// Do</div>
+      <ul>
+        <li>Lead with what the thing <em>is</em> and what it <em>does</em></li>
+        <li>Name the specific hardware, language, or API</li>
+        <li>Let the breadth speak for itself — don't announce it</li>
+        <li>Describe motivation when it's concrete and specific</li>
+        <li>Write in first person, plainly, sentence case</li>
+        <li>Use dry humor when it appears naturally</li>
+        <li>Keep project descriptions to 2–3 sentences</li>
+        <li>Introduce previous career context only in About</li>
+      </ul>
+    </div>
+    <div class="voice-col dont">
+      <div class="voice-col-header">// Don't</div>
+      <ul>
+        <li>Lead with KYM or BuzzFeed as a credential anywhere except About</li>
+        <li>Declare values — demonstrate them through the work</li>
+        <li>Use: "passionate", "driven", "innovative", "creative professional"</li>
+        <li>Apologize for or explain the career change in copy</li>
+        <li>Sound bitter about the internet or media industry</li>
+        <li>Over-describe a project — a paragraph, not an essay</li>
+        <li>Write in third person ("Chris Menning is a developer who...")</li>
+        <li>Use exclamation points</li>
+      </ul>
+    </div>
+  </div>
+
+  <span class="sg-sub-label">Copy Examples</span>
+
+  <div class="copy-example good">
+    <div class="copy-example-header">
+      <span class="copy-example-label">✓ Good — Project description</span>
+    </div>
+    <div class="copy-example-text">A repurposed Hanimex Vista Viewer II housing a Raspberry Pi Zero and a small LCD. Queries NASA, iNaturalist, and a carbon countdown API and cycles through them passively. Built because I wanted a screen on my desk that showed something real.</div>
+  </div>
+
+  <div class="copy-example bad">
+    <div class="copy-example-header">
+      <span class="copy-example-label">✗ Avoid — Same project, wrong voice</span>
+    </div>
+    <div class="copy-example-text">A passion project that showcases my creative approach to hardware hacking and my innovative use of open APIs to create a unique retrofuturistic experience. Demonstrates my ability to blend software and hardware skills.</div>
+  </div>
+
+  <div class="copy-example good" style="margin-top:8px;">
+    <div class="copy-example-header">
+      <span class="copy-example-label">✓ Good — Bio</span>
+    </div>
+    <div class="copy-example-text">I write software, make electronic music on vintage gear, and run a home network that doesn't report back to anyone. I'm a big believer in open source and technology that stays in the hands of the people using it.</div>
+  </div>
+
+  <div class="copy-example bad">
+    <div class="copy-example-header">
+      <span class="copy-example-label">✗ Avoid — Bio, wrong framing</span>
+    </div>
+    <div class="copy-example-text">After a decade in internet culture and media, I made the difficult decision to retrain as a software developer. Despite a non-traditional background, I am passionate about leveraging technology to create meaningful digital experiences.</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════
+     06 · PHOTOGRAPHY
+     ═══════════════════════ -->
+<div class="sg-section" id="photo" style="background:#0d0a06;">
+  <div class="sg-section-eyebrow">06 // Guidelines</div>
+  <div class="sg-section-title">Photography</div>
+  <div class="sg-section-desc">Photography is the most important design element on this site. No stock images, no illustrations, no mockup frames. Only real photographs of real objects. The photos are what make "maker's workshop" feel true rather than claimed.</div>
+
+  <div class="photo-rules">
+
+    <div class="photo-rule">
+      <div class="photo-rule-title">Surface &amp; Background</div>
+      <div class="photo-rule-body">The <strong>reddish-brown wood desk</strong> is the primary backdrop. It appeared in both the Nature Oracle and Tome Reader shots and immediately sets the right warmth and tone. Use it as a consistent surface for product shots. Avoid white, grey, or neutral backgrounds — they strip the warmth that connects the objects to each other.</div>
+    </div>
+
+    <div class="photo-rule">
+      <div class="photo-rule-title">Lighting</div>
+      <div class="photo-rule-body"><strong>Natural light from the side</strong>, not overhead flash. The Nature Oracle photo with the screen lit is the target — the object itself is the light source. Avoid flat, even lighting. Some shadow and gradient gives depth and makes the object feel three-dimensional and present.</div>
+    </div>
+
+    <div class="photo-rule">
+      <div class="photo-rule-title">Screen State</div>
+      <div class="photo-rule-body">Always photograph with the <strong>screen active and showing real content</strong>. The asteroid data on the Nature Oracle is better than a test pattern or blank screen. The manga page in the Tome Reader is better than a startup screen. The content on the screen tells part of the project's story.</div>
+    </div>
+
+    <div class="photo-rule">
+      <div class="photo-rule-title">Don't Clean Up Too Much</div>
+      <div class="photo-rule-body">The <strong>crime scene tape, masking tape labels, visible USB cables, purple tape on the Tome Reader</strong> — these are personality, not flaws. They show the objects are in use. A perfectly clean studio shot would make the work feel finished and distant. Keep the evidence of process.</div>
+    </div>
+
+    <div class="photo-rule">
+      <div class="photo-rule-title">Shot Types Per Project</div>
+      <div class="photo-rule-body"><strong>Hero shot:</strong> straight-on, clean, the object as subject. <strong>Context shot:</strong> the object in its environment or in use. The cyberdeck on the living room floor with the dog in the background is a perfect context shot — keep that energy. Each project should have both.</div>
+    </div>
+
+    <div class="photo-rule">
+      <div class="photo-rule-title">Synth Setup</div>
+      <div class="photo-rule-body">The studio wide shot is good context but needs a clean frame — crop out the floor and focus on the gear surface. <strong>Close-up panel shots</strong> (the CS01 II, the TD-3 face, the Korg Volca) work especially well as project illustration and visual texture. The colored cable shot from the rack back is site-ready now.</div>
+    </div>
+
+  </div>
+
+  <div class="usage-block note" style="margin-top:1.5rem;"><span class="use-icon">◆</span><span class="use-text">Priority shots still needed: cyberdeck open and running (hero), cyberdeck closed on the desk (context), Tome Reader open showing e-ink clearly, synth setup clean crop. These four would complete the visual library.</span></div>
+</div>
+
+
+<!-- ═══════════════════════
+     07 · SITE STRUCTURE
+     ═══════════════════════ -->
+<div class="sg-section" id="structure">
+  <div class="sg-section-eyebrow">07 // Guidelines</div>
+  <div class="sg-section-title">Site Structure</div>
+  <div class="sg-section-desc">Four pages. Projects is the heart of the site — everything else supports it. The homepage orients, Projects showcases, About explains, Contact connects.</div>
+
+  <div class="sitemap">
+
+    <div class="sitemap-page">
+      <div class="sitemap-page-header">
+        <span class="sitemap-page-num">01 //</span>
+        <span class="sitemap-page-name">Home</span>
+        <span class="sitemap-page-url">chrismenning.com/</span>
+      </div>
+      <div class="sitemap-page-body">
+        <div>
+          <div class="sitemap-col-label">// Contains</div>
+          <ul class="sitemap-items">
+            <li>Hero with name (Oxanium display), eyebrow label, bio paragraph with drop cap</li>
+            <li>Status panel — LED indicators, LCD readout, step grid</li>
+            <li>Speed stripe accent</li>
+            <li>Navigation to all sections</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sitemap-col-label">// Purpose</div>
+          <ul class="sitemap-items">
+            <li>First impression — polished design sensibility immediately visible</li>
+            <li>Orient the visitor in under 10 seconds</li>
+            <li>Lead with who you are now, not your history</li>
+            <li>Single page — no scrolling content below the fold</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sitemap-page">
+      <div class="sitemap-page-header">
+        <span class="sitemap-page-num">02 //</span>
+        <span class="sitemap-page-name">Projects</span>
+        <span class="sitemap-page-url">chrismenning.com/projects/</span>
+      </div>
+      <div class="sitemap-page-body">
+        <div>
+          <div class="sitemap-col-label">// Contains</div>
+          <ul class="sitemap-items">
+            <li>Tag filter bar — All / Software / Music / Hardware / VR / Open Source</li>
+            <li>Asymmetric card grid — featured (7 col) + medium (5 col) + small (4 col)</li>
+            <li>Each card: index number, title, 2–3 sentence description, tags, arrow</li>
+            <li>Individual project pages accessible from cards</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sitemap-col-label">// Purpose</div>
+          <ul class="sitemap-items">
+            <li>The heart of the site — everything else supports this page</li>
+            <li>Single pool of work, tagged not siloed — cross-disciplinary projects live naturally here</li>
+            <li>Breadth of skills visible at a glance without requiring a resume</li>
+            <li>Photography carries most of the visual weight</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sitemap-page">
+      <div class="sitemap-page-header">
+        <span class="sitemap-page-num">03 //</span>
+        <span class="sitemap-page-name">About</span>
+        <span class="sitemap-page-url">chrismenning.com/about/</span>
+      </div>
+      <div class="sitemap-page-body">
+        <div>
+          <div class="sitemap-col-label">// Contains</div>
+          <ul class="sitemap-items">
+            <li>Longer bio with ghost drop cap on first paragraph</li>
+            <li>Career arc — software work, previous career context, how they connect</li>
+            <li>Home lab section — what runs, why it runs that way</li>
+            <li>Cassette UI — current stack / gear summary</li>
+            <li>Download CV link</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sitemap-col-label">// Purpose</div>
+          <ul class="sitemap-items">
+            <li>For visitors who want more after seeing the projects</li>
+            <li>The only place KYM / BuzzFeed context is mentioned</li>
+            <li>Explains the career path without apologizing for it</li>
+            <li>Home lab here as "values with receipts" not a project showcase</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sitemap-page">
+      <div class="sitemap-page-header">
+        <span class="sitemap-page-num">04 //</span>
+        <span class="sitemap-page-name">Contact</span>
+        <span class="sitemap-page-url">chrismenning.com/contact/</span>
+      </div>
+      <div class="sitemap-page-body">
+        <div>
+          <div class="sitemap-col-label">// Contains</div>
+          <ul class="sitemap-items">
+            <li>Brief orienting paragraph (1–2 sentences)</li>
+            <li>Email button (primary CTA)</li>
+            <li>GitHub, Bandcamp, LinkedIn, Mastodon links</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sitemap-col-label">// Purpose</div>
+          <ul class="sitemap-items">
+            <li>Keep it minimal — don't over-explain here</li>
+            <li>The paragraph sets tone: open to collaborators, employers, music fans</li>
+            <li>No contact form — direct email only</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="usage-block note" style="margin-top:1.5rem;"><span class="use-icon">◆</span><span class="use-text">Built with Eleventy on GitHub Pages. chrismenning.com CNAME points to GitHub Pages servers. SSL handled automatically. Project content authored in Markdown with YAML front matter for tags and metadata. One Eleventy template for all project pages.</span></div>
+</div>
+
+</main>
+</body>
+</html>

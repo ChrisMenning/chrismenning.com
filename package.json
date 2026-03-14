@@ -1,0 +1,15 @@
+{
+  "name": "chrismenning-com",
+  "version": "1.0.0",
+  "description": "Personal website — chrismenning.com",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}

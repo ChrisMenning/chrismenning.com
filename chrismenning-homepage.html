@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Menning — Developer & Maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300&family=Share+Tech+Mono&family=Oxanium:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════
+   TOKENS
+   ═══════════════════════════════ */
+:root {
+  --void:        #0a0806;
+  --panel-black: #0f0c08;
+  --panel-dark:  #1a1610;
+  --panel-mid:   #2a2418;
+  --panel-light: #3a3028;
+  --wood:        #5a3e28;
+  --gold:        #d4a820;
+  --gold-burn:   #c07010;
+  --gold-dark:   #7a5e10;
+  --stripe-red:  #8a1a08;
+  --led-green:   #50e030;
+  --led-red:     #cc2010;
+  --parchment:   #f0ebe0;
+  --warm-gray:   #a09080;
+  --dim-brown:   #5a4a38;
+  --ghost:       #3a3028;
+
+  --f-display: 'Oxanium', sans-serif;
+  --f-body:    'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --f-mono:    'Share Tech Mono', monospace;
+}
+
+/* ═══════════════════════════════
+   RESET
+   ═══════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+
+body {
+  background: var(--panel-black);
+  color: var(--warm-gray);
+  font-family: var(--f-body);
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
+    linear-gradient(var(--panel-black), var(--panel-black));
+}
+
+/* ═══════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100%; left: 1rem;
+  background: var(--gold); color: var(--void);
+  font-family: var(--f-mono); font-size: 0.7rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.5rem 1rem; text-decoration: none;
+  z-index: 9999; transition: top 0.1s;
+}
+.skip-link:focus { top: 0.5rem; }
+
+/* ═══════════════════════════════
+   SPEED STRIPE — 3 weights
+   ═══════════════════════════════ */
+.stripe {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.stripe::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(
+    to right,
+    var(--stripe-red)  0%,
+    var(--stripe-red)  calc(33% - 6px),
+    var(--gold)        calc(33% - 6px), var(--gold) 33%,
+    var(--gold-burn)   33%,
+    var(--gold-burn)   calc(66% - 6px),
+    var(--gold)        calc(66% - 6px), var(--gold) 66%,
+    var(--stripe-red)  66%, var(--stripe-red) 100%
+  );
+  transform: skewX(-20deg) scaleX(1.3);
+}
+.stripe-full   { height: 10px; }
+.stripe-medium { height: 6px; }
+.stripe-accent { height: 4px; }
+
+/* ═══════════════════════════════
+   HAZARD STRIPE
+   ═══════════════════════════════ */
+.hazard {
+  position: relative;
+  overflow: hidden;
+}
+.hazard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--gold)       0px,   var(--gold)       7px,
+    var(--panel-dark) 7px,   var(--panel-dark)  14px
+  );
+}
+
+/* ═══════════════════════════════
+   TAPE LABEL
+   ═══════════════════════════════ */
+.tape {
+  background: var(--gold);
+  color: var(--void);
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  display: inline-block;
+  line-height: 1;
+}
+.tape-r1 { transform: rotate(-1.5deg); }
+.tape-r2 { transform: rotate(1deg); }
+.tape-r3 { transform: rotate(-0.8deg); }
+
+/* ═══════════════════════════════
+   LED DOTS
+   ═══════════════════════════════ */
+.led-row { display: flex; align-items: center; gap: 5px; }
+.led { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.led-g   { background: var(--led-green); box-shadow: 0 0 5px var(--led-green), 0 0 10px rgba(80,224,48,0.3); }
+.led-y   { background: var(--gold);      box-shadow: 0 0 5px var(--gold), 0 0 10px rgba(212,168,32,0.3); }
+.led-r   { background: var(--led-red);   box-shadow: 0 0 5px var(--led-red), 0 0 10px rgba(204,32,16,0.3); }
+.led-off { background: var(--panel-mid); border: 1px solid var(--ghost); }
+.led-text {
+  font-family: var(--f-mono); font-size: 0.5rem;
+  letter-spacing: 0.12em; color: var(--ghost);
+  margin-left: 0.5rem;
+}
+
+/* ═══════════════════════════════
+   STEP SEQUENCER
+   ═══════════════════════════════ */
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3px;
+}
+.step {
+  aspect-ratio: 1;
+  border-radius: 1px;
+  border: 1px solid var(--panel-mid);
+  background: var(--panel-dark);
+}
+.step-g { background: var(--led-green); border-color: #38b020; box-shadow: 0 0 4px var(--led-green); }
+.step-y { background: var(--gold);      border-color: var(--gold-burn); box-shadow: 0 0 4px var(--gold); }
+.step-r { background: var(--led-red);   border-color: #aa1808; box-shadow: 0 0 4px var(--led-red); }
+
+/* ═══════════════════════════════
+   LCD READOUT
+   ═══════════════════════════════ */
+.lcd {
+  background: #101e12;
+  border: 1px solid #0a160c;
+  border-radius: 1px;
+  padding: 0.65rem 0.85rem;
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  line-height: 2;
+  color: #58c880;
+  letter-spacing: 0.07em;
+}
+.lcd-dim    { color: #244a28; }
+.lcd-bright { color: #88ffb0; }
+
+/* ═══════════════════════════════
+   PROJECT TAG CHIPS
+   ═══════════════════════════════ */
+.tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag {
+  font-family: var(--f-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid;
+  border-radius: 1px;
+  white-space: nowrap;
+}
+.tag-software    { color: #5898c8; border-color: #182840; }
+.tag-music       { color: var(--gold); border-color: #4a3808; }
+.tag-hardware    { color: #68a848; border-color: #204018; }
+.tag-vr          { color: #9868c8; border-color: #381858; }
+.tag-open-source { color: var(--gold-burn); border-color: #4a2808; }
+
+/* ═══════════════════════════════
+   NAV
+   ═══════════════════════════════ */
+.site-nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(10,8,6,0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--panel-mid);
+}
+.nav-inner {
+  max-width: 1400px; margin: 0 auto;
+  padding: 0 2rem; height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  display: flex; align-items: center;
+  gap: 0.75rem; text-decoration: none; flex-shrink: 0;
+}
+.nav-logo-mark { width: 36px; height: 20px; }
+.nav-logo-name {
+  font-family: var(--f-body); font-weight: 700;
+  font-size: 0.82rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--parchment);
+}
+.nav-links { display: flex; align-items: center; height: 52px; gap: 0; list-style: none; }
+.nav-links a {
+  font-family: var(--f-mono); font-size: 0.62rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ghost); text-decoration: none;
+  padding: 0 1.25rem; height: 52px;
+  display: flex; align-items: center;
+  border-left: 1px solid var(--panel-mid);
+  transition: color 0.15s, background 0.15s;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible { color: var(--parchment); background: rgba(212,168,32,0.05); outline: none; }
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after { transform: scaleX(1); }
+.nav-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+
+/* ═══════════════════════════════
+   HERO — HUD composition
+   ═══════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 62px);
+  overflow: hidden;
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(212,168,32,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,168,32,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero-wash {
+  position: absolute; top: 0; right: -10%; width: 60%; height: 100%;
+  background: radial-gradient(ellipse at 75% 25%, rgba(90,62,40,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Ghost background name */
+.hero-ghost {
+  position: absolute; bottom: -0.08em; left: -0.02em;
+  font-family: var(--f-display); font-weight: 800;
+  font-size: clamp(10rem, 24vw, 24rem);
+  line-height: 1; letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(212,168,32,0.05);
+  pointer-events: none; user-select: none; white-space: nowrap;
+}
+
+/* ── HUD CANVAS ── */
+.hud {
+  position: relative; z-index: 1;
+  max-width: 1400px; width: 100%;
+  margin: 0 auto; padding: 0 2rem;
+  min-height: calc(100vh - 62px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+/* ── TOP-LEFT CATALOG REF ── */
+.hud-catalog {
+  position: absolute; top: 2rem; left: 2rem;
+  font-family: var(--f-mono); font-size: 0.5rem;
+  letter-spacing: 0.2em; color: var(--ghost);
+  line-height: 2;
+  animation: fade-in 1s ease both 0.8s;
+}
+.hud-catalog strong { color: var(--panel-light); }
+
+/* ── TOP-RIGHT STATUS ── */
+.hud-status {
+  position: absolute; top: 2rem; right: 2rem;
+  font-family: var(--f-mono); font-size: 0.5rem;
+  letter-spacing: 0.15em; text-align: right;
+  line-height: 2;
+  animation: fade-in 1s ease both 0.8s;
+}
+.hud-status .online { color: var(--led-green); }
+.hud-status .dim    { color: var(--ghost); }
+
+/* ── NAME ── */
+.hud-name-block {
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0 2rem;
+  animation: fade-up 0.7s ease both 0.15s;
+}
+
+.hud-eyebrow {
+  font-family: var(--f-mono); font-size: 0.58rem;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.65;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hud-eyebrow::before {
+  content: '▶'; font-size: 0.4rem;
+  color: var(--gold-burn);
+}
+
+h1.hud-name {
+  font-family: var(--f-display); font-weight: 800;
+  font-size: clamp(4.8rem, 9.5vw, 10rem);
+  line-height: 0.88; letter-spacing: -0.025em;
+  text-transform: uppercase; color: var(--parchment);
+}
+h1.hud-name .gold { color: var(--gold); }
+
+.hud-name-stripe {
+  height: 8px; position: relative; overflow: hidden;
+  margin-top: 1.5rem;
+  width: clamp(180px, 48%, 520px);
+  animation: expand-w 0.8s ease both 0.5s;
+}
+.hud-name-stripe::after {
+  content: ''; position: absolute; inset: -3px;
+  background: linear-gradient(
+    to right,
+    var(--stripe-red)  0%,
+    var(--stripe-red)  calc(33% - 5px),
+    var(--gold)        calc(33% - 5px), var(--gold) 33%,
+    var(--gold-burn)   33%,
+    var(--gold-burn)   calc(66% - 5px),
+    var(--gold)        calc(66% - 5px), var(--gold) 66%,
+    var(--stripe-red)  66%, var(--stripe-red) 100%
+  );
+  transform: skewX(-20deg) scaleX(1.3);
+}
+
+/* ── BOTTOM ROW: BIO + PANEL ── */
+.hud-bottom {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem; align-items: end;
+  padding-bottom: 3.5rem;
+  animation: fade-up 0.7s ease both 0.35s;
+}
+
+/* ── BIO with ghost drop cap ── */
+.hud-bio p {
+  font-size: 1rem; font-weight: 300;
+  line-height: 1.85; color: var(--warm-gray);
+  max-width: 500px;
+}
+.hud-bio p::first-letter {
+  font-family: var(--f-display); font-weight: 800;
+  font-size: 6.5em; line-height: 0.68;
+  float: left; margin-right: 0.04em; margin-top: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold);
+}
+.hud-bio p strong { color: var(--parchment); font-weight: 600; }
+
+/* ── STATUS PANEL ── */
+.hud-panel {
+  background: var(--void);
+  border: 1px solid var(--panel-mid);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Panel header bar */
+.panel-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background: var(--panel-dark);
+  border-bottom: 1px solid var(--panel-mid);
+}
+.panel-header-label {
+  font-family: var(--f-mono); font-size: 0.48rem;
+  letter-spacing: 0.25em; color: var(--ghost);
+  text-transform: uppercase;
+}
+
+.panel-body { padding: 1rem; }
+
+/* Hazard stripe inside panel — hardware reference */
+.panel-hazard-strip {
+  height: 6px;
+  position: relative; overflow: hidden;
+  margin-bottom: 0.85rem; border-radius: 1px;
+}
+.panel-hazard-strip::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(212,168,32,0.5)  0px,  rgba(212,168,32,0.5)  5px,
+    var(--panel-dark)     5px,  var(--panel-dark)     10px
+  );
+}
+
+/* ── PANEL INNER CONTENT ── */
+.panel-section { margin-bottom: 0.85rem; }
+.panel-section:last-child { margin-bottom: 0; }
+
+.panel-label {
+  font-family: var(--f-mono); font-size: 0.46rem;
+  letter-spacing: 0.22em; color: var(--ghost);
+  text-transform: uppercase; margin-bottom: 0.45rem;
+}
+
+.panel-rule { height: 1px; background: var(--panel-mid); margin: 0.85rem 0; }
+
+.panel-footer-stripe {
+  height: 4px; position: relative; overflow: hidden;
+}
+.panel-footer-stripe::after {
+  content: ''; position: absolute; inset: -2px;
+  background: linear-gradient(
+    to right,
+    var(--stripe-red)  0%,
+    var(--stripe-red)  calc(33% - 4px),
+    var(--gold)        calc(33% - 4px), var(--gold) 33%,
+    var(--gold-burn)   33%,
+    var(--gold-burn)   calc(66% - 4px),
+    var(--gold)        calc(66% - 4px), var(--gold) 66%,
+    var(--stripe-red)  66%, var(--stripe-red) 100%
+  );
+  transform: skewX(-20deg) scaleX(1.3);
+}
+
+/* ── TAPE LABEL cluster near bio ── */
+.bio-meta {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap; margin-top: 1.25rem;
+}
+
+/* ── MINI FEATURED CARD STRIP ── */
+/* Teaser of project cards at bottom of hero to pull visitor in */
+.hero-cards-strip {
+  position: relative; z-index: 1;
+  background: var(--void);
+  border-top: 1px solid var(--panel-mid);
+  padding: 0;
+}
+
+.hero-cards-inner {
+  max-width: 1400px; margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.mini-card {
+  padding: 1.25rem 1.5rem;
+  border-right: 1px solid var(--panel-mid);
+  position: relative; overflow: hidden;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+  display: block;
+}
+.mini-card:last-child { border-right: none; }
+.mini-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; bottom: 0; width: 3px;
+  background: var(--panel-mid);
+  transition: background 0.2s;
+}
+/* Corner triangle on hover — from style guide */
+.mini-card::after {
+  content: ''; position: absolute;
+  top: 0; right: 0;
+  border-style: solid; border-width: 0 18px 18px 0;
+  border-color: transparent var(--gold) transparent transparent;
+  opacity: 0; transition: opacity 0.2s;
+}
+.mini-card:hover { background: var(--panel-dark); }
+.mini-card:hover::before { background: var(--gold); }
+.mini-card:hover::after  { opacity: 1; }
+.mini-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+}
+
+.mini-card-num {
+  font-family: var(--f-mono); font-size: 0.48rem;
+  letter-spacing: 0.18em; color: var(--gold);
+  opacity: 0.5; margin-bottom: 0.4rem;
+}
+.mini-card-title {
+  font-family: var(--f-body); font-weight: 700;
+  font-size: 0.9rem; text-transform: uppercase;
+  letter-spacing: 0.02em; color: var(--parchment);
+  margin-bottom: 0.3rem;
+}
+.mini-card-desc {
+  font-size: 0.75rem; font-weight: 300;
+  color: var(--dim-brown); line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.mini-card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* View all link */
+.mini-card-view-all {
+  display: flex; align-items: center;
+  justify-content: center; gap: 0.75rem;
+  padding: 1.25rem;
+  font-family: var(--f-mono); font-size: 0.58rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ghost); text-decoration: none;
+  border-top: 1px solid var(--panel-mid);
+  transition: color 0.15s, background 0.15s;
+}
+.mini-card-view-all::after {
+  content: '→'; color: var(--gold-burn);
+  transition: transform 0.2s, color 0.15s;
+}
+.mini-card-view-all:hover {
+  color: var(--gold); background: rgba(212,168,32,0.04);
+}
+.mini-card-view-all:hover::after {
+  color: var(--gold); transform: translateX(4px);
+}
+.mini-card-view-all:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: -2px;
+}
+
+/* ── SCROLL INDICATOR ── */
+.hud-scroll {
+  position: absolute; bottom: 1.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  font-family: var(--f-mono); font-size: 0.46rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ghost); text-decoration: none;
+  animation: fade-in 1.2s ease both 1s;
+  transition: color 0.15s;
+}
+.hud-scroll:hover { color: var(--gold); }
+.scroll-line {
+  width: 1px; height: 28px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scroll-pulse 2.2s ease-in-out infinite;
+}
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.25; transform: scaleY(1); }
+  50%       { opacity: 0.9;  transform: scaleY(0.65); }
+}
+
+/* ═══════════════════════════════
+   FOOTER
+   ═══════════════════════════════ */
+.site-footer { background: var(--void); border-top: 1px solid var(--panel-mid); }
+.footer-inner {
+  max-width: 1400px; margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-copy {
+  font-family: var(--f-mono); font-size: 0.5rem;
+  letter-spacing: 0.15em; color: var(--ghost);
+}
+.footer-links { display: flex; gap: 1.75rem; list-style: none; }
+.footer-links a {
+  font-family: var(--f-mono); font-size: 0.5rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ghost); text-decoration: none; transition: color 0.15s;
+}
+.footer-links a:hover,
+.footer-links a:focus-visible { color: var(--gold); }
+.footer-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* ═══════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes expand-w {
+  from { width: 0; opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════ */
+@media (max-width: 700px) {
+  .hud-bottom { grid-template-columns: 1fr; gap: 2rem; }
+  .hud-panel  { display: none; }
+  .hud-catalog, .hud-status { display: none; }
+  .hero-ghost { display: none; }
+  h1.hud-name { font-size: clamp(3.5rem, 14vw, 6rem); }
+  .hero-cards-inner { grid-template-columns: 1fr; }
+  .mini-card { border-right: none; border-bottom: 1px solid var(--panel-mid); }
+  .mini-card:last-child { border-bottom: none; }
+}
+@media (max-width: 560px) {
+  .nav-logo-name { display: none; }
+  .nav-links a { padding: 0 0.85rem; font-size: 0.56rem; }
+  .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* ═══════════════════════════════
+   REDUCED MOTION
+   ═══════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ═══════════════════════════════
+   HIGH CONTRAST
+   ═══════════════════════════════ */
+@media (forced-colors: active) {
+  .hud-bio p::first-letter { -webkit-text-stroke: 0; color: Highlight; }
+  .step-g, .step-y, .step-r { background: Highlight; box-shadow: none; }
+  .stripe::after, .hazard::after, .panel-footer-stripe::after { display: none; }
+}
+
+/* ═══════════════════════════════
+   DEMO BAR
+   ═══════════════════════════════ */
+.demo-bar {
+  background: var(--gold); color: var(--void);
+  font-family: var(--f-mono); font-size: 0.6rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  text-align: center; padding: 0.5rem; font-weight: 700;
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="demo-bar" role="presentation">▶ Homepage Mockup — chrismenning.com</div>
+<div class="stripe stripe-full" role="presentation" aria-hidden="true"></div>
+
+<!-- ════════════
+     NAV
+     ════════════ -->
+<header>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Chris Menning — home">
+        <svg class="nav-logo-mark" viewBox="0 0 44 22" fill="none" aria-hidden="true">
+          <polyline points="1,11 7,11 11,3 15,19 19,11 25,11 29,3 33,19 37,11 43,11"
+            stroke="#d4a820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav-logo-name">Chris Menning</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- ════════════
+     HERO
+     ════════════ -->
+<main id="main-content">
+<section class="hero" aria-label="Introduction">
+
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-wash" aria-hidden="true"></div>
+  <div class="hero-ghost" aria-hidden="true">Menning</div>
+
+  <!-- Top-left catalog reference -->
+  <div class="hud-catalog" aria-hidden="true">
+    <strong>REF //</strong> CM-2025<br>
+    <strong>ISS //</strong> v1.0<br>
+    <strong>LOC //</strong> Green Bay, WI
+  </div>
+
+  <!-- Top-right live status -->
+  <div class="hud-status" aria-label="Current status">
+    <span class="dim">STATUS // </span><span class="online">OPERATIONAL</span><br>
+    <span class="dim">AVAIL  // </span><span class="online">OPEN</span><br>
+    <span class="dim">NET    // </span><span class="online">SELF-HOSTED</span>
+  </div>
+
+  <div class="hud">
+
+    <!-- Name block -->
+    <div class="hud-name-block">
+      <div class="hud-eyebrow" aria-hidden="true">
+        Software Developer · Electronic Musician · Green Bay, WI
+      </div>
+      <h1 class="hud-name">Chris<br><span class="gold">Menning</span></h1>
+      <div class="hud-name-stripe" aria-hidden="true"></div>
+    </div>
+
+    <!-- Bottom: bio + panel -->
+    <div class="hud-bottom">
+
+      <!-- Bio -->
+      <div class="hud-bio">
+        <p>I write software, make electronic music on vintage gear, and run a home network that doesn't report back to anyone. I'm a big believer in <strong>open source</strong> and technology that stays in the hands of the people using it.</p>
+
+        <!-- Tape labels anchored beneath bio — the "workshop" feel -->
+        <div class="bio-meta" aria-label="Disciplines">
+          <span class="tape tape-r1">C# · .NET</span>
+          <span class="tape tape-r2">Salesforce Apex</span>
+          <span class="tape tape-r3">DAWless</span>
+          <span class="tape tape-r1">Open Source</span>
+          <span class="tape tape-r2">Self-Hosted</span>
+        </div>
+      </div>
+
+      <!-- Status panel -->
+      <aside class="hud-panel" aria-label="System status">
+
+        <div class="panel-header">
+          <span class="panel-header-label">SYS // CM-01</span>
+          <!-- LED row in header -->
+          <div class="led-row" aria-hidden="true">
+            <div class="led led-g"></div>
+            <div class="led led-g"></div>
+            <div class="led led-y"></div>
+            <div class="led led-off"></div>
+            <div class="led led-off"></div>
+            <span class="led-text">ONLINE</span>
+          </div>
+        </div>
+
+        <div class="panel-body">
+
+          <!-- Hazard strip — hardware reference -->
+          <div class="panel-hazard-strip" aria-hidden="true"></div>
+
+          <!-- Step grid -->
+          <div class="panel-section">
+            <div class="panel-label">// sequence</div>
+            <div class="step-grid" aria-hidden="true" role="presentation">
+              <div class="step step-g"></div><div class="step step-g"></div>
+              <div class="step step-y"></div><div class="step step-y"></div>
+              <div class="step step-r"></div><div class="step"></div>
+              <div class="step step-g"></div><div class="step"></div>
+              <div class="step step-y"></div><div class="step"></div>
+              <div class="step step-g"></div><div class="step step-g"></div>
+              <div class="step"></div><div class="step step-y"></div>
+              <div class="step step-r"></div><div class="step step-g"></div>
+            </div>
+          </div>
+
+          <div class="panel-rule" aria-hidden="true"></div>
+
+          <!-- LCD readout -->
+          <div class="panel-section">
+            <div class="panel-label">// readout</div>
+            <div class="lcd" role="region" aria-label="Technical summary">
+              <span class="lcd-dim">LOC  // </span><span class="lcd-bright">Green Bay, WI</span><br>
+              <span class="lcd-dim">CODE // </span><span>C# · Apex · Python · JS</span><br>
+              <span class="lcd-dim">GEAR // </span><span>Synths · TD-3 · DAWless</span><br>
+              <span class="lcd-dim">LAB  // </span><span class="lcd-bright">NextCloud · Pi-hole · HA</span>
+            </div>
+          </div>
+
+          <div class="panel-rule" aria-hidden="true"></div>
+
+          <!-- Tag chips — disciplines -->
+          <div class="panel-section">
+            <div class="panel-label">// disciplines</div>
+            <div class="tags" aria-label="Project disciplines">
+              <span class="tag tag-software">Software</span>
+              <span class="tag tag-music">Music</span>
+              <span class="tag tag-hardware">Hardware</span>
+              <span class="tag tag-vr">VR</span>
+              <span class="tag tag-open-source">Open Source</span>
+            </div>
+          </div>
+
+        </div><!-- /panel-body -->
+
+        <!-- Panel footer accent stripe -->
+        <div class="panel-footer-stripe" aria-hidden="true"></div>
+
+      </aside>
+
+    </div><!-- /hud-bottom -->
+
+  </div><!-- /hud -->
+
+  <!-- Scroll hint -->
+  <a href="#featured" class="hud-scroll" aria-label="Scroll to featured projects">
+    <div class="scroll-line" aria-hidden="true"></div>
+    <span>Featured</span>
+  </a>
+
+</section>
+
+<!-- ════════════════════════════
+     FEATURED PROJECTS STRIP
+     — teaser pull into Projects
+     ════════════════════════════ -->
+<section id="featured" aria-label="Featured projects">
+
+  <div class="stripe stripe-medium" role="presentation" aria-hidden="true"></div>
+
+  <div class="hero-cards-strip">
+    <div class="hero-cards-inner">
+
+      <a href="/projects/nature-oracle" class="mini-card" aria-label="Nature Oracle project">
+        <div class="mini-card-num">001 //</div>
+        <div class="mini-card-title">Nature Oracle</div>
+        <div class="mini-card-desc">Repurposed slide viewer, Raspberry Pi Zero, NASA API. A retrofuturistic passive info display.</div>
+        <div class="mini-card-tags">
+          <span class="tag tag-hardware">Hardware</span>
+          <span class="tag tag-software">Software</span>
+          <span class="tag tag-open-source">Open Source</span>
+        </div>
+      </a>
+
+      <a href="/projects/britannia-deluxe" class="mini-card" aria-label="Britannia Deluxe cyberdeck project">
+        <div class="mini-card-num">002 //</div>
+        <div class="mini-card-title">Britannia Deluxe</div>
+        <div class="mini-card-desc">Cigar box cyberdeck. Raspberry Pi, orange keyboard, dual screens, hazard tape. Actually runs Linux.</div>
+        <div class="mini-card-tags">
+          <span class="tag tag-hardware">Hardware</span>
+          <span class="tag tag-open-source">Open Source</span>
+        </div>
+      </a>
+
+      <a href="/projects/disaster-preparedness-club" class="mini-card" aria-label="Disaster Preparedness Club music project">
+        <div class="mini-card-num">003 //</div>
+        <div class="mini-card-title">Disaster Preparedness Club</div>
+        <div class="mini-card-desc">One-man DAWless electronic music project. Vintage synths and drum machines. No computers involved.</div>
+        <div class="mini-card-tags">
+          <span class="tag tag-music">Music</span>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="/projects" class="mini-card-view-all" aria-label="View all projects">
+      View all projects
+    </a>
+
+  </div>
+
+</section>
+</main>
+
+<!-- ════════════
+     FOOTER
+     ════════════ -->
+<footer class="site-footer">
+  <div class="stripe stripe-medium" role="presentation" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <p class="footer-copy">© CHRIS MENNING · GREEN BAY, WI · CHRISMENNING.COM</p>
+    <ul class="footer-links" aria-label="External links" role="list">
+      <li><a href="https://github.com" rel="noopener noreferrer" aria-label="GitHub">GitHub</a></li>
+      <li><a href="https://bandcamp.com" rel="noopener noreferrer" aria-label="Bandcamp">Bandcamp</a></li>
+      <li><a href="https://linkedin.com" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a></li>
+      <li><a href="https://mastodon.social" rel="noopener noreferrer" aria-label="Mastodon">Mastodon</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

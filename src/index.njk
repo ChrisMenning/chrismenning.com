@@ -1,0 +1,149 @@
+---
+layout: base.njk
+title: Developer & Maker
+description: Software developer, electronic musician, maker. Green Bay, WI.
+---
+
+<main id="main-content">
+<section class="hero" aria-label="Introduction">
+
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-wash" aria-hidden="true"></div>
+  <div class="hero-ghost" aria-hidden="true">Menning</div>
+
+  <div class="hud-catalog" aria-hidden="true">
+    <strong>REF //</strong> CM-2025<br>
+    <strong>ISS //</strong> v1.0<br>
+    <strong>LOC //</strong> Green Bay, WI
+  </div>
+
+  <div class="hud-status" aria-label="Current status">
+    <span class="dim">STATUS // </span><span class="online">OPERATIONAL</span><br>
+    <span class="dim">AVAIL  // </span><span class="online">OPEN</span><br>
+    <span class="dim">NET    // </span><span class="online">SELF-HOSTED</span>
+  </div>
+
+  <div class="hud">
+
+    <div class="hud-name-block">
+      <div class="hud-eyebrow" aria-hidden="true">
+        Software Developer · Electronic Musician · Green Bay, WI
+      </div>
+      <h1 class="hud-name">Chris<br><span class="gold">Menning</span></h1>
+      <div class="hud-name-stripe" aria-hidden="true"></div>
+    </div>
+
+    <div class="hud-bottom">
+
+      <div class="hud-bio">
+        <p>I write software, make electronic music on vintage gear, and run a home network that doesn't report back to anyone. I'm a big believer in <strong>open source</strong> and technology that stays in the hands of the people using it.</p>
+        <div class="bio-meta" aria-label="Disciplines">
+          <span class="tape tape-r1">C# · .NET</span>
+          <span class="tape tape-r2">Salesforce Apex</span>
+          <span class="tape tape-r3">DAWless</span>
+          <span class="tape tape-r1">Open Source</span>
+          <span class="tape tape-r2">Self-Hosted</span>
+        </div>
+      </div>
+
+      <aside class="hud-panel" aria-label="System status">
+        <div class="panel-header">
+          <span class="panel-header-label">SYS // CM-01</span>
+          <div class="led-row" aria-hidden="true">
+            <div class="led led-g"></div>
+            <div class="led led-g"></div>
+            <div class="led led-y"></div>
+            <div class="led led-off"></div>
+            <div class="led led-off"></div>
+            <span class="led-text">ONLINE</span>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="panel-hazard-strip" aria-hidden="true"></div>
+
+          <div class="panel-section">
+            <div class="panel-label">// sequence</div>
+            <div class="step-grid" aria-hidden="true" role="presentation">
+              <div class="step step-g"></div><div class="step step-g"></div>
+              <div class="step step-y"></div><div class="step step-y"></div>
+              <div class="step step-r"></div><div class="step"></div>
+              <div class="step step-g"></div><div class="step"></div>
+              <div class="step step-y"></div><div class="step"></div>
+              <div class="step step-g"></div><div class="step step-g"></div>
+              <div class="step"></div><div class="step step-y"></div>
+              <div class="step step-r"></div><div class="step step-g"></div>
+            </div>
+          </div>
+
+          <div class="panel-rule" aria-hidden="true"></div>
+
+          <div class="panel-section">
+            <div class="panel-label">// readout</div>
+            <div class="lcd" role="region" aria-label="Technical summary">
+              <span class="lcd-dim">LOC  // </span><span class="lcd-bright">Green Bay, WI</span><br>
+              <span class="lcd-dim">CODE // </span><span>C# · Apex · Python · JS</span><br>
+              <span class="lcd-dim">GEAR // </span><span>Synths · TD-3 · DAWless</span><br>
+              <span class="lcd-dim">LAB  // </span><span class="lcd-bright">Nextcloud · Pi-hole · HA</span>
+            </div>
+          </div>
+
+          <div class="panel-rule" aria-hidden="true"></div>
+
+          <div class="panel-section">
+            <div class="panel-label">// disciplines</div>
+            <div class="tags" aria-label="Project disciplines">
+              <span class="tag tag-software">Software</span>
+              <span class="tag tag-music">Music</span>
+              <span class="tag tag-hardware">Hardware</span>
+              <span class="tag tag-vr">VR</span>
+              <span class="tag tag-open-source">Open Source</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-footer-stripe" aria-hidden="true"></div>
+      </aside>
+
+    </div><!-- /hud-bottom -->
+  </div><!-- /hud -->
+
+  <a href="#featured" class="hud-scroll" aria-label="Scroll to featured projects">
+    <div class="scroll-line" aria-hidden="true"></div>
+    <span>Featured</span>
+  </a>
+
+</section>
+
+<!-- ════════════════════════════
+     FEATURED PROJECTS STRIP
+     ════════════════════════════ -->
+<section id="featured" aria-label="Featured projects">
+
+  <div class="stripe stripe-medium" role="presentation" aria-hidden="true"></div>
+
+  <div class="hero-cards-strip">
+    <div class="hero-cards-inner">
+      {%- for project in collections.projects | sort(false, false, "data.order") %}
+      {%- if project.data.featured %}
+      <a href="/projects/{{ project.fileSlug }}/" class="mini-card" aria-label="{{ project.data.title }} project">
+        <div class="mini-card-num">{{ project.data.order | padZero }} //</div>
+        <div class="mini-card-title">{{ project.data.title }}</div>
+        <div class="mini-card-desc">{{ project.data.summary }}</div>
+        <div class="mini-card-tags">
+          {%- for tag in project.data.projectTags %}
+          <span class="tag tag-{{ tag }}">{{ tag | tagName }}</span>
+          {%- endfor %}
+        </div>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+
+    <a href="/projects/" class="mini-card-view-all" aria-label="View all projects">
+      View all projects
+    </a>
+  </div>
+
+</section>
+</main>

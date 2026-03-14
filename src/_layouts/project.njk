@@ -1,0 +1,67 @@
+---
+layout: base.njk
+---
+
+<main id="main-content">
+
+  <div class="page-hero" aria-label="{{ title }}">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow" aria-hidden="true">{{ order | padZero }} // Projects</div>
+      <h1 class="page-heading">{{ title }}</h1>
+      <div class="page-stripe" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="project-detail-layout">
+
+      <div>
+        <a href="/projects/" class="project-back" aria-label="Back to all projects">Back to projects</a>
+        <div class="project-content">
+          {{ content | safe }}
+        </div>
+      </div>
+
+      <aside class="project-detail-sidebar" aria-label="Project details">
+
+        <div class="hud-panel">
+          <div class="panel-header">
+            <span class="panel-header-label">// metadata</span>
+            <div class="led-row" aria-hidden="true">
+              {%- if status == "complete" %}
+              <div class="led led-g"></div><div class="led led-g"></div><div class="led led-off"></div>
+              {%- elif status == "ongoing" %}
+              <div class="led led-g"></div><div class="led led-y"></div><div class="led led-off"></div>
+              {%- else %}
+              <div class="led led-y"></div><div class="led led-off"></div><div class="led led-off"></div>
+              {%- endif %}
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="panel-hazard-strip" aria-hidden="true"></div>
+            <div class="panel-section">
+              <div class="panel-label">// year · status</div>
+              <div class="bio-meta">
+                <span class="tape tape-r1">{{ year }}</span>
+                <span class="tape tape-r2">{{ status }}</span>
+              </div>
+            </div>
+            <div class="panel-rule" aria-hidden="true"></div>
+            <div class="panel-section">
+              <div class="panel-label">// disciplines</div>
+              <div class="tags">
+                {%- for tag in projectTags %}
+                <span class="tag tag-{{ tag }}">{{ tag | tagName }}</span>
+                {%- endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer-stripe" aria-hidden="true"></div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+</main>
