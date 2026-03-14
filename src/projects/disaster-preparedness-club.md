@@ -2,24 +2,40 @@
 title: Disaster Preparedness Club
 order: 3
 featured: true
-summary: One-man DAWless electronic music project. Vintage synthesizers and drum machines. No computers involved.
+summary: One-man DAWless electronic music project. Electronic music that lingers in the space between threat and calm.
 projectTags:
   - music
-year: 2020
+year: 2026
 status: ongoing
 bandcamp: https://disasterpreparednessclub.bandcamp.com
 ---
 
-Disaster Preparedness Club is a one-man electronic music project built entirely on hardware. The setup: a Behringer TD-3, a handful of vintage synthesizers, a drum machine. No DAW, no laptop on stage, no plugins. Everything happens in real time on the machines. Patches get made, sequences get written, and then the record button gets pressed. That's the whole workflow.
-
-The name is accurate. The music is for the end times but it's still pretty fun to dance to.
+Electronic music that lingers in the space between threat and calm. Built from repetition, tension, and gradual release — familiar on the surface, unsettled underneath. No DAW, no laptop, no plugins. Everything happens in real time on the machines.
 
 ## The setup
 
-The appeal of DAWless is the same as the appeal of any analog instrument — the machine has opinions. The TD-3 wants to make a certain kind of sound. The vintage gear has limitations that turn into decisions. There's no undo. Working with hardware means committing, and committing is where the music actually happens.
+The Squarp Pyramid drives sequences on every synth and drum machine in the chain. The rest of the signal goes through a rack of effects units before it gets recorded.
 
-No subscriptions. No cloud sync. No terms of service update that changes what the Roland does. The gear from 1987 works the same way it did in 1987.
+- **Squarp Pyramid** — sequencer, the brain of the whole setup
+- **Yamaha CS01-II** — tiny monophonic analog synth, 1982
+- **Korg MS-20** — semi-modular analog synth, the workhorse
+- **Korg Volca Keys** — polyphonic analog
+- **Korg Volca Kick** — analog kick drum
+- **Behringer TD-3** — acid bassline
+- **Sequential Circuits Drumtraks** — vintage digital drum machine, 1984
+- **Korg NTS-3** — kaoss-style effects
+- Rack of effects units
+
+No subscriptions. No cloud sync. No terms of service update that changes what the Sequential Circuits box does. The gear from 1984 works the same way it did in 1984.
+
+## Music for a Crisis EP
+
+Released January 2, 2026. A collection of synth-driven pieces written under pressure — emotional, conceptual, and practical. The record grew out of a deliberate return to limitation: a stripped-down setup, a focus on monophonic lines and momentum, and the goal of shaping a body of work that could function as a cohesive live set.
+
+The music sits somewhere between darkwave, 1980s horror and sci-fi film scores, EBM, and post-industrial electronic forms, favoring tension, restraint, and physical presence over excess or spectacle. Themes of anxiety, existential dread, and impending collapse run throughout — but the record resists stagnation. Determination, defiance, and moments of fragile hope push against the weight, keeping the music in motion.
+
+Rather than documenting disaster itself, *Music for a Crisis* is about living alongside it — preparing, enduring, and continuing forward when the emergency feels ongoing. These tracks are meant to be felt in sequence, at volume, and eventually in a room with other people.
 
 ## Listen
 
-Releases and tracks on [Bandcamp](https://disasterpreparednessclub.bandcamp.com).
+[Bandcamp](https://disasterpreparednessclub.bandcamp.com)
