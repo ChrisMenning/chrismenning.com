@@ -793,6 +793,8 @@ h1.hud-name .gold { color: var(--gold); }
   display: grid;
   grid-template-columns: 1fr 260px;
   gap: 4rem; align-items: start;
+  max-width: 1020px;
+  margin: 0 auto;
 }
 .project-content { max-width: 620px; }
 .project-content p {
@@ -869,6 +871,8 @@ h1.hud-name .gold { color: var(--gold); }
   display: grid;
   grid-template-columns: 1fr 280px;
   gap: 4rem; align-items: start;
+  max-width: 1020px;
+  margin: 0 auto;
 }
 .about-body { max-width: 600px; }
 .about-body p {
