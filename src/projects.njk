@@ -19,9 +19,9 @@ description: Software, hardware, and music projects by Chris Menning.
   <div class="page-body">
     <div class="project-grid">
       {%- for project in collections.projects | sort(false, false, "data.order") %}
-      <a href="{{ project.url | url }}" class="project-card" aria-label="{{ project.data.title }}">
+      <div class="project-card">
         <div class="project-card-num">{{ project.data.order | padZero }} //</div>
-        <div class="project-card-title">{{ project.data.title }}</div>
+        <a href="{{ project.url | url }}" class="project-card-title project-card-link" aria-label="{{ project.data.title }}">{{ project.data.title }}</a>
         <div class="project-card-meta">
           <span class="tape tape-r1">{{ project.data.year }}</span>
           <span class="tape {% if loop.index % 3 == 0 %}tape-r3{% elif loop.index % 2 == 0 %}tape-r2{% else %}tape-r1{% endif %}">{{ project.data.status }}</span>
@@ -40,7 +40,7 @@ description: Software, hardware, and music projects by Chris Menning.
             {%- endif %}
           </span>
         </div>
-      </a>
+      </div>
       {%- endfor %}
     </div>
   </div>
