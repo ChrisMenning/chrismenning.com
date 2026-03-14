@@ -19,6 +19,8 @@
   --dim-brown:   #5a4a38;
   --ghost:       #3a3028;
 
+  --container:   1400px;
+
   --f-display: 'Oxanium', sans-serif;
   --f-body:    'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --f-mono:    'Share Tech Mono', monospace;
@@ -206,7 +208,7 @@ a.tag:hover { opacity: 0.75; }
   border-bottom: 1px solid var(--panel-mid);
 }
 .nav-inner {
-  max-width: 1400px; margin: 0 auto;
+  max-width: var(--container); margin: 0 auto;
   padding: 0 2rem; height: 52px;
   display: flex; align-items: center; justify-content: space-between;
 }
@@ -283,7 +285,7 @@ a.tag:hover { opacity: 0.75; }
 /* ── HUD CANVAS ── */
 .hud {
   position: relative; z-index: 1;
-  max-width: 1400px; width: 100%;
+  max-width: var(--container); width: 100%;
   margin: 0 auto; padding: 0 2rem;
   min-height: calc(100vh - 62px);
   display: grid;
@@ -468,7 +470,7 @@ h1.hud-name .gold { color: var(--gold); }
 }
 
 .hero-cards-inner {
-  max-width: 1400px; margin: 0 auto;
+  max-width: var(--container); margin: 0 auto;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -573,7 +575,7 @@ h1.hud-name .gold { color: var(--gold); }
    ═══════════════════════════════ */
 .site-footer { background: var(--void); border-top: 1px solid var(--panel-mid); }
 .footer-inner {
-  max-width: 1400px; margin: 0 auto;
+  max-width: var(--container); margin: 0 auto;
   padding: 1.5rem 2rem;
   display: flex; align-items: center; justify-content: space-between;
 }
@@ -656,7 +658,7 @@ h1.hud-name .gold { color: var(--gold); }
 }
 .page-hero-inner {
   position: relative; z-index: 1;
-  max-width: 1400px; margin: 0 auto;
+  max-width: var(--container); margin: 0 auto;
   padding: 3rem 2rem 2.5rem;
 }
 .page-eyebrow {
@@ -697,7 +699,7 @@ h1.hud-name .gold { color: var(--gold); }
   max-width: 560px; margin-top: 1rem;
 }
 .page-body {
-  max-width: 1400px; margin: 0 auto;
+  max-width: var(--container); margin: 0 auto;
   padding: 3rem 2rem;
 }
 
@@ -954,4 +956,17 @@ h1.hud-name .gold { color: var(--gold); }
   .contact-grid { grid-template-columns: 1fr; }
   .page-body { padding: 2rem 1.25rem; }
   .page-hero-inner { padding: 2rem 1.25rem 2rem; }
+}
+
+/* ═══════════════════════════════
+   LARGE SCREEN
+   ═══════════════════════════════ */
+@media (min-width: 1440px) {
+  :root { --container: 1600px; }
+  .hud-bottom { grid-template-columns: 1fr 380px; }
+  .project-detail-layout { grid-template-columns: 1fr 300px; }
+}
+@media (min-width: 1800px) {
+  :root { --container: 1760px; }
+  .hud-bottom { grid-template-columns: 1fr 420px; }
 }
