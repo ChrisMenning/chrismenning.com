@@ -55,11 +55,12 @@ layout: base.njk
                 {%- endfor %}
               </div>
             </div>
-            {%- if github or bandcamp or meta %}
+            {%- if website or github or bandcamp or meta %}
             <div class="panel-rule" aria-hidden="true"></div>
             <div class="panel-section">
               <div class="panel-label">// links</div>
               <div class="lcd">
+                {%- if website %}<a href="{{ website }}" rel="noopener noreferrer" style="color:#88ffb0;text-decoration:none;" aria-label="Project website">Website →</a><br>{%- endif %}
                 {%- if github %}<a href="{{ github }}" rel="noopener noreferrer" style="color:#88ffb0;text-decoration:none;" aria-label="GitHub repository">GitHub →</a><br>{%- endif %}
                 {%- if bandcamp %}<a href="{{ bandcamp }}" rel="noopener noreferrer" style="color:#88ffb0;text-decoration:none;" aria-label="Bandcamp">Bandcamp →</a><br>{%- endif %}
                 {%- if meta %}<a href="{{ meta }}" rel="noopener noreferrer" style="color:#88ffb0;text-decoration:none;" aria-label="Meta Horizon Store">Meta Store →</a>{%- endif %}
