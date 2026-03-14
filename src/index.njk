@@ -93,11 +93,11 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
           <div class="panel-section">
             <div class="panel-label">// disciplines</div>
             <div class="tags" aria-label="Project disciplines">
-              <span class="tag tag-software">Software</span>
-              <span class="tag tag-music">Music</span>
-              <span class="tag tag-hardware">Hardware</span>
-              <span class="tag tag-vr">VR</span>
-              <span class="tag tag-open-source">Open Source</span>
+              <a href="{{ '/tags/software/' | url }}" class="tag tag-software">Software</a>
+              <a href="{{ '/tags/music/' | url }}" class="tag tag-music">Music</a>
+              <a href="{{ '/tags/hardware/' | url }}" class="tag tag-hardware">Hardware</a>
+              <a href="{{ '/tags/vr/' | url }}" class="tag tag-vr">VR</a>
+              <a href="{{ '/tags/open-source/' | url }}" class="tag tag-open-source">Open Source</a>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
         <div class="mini-card-desc">{{ project.data.summary }}</div>
         <div class="mini-card-tags">
           {%- for tag in project.data.projectTags %}
-          <span class="tag tag-{{ tag }}">{{ tag | tagName }}</span>
+          <a href="{{ ('/tags/' + tag) | url }}" class="tag tag-{{ tag }}" aria-label="Browse {{ tag | tagName }} projects">{{ tag | tagName }}</a>
           {%- endfor %}
         </div>
       </a>

@@ -51,7 +51,7 @@ layout: base.njk
               <div class="panel-label">// disciplines</div>
               <div class="tags">
                 {%- for tag in projectTags %}
-                <span class="tag tag-{{ tag }}">{{ tag | tagName }}</span>
+                <a href="{{ ('/tags/' + tag) | url }}" class="tag tag-{{ tag }}" aria-label="Browse {{ tag | tagName }} projects">{{ tag | tagName }}</a>
                 {%- endfor %}
               </div>
             </div>

@@ -1,24 +1,29 @@
 ---
+pagination:
+  data: collections.projectTagList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag }}/"
 layout: base.njk
-title: Projects
-permalink: /projects/
-description: Software, hardware, and music projects by Chris Menning.
+eleventyComputed:
+  title: "{{ tag | tagName }}"
 ---
 
 <main id="main-content">
 
-  <div class="page-hero" aria-label="Projects">
+  <div class="page-hero" aria-label="{{ tag | tagName }}">
     <div class="page-hero-inner">
-      <div class="page-eyebrow" aria-hidden="true">02 // Work</div>
-      <h1 class="page-heading">Projects</h1>
+      <div class="page-eyebrow" aria-hidden="true">02 // Projects</div>
+      <h1 class="page-heading">{{ tag | tagName }}</h1>
       <div class="page-stripe" aria-hidden="true"></div>
-      <p class="page-desc">Software, hardware, music. Things I built because they didn't exist, or because I wanted to understand how they worked.</p>
+      <p class="page-desc">Projects tagged <span class="tag tag-{{ tag }}">{{ tag | tagName }}</span></p>
     </div>
   </div>
 
   <div class="page-body">
     <div class="project-grid">
       {%- for project in collections.projects | sort(false, false, "data.order") %}
+      {%- if tag in project.data.projectTags %}
       <a href="{{ project.url | url }}" class="project-card" aria-label="{{ project.data.title }}">
         <div class="project-card-num">{{ project.data.order | padZero }} //</div>
         <div class="project-card-title">{{ project.data.title }}</div>
@@ -29,8 +34,8 @@ description: Software, hardware, and music projects by Chris Menning.
         <div class="project-card-body">{{ project.data.summary }}</div>
         <div class="project-card-footer">
           <div class="tags">
-            {%- for tag in project.data.projectTags %}
-            <a href="{{ ('/tags/' + tag) | url }}" class="tag tag-{{ tag }}" aria-label="Browse {{ tag | tagName }} projects">{{ tag | tagName }}</a>
+            {%- for t in project.data.projectTags %}
+            <a href="{{ ('/tags/' + t) | url }}" class="tag tag-{{ t }}" aria-label="Browse {{ t | tagName }} projects">{{ t | tagName }}</a>
             {%- endfor %}
           </div>
           <span class="project-status project-status-{{ project.data.status }}" aria-label="Status: {{ project.data.status }}">
@@ -41,7 +46,11 @@ description: Software, hardware, and music projects by Chris Menning.
           </span>
         </div>
       </a>
+      {%- endif %}
       {%- endfor %}
+    </div>
+    <div class="page-back-row">
+      <a href="{{ '/projects/' | url }}" class="project-back">All projects</a>
     </div>
   </div>
 
