@@ -310,8 +310,9 @@ a.tag:hover { opacity: 0.75; }
   padding: 0.85rem 2rem;
   display: flex; gap: 2rem; align-items: flex-start;
 }
-.nav-mega-col { flex: 1; }
+.nav-mega-col { flex: 1; min-width: 0; }
 .nav-mega-col-all { flex: 0 0 auto; min-width: 100px; }
+.nav-mega-col-skills { flex: 2; min-width: 0; }
 .nav-mega-heading {
   font-family: var(--f-mono); font-size: 0.49rem;
   letter-spacing: 0.2em; text-transform: uppercase;
@@ -741,6 +742,15 @@ h1.hud-name .gold { color: var(--gold); }
   .hero-cards-inner { grid-template-columns: 1fr; }
   .mini-card { border-right: none; border-bottom: 1px solid var(--panel-mid); }
   .mini-card:last-child { border-bottom: none; }
+  .nav-mega-panel { overflow-x: hidden; }
+  .nav-mega-inner {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+  }
+  .nav-mega-col-all { min-width: 0; }
+  .nav-mega-col-skills { flex: none; }
+  .nav-mega-skills { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   .nav-logo-name { display: none; }
