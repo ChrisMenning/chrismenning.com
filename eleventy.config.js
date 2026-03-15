@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
   // Pass static assets through unchanged
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/CNAME");
 
   // Watch CSS for changes during dev
   eleventyConfig.addWatchTarget("src/css/");
@@ -30,7 +31,7 @@ module.exports = function (eleventyConfig) {
   return {
     // Set to "/" when using a custom domain; set to "/chrismenning.com/" for
     // the default GitHub Pages subdirectory URL.
-    pathPrefix: "/chrismenning.com/",
+    pathPrefix: "/",
     dir: {
       input: "src",
       output: "_site",
