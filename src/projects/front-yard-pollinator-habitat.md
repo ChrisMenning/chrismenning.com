@@ -15,7 +15,7 @@ In 2023, I converted it.
 
 <figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/Beginning%20-%202048-1536-max.jpg' | url }}" alt="The front yard at the beginning of the pollinator habitat installation" loading="lazy">
-  <figcaption>The yard at the start — grass still in, edging just going in.</figcaption>
+  <figcaption>The yard at the start — plugs installed and grass removed.</figcaption>
 </figure>
 
 The yard is about 536 square feet total. After carving out a 174 sq ft mulched setback (required by city ordinance) and 74 sq ft of Prairie Dropseed along the entrance walk, the remaining **288 square feet** became the pollinator habitat.
