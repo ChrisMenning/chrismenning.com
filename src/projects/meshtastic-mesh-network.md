@@ -6,6 +6,7 @@ summary: Building a local LoRa mesh network using Meshtastic — solar-powered r
 projectTags:
   - hardware
   - software
+  - open-source
   - home-lab
 skills:
   - lora

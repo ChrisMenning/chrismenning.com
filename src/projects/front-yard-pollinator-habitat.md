@@ -3,7 +3,8 @@ title: Front Yard Pollinator Habitat
 order: 15
 featured: false
 summary: Converted 288 square feet of front lawn into a native wildflower pollinator habitat — navigating city ordinance compliance, a failed seed broadcast, and the obsessive joy of cataloging 39 native plant species.
-projectTags: []
+projectTags:
+  - nature
 skills: []
 year: 2023
 status: ongoing

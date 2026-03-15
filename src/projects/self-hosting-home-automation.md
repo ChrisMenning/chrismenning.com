@@ -7,6 +7,7 @@ projectTags:
   - open-source
   - home-lab
 skills:
+  - raspberry-pi
   - linux
   - self-hosting
 year: 2024
