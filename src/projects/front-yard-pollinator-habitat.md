@@ -45,6 +45,14 @@ After the seed failure I switched to starter plugs from **Stone Silo Prairie Pla
 
 This is when I fell in love with the project. Picking out individual plants — learning their names, bloom times, heights, and relationships with specific pollinators — turned into something I hadn't expected. It reminds me a lot of playing Pokémon: there are dozens of species, each with its own profile, and you're building out your PokeDex catalog. The cataloging instinct kicked in hard, and I started tracking everything.
 
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-pics/1536-2048-max2.jpg' | url }}" alt="Native plants establishing in the pollinator habitat" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-pics/1536-2048-max3.jpg' | url }}" alt="Close-up of native wildflowers in the habitat" loading="lazy">
+</figure>
+
 ## The plant catalog
 
 What started as 18 species in a seed packet has grown to 39 identified species (plus one prospective addition), spanning bloom times from late May through October and heights from half a foot to six feet.
@@ -103,6 +111,14 @@ The goal was continuous bloom from May through October — something always flow
   <img src="{{ '/img/pollinator-hab/yard-pics/1536-2048-max.jpg' | url }}" alt="Native wildflowers growing in the pollinator habitat" loading="lazy">
 </figure>
 
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-pics/2048-1536-max6.jpg' | url }}" alt="Pollinator habitat in peak summer bloom" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-pics/1536-2048-max4.jpg' | url }}" alt="Tall native wildflowers filling the habitat" loading="lazy">
+</figure>
+
 ## Neighbor reactions
 
 Replacing a tidy front lawn with what looks — at least early in the season — like a patch of weeds is a statement whether you intend it to be or not. To neighbors who take pride in a well-edged, immaculately mowed lawn, a front yard full of tall native plants growing in apparent chaos is an affront. You get looks. You get questions. A few of those questions have a certain edge to them.
@@ -110,6 +126,11 @@ Replacing a tidy front lawn with what looks — at least early in the season —
 This is exactly why I went through the formal ordinance compliance process before a single plant went in. I wanted this radical, solarpunk-adjacent yard to be unimpeachably inside the lines — documented, permitted, proper. The city had a process, I followed it, and I have the paperwork to prove it.
 
 I also took steps to make the intent legible to anyone walking by. The yard is certified through the **National Wildlife Federation's [Certified Wildlife Habitat](https://www.nwf.org/certifiedwildlifehabitat) program** — it meets the requirements for food, water, cover, and places to raise young. The certification sign is posted in the yard. I added a couple more signs alongside it, because if the goal is to communicate *there is a method to this madness*, more is more.
+
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/pollinator%20sign.jpg' | url }}" alt="NWF Certified Wildlife Habitat sign and additional pollinator signs in the yard" loading="lazy">
+  <figcaption>The NWF Certified Wildlife Habitat sign, plus backup signage — communicating intent to passersby.</figcaption>
+</figure>
 
 That said — the reception has been overwhelmingly positive. When I'm out there weeding or planting, neighbors stop and start talking. Almost everyone who takes the time to ask about it loves it. The people who are drawn to engage are curious, not hostile. They want to know what the plants are, whether it's a lot of work (it is), whether they could do something similar (the can!). The yard turns out to be a conversation starter in the best possible way.
 
@@ -125,4 +146,16 @@ The cataloging instinct — wanting to know every species, track every bloom, no
 
 <figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/1536-2048-max1.jpg' | url }}" alt="Detail view of the front yard pollinator habitat" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-pics/2048-1536-max7.jpg' | url }}" alt="Wildflowers and native grasses in the front yard habitat" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-pics/1536-20482-max.jpg' | url }}" alt="Native plants in the pollinator habitat" loading="lazy">
+</figure>
+
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-pics/2048-1536-max8.jpg' | url }}" alt="Front yard pollinator habitat looking toward the street" loading="lazy">
 </figure>
