@@ -55,4 +55,20 @@ Getting magnetism to work convincingly in Unity means writing your own force sys
 
 That, combined with gravity that could be rotated or inverted per zone, meant levels could be designed in three dimensions in ways that feel genuinely impossible on a flat screen — and in VR, impossible-feeling geometry lands differently.
 
-Available on the [Meta Horizon Store](https://www.meta.com/experiences/polarity-ball-rubicon/2275654505793837/).
+## On shadows in mobile VR
+
+Mobile VR hardware runs on a tight GPU budget. Real-time shadow calculation requires rendering the scene a second time from the perspective of each light source — at 60fps in VR, on a Snapdragon 820, that's not viable.
+
+The obvious solution is to turn shadows off. Rubicon used a different approach: a fake shadow caster. Rather than calculating where light doesn't reach, a flat mesh is positioned beneath each object and textured to match the surface geometry below it, scaled and positioned dynamically as the object moves. The result reads as a shadow — convincingly enough that you don't notice it isn't one. Same perceptual result at a fraction of the GPU cost.
+
+This kind of decision is what mobile VR development forces. You're not finding workarounds for ideal solutions — you're finding the right solution for the actual hardware and frame budget you're shipping on. The constraint shapes the design.
+
+Available on the [Meta Horizon Store](https://www.meta.com/experiences/polarity-ball-rubicon/2275654505793837/). I wrote about the private beta process [on Medium](https://medium.com/@cjmenning/polarity-ball-rubicon-enters-private-beta-4e06e7b557de).
+
+## On immersive learning
+
+Building Polarity Ball and Rubicon, and later the [NWTC Metaversity demo](/projects/nwtc-metaversity-demo/), gave me a concrete view of when VR actually earns its cost and when it doesn't.
+
+It works when the thing you're learning has a spatial or embodied dimension that flat media can't replicate — blueprint folding, anatomical structure, field interaction where the relationship between objects matters more than any single object. It works when shared presence is part of the experience itself. Outside those two cases, a well-designed interactive on a flat screen is usually the better answer. A lecture in VR is still a lecture.
+
+The mistake most institutions make is treating immersive technology as a general-purpose delivery mechanism for content that wasn't designed for it. The question is never "can we put this in VR." It's "does this problem benefit from being spatial and embodied." Building the magnetic interaction system in these games — and then adapting it as a physics playroom in the Metaversity — gave me a concrete answer to that question in specific contexts. I trust a specific yes more than I trust general enthusiasm for the medium.
