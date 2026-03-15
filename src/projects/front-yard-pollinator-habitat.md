@@ -127,11 +127,6 @@ This is exactly why I went through the formal ordinance compliance process befor
 
 I also took steps to make the intent legible to anyone walking by. The yard is certified through the **National Wildlife Federation's [Certified Wildlife Habitat](https://www.nwf.org/certifiedwildlifehabitat) program** — it meets the requirements for food, water, cover, and places to raise young. The certification sign is posted in the yard. I added a couple more signs alongside it, because if the goal is to communicate *there is a method to this madness*, more is more.
 
-<figure class="project-figure">
-  <img src="{{ '/img/pollinator-hab/pollinator%20sign.jpg' | url }}" alt="NWF Certified Wildlife Habitat sign and additional pollinator signs in the yard" loading="lazy">
-  <figcaption>The NWF Certified Wildlife Habitat sign, plus backup signage — communicating intent to passersby.</figcaption>
-</figure>
-
 That said — the reception has been overwhelmingly positive. When I'm out there weeding or planting, neighbors stop and start talking. Almost everyone who takes the time to ask about it loves it. The people who are drawn to engage are curious, not hostile. They want to know what the plants are, whether it's a lot of work (it is), whether they could do something similar (the can!). The yard turns out to be a conversation starter in the best possible way.
 
 ## What it actually does
