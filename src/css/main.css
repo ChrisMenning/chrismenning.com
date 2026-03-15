@@ -744,12 +744,12 @@ h1.hud-name .gold { color: var(--gold); }
   .mini-card:last-child { border-bottom: none; }
   .nav-mega-panel { overflow-x: hidden; }
   .nav-mega-inner {
-    flex-direction: column;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.25rem;
     padding: 0.75rem 1rem;
   }
-  .nav-mega-col-all { min-width: 0; }
-  .nav-mega-col-skills { flex: none; }
+  .nav-mega-col-all { flex: 0 0 auto; }
+  .nav-mega-col-skills { flex: none; width: 100%; }
   .nav-mega-skills { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
