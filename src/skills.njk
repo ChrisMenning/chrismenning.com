@@ -1,18 +1,29 @@
 ---
+pagination:
+  data: collections.projectSkillList
+  size: 1
+  alias: skillId
+permalink: "/skills/{{ skillId }}/"
 layout: base.njk
-title: Projects
-permalink: /projects/
-description: Software, hardware, and music projects by Chris Menning.
+eleventyComputed:
+  title: "{{ skillId }}"
 ---
+
+{%- set currentSkill = null %}
+{%- for group in skillGroups %}
+  {%- for s in group.skills %}
+    {%- if s.id == skillId %}{% set currentSkill = s %}{% endif %}
+  {%- endfor %}
+{%- endfor %}
 
 <main id="main-content">
 
-  <div class="page-hero" aria-label="Projects">
+  <div class="page-hero" aria-label="{{ currentSkill.label if currentSkill else skillId }}">
     <div class="page-hero-inner">
-      <div class="page-eyebrow" aria-hidden="true">02 // Work</div>
-      <h1 class="page-heading">Projects</h1>
+      <div class="page-eyebrow" aria-hidden="true">02 // Projects</div>
+      <h1 class="page-heading">{{ currentSkill.label if currentSkill else skillId }}</h1>
       <div class="page-stripe" aria-hidden="true"></div>
-      <p class="page-desc">Software, hardware, music. Things I built because they didn't exist, or because I wanted to understand how they worked.</p>
+      <p class="page-desc">Projects using <span class="skill-cell skill-cell-{{ currentSkill.level if currentSkill else 'g' }}">{{ currentSkill.label if currentSkill else skillId }}</span></p>
     </div>
   </div>
 
@@ -24,6 +35,7 @@ description: Software, hardware, and music projects by Chris Menning.
     </div>
     <div class="project-grid">
       {%- for project in collections.projects | sort(true, false, "data.year") %}
+      {%- if project.data.skills and skillId in project.data.skills %}
       <div class="project-card" data-year="{{ project.data.year }}" data-title="{{ project.data.title | lower }}">
         <div class="project-card-num">
           <span class="project-card-num-index">{{ project.data.order | padZero }} //</span>
@@ -47,7 +59,11 @@ description: Software, hardware, and music projects by Chris Menning.
           </div>
         </div>
       </div>
+      {%- endif %}
       {%- endfor %}
+    </div>
+    <div class="page-back-row">
+      <a href="{{ '/projects/' | url }}" class="project-back">All projects</a>
     </div>
   </div>
 

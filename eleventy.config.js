@@ -20,6 +20,19 @@ module.exports = function (eleventyConfig) {
     return [...tags].sort();
   });
 
+  // Collect all unique skill IDs across all project files
+  eleventyConfig.addCollection("projectSkillList", function (collectionApi) {
+    const ids = new Set();
+    collectionApi.getAll().forEach(item => {
+      // Guard: only look at project pages (they have projectTags); without this,
+      // item.data.skills resolves to the global _data/skills.js for non-project pages.
+      if (item.data.projectTags && item.data.skills) {
+        item.data.skills.forEach(s => ids.add(s));
+      }
+    });
+    return [...ids].sort();
+  });
+
   // Pass static assets through unchanged
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/img");

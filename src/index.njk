@@ -63,29 +63,6 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
           <div class="panel-hazard-strip" aria-hidden="true"></div>
 
           <div class="panel-section">
-            <div class="panel-label">// stack</div>
-            <div class="skill-grid" role="region" aria-label="Skills overview">
-              {%- for group in skills %}
-              <div class="skill-group">
-                <div class="skill-group-label">{{ group.label }}</div>
-                <div class="skill-cells">
-                  {%- for skill in group.skills %}
-                  <span class="skill-cell skill-cell-{{ skill.level }}">{{ skill.label }}</span>
-                  {%- endfor %}
-                </div>
-              </div>
-              {%- endfor %}
-            </div>
-            <div class="skill-legend" aria-label="Legend">
-              <span class="skill-dot skill-dot-g" aria-hidden="true"></span><span>active</span>
-              <span class="skill-dot skill-dot-y" aria-hidden="true"></span><span>occasional</span>
-              <span class="skill-dot skill-dot-r" aria-hidden="true"></span><span>dormant</span>
-            </div>
-          </div>
-
-          <div class="panel-rule" aria-hidden="true"></div>
-
-          <div class="panel-section">
             <div class="panel-label">// readout</div>
             <div class="lcd" role="region" aria-label="Technical summary">
               <span class="lcd-dim">LOC  // </span><span class="lcd-bright">Green Bay, WI</span><br>
@@ -107,6 +84,29 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
               <a href="{{ '/tags/hardware/' | url }}" class="tag tag-hardware">Hardware</a>
               <a href="{{ '/tags/vr/' | url }}" class="tag tag-vr">VR</a>
               <a href="{{ '/tags/open-source/' | url }}" class="tag tag-open-source">Open Source</a>
+            </div>
+          </div>
+
+          <div class="panel-rule" aria-hidden="true"></div>
+
+          <div class="panel-section">
+            <div class="panel-label">// stack</div>
+            <div class="skill-grid" role="region" aria-label="Skills overview">
+              {%- for group in skillGroups %}
+              <div class="skill-group">
+                <div class="skill-group-label">{{ group.label }}</div>
+                <div class="skill-cells">
+                  {%- for skill in group.skills %}
+                  <a href="{{ ('/skills/' + skill.id) | url }}" class="skill-cell skill-cell-{{ skill.level }}">{{ skill.label }}</a>
+                  {%- endfor %}
+                </div>
+              </div>
+              {%- endfor %}
+            </div>
+            <div class="skill-legend" aria-label="Legend">
+              <span class="skill-dot skill-dot-g" aria-hidden="true"></span><span>active</span>
+              <span class="skill-dot skill-dot-y" aria-hidden="true"></span><span>occasional</span>
+              <span class="skill-dot skill-dot-r" aria-hidden="true"></span><span>dormant</span>
             </div>
           </div>
         </div>

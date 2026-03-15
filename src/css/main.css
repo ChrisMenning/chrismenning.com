@@ -788,10 +788,12 @@ h1.hud-name .gold { color: var(--gold); }
 .project-card:has(.project-card-link:hover)::after { opacity: 1; }
 .project-card:has(.project-card-link:focus-visible) { outline: 2px solid var(--gold); outline-offset: -2px; }
 .project-card-num {
+  display: flex; justify-content: space-between; align-items: center;
   font-family: var(--f-mono); font-size: 0.62rem;
-  letter-spacing: 0.18em; color: var(--gold);
-  opacity: 0.5; margin-bottom: 0.4rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.4rem;
 }
+.project-card-num-index { color: var(--gold); opacity: 0.5; }
 .project-card-link {
   font-family: var(--f-body); font-weight: 700;
   font-size: 1rem; text-transform: uppercase;
@@ -822,6 +824,32 @@ h1.hud-name .gold { color: var(--gold); }
 .project-status-complete { color: var(--led-green); }
 .project-status-ongoing  { color: var(--gold); }
 .project-status-paused   { color: var(--ghost); }
+
+/* ═══════════════════════════════
+   SORT TOOLBAR
+   ═══════════════════════════════ */
+.sort-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.sort-toolbar-label {
+  font-family: var(--f-mono); font-size: 0.6rem;
+  letter-spacing: 0.14em; color: var(--ghost);
+  text-transform: uppercase; margin-right: 0.25rem;
+}
+.sort-btn {
+  font-family: var(--f-mono); font-size: 0.62rem;
+  letter-spacing: 0.1em; color: var(--ghost);
+  background: transparent; border: 1px solid var(--panel-mid);
+  border-radius: 1px; padding: 0.25rem 0.65rem;
+  cursor: pointer; transition: color 0.15s, border-color 0.15s;
+}
+.sort-btn-active,
+.sort-btn:hover { color: var(--gold); border-color: var(--gold-burn); }
+a.skill-cell { text-decoration: none; }
+a.skill-cell:hover { opacity: 0.75; }
 
 /* ═══════════════════════════════
    PROJECT DETAIL — single page

@@ -21,15 +21,27 @@ eleventyComputed:
   </div>
 
   <div class="page-body">
+    <div class="sort-toolbar" role="toolbar" aria-label="Sort order">
+      <span class="sort-toolbar-label">Sort</span>
+      <button class="sort-btn sort-btn-active" data-sort="year" aria-pressed="true">// by year</button>
+      <button class="sort-btn" data-sort="alpha" aria-pressed="false">// A–Z</button>
+    </div>
     <div class="project-grid">
       {%- for project in collections.projects | sort(true, false, "data.year") %}
       {%- if tag in project.data.projectTags %}
-      <div class="project-card">
-        <div class="project-card-num">{{ project.data.order | padZero }} //</div>
+      <div class="project-card" data-year="{{ project.data.year }}" data-title="{{ project.data.title | lower }}">
+        <div class="project-card-num">
+          <span class="project-card-num-index">{{ project.data.order | padZero }} //</span>
+          <span class="project-status project-status-{{ project.data.status }}" aria-label="Status: {{ project.data.status }}">
+            {%- if project.data.status == "complete" %}● Complete
+            {%- elif project.data.status == "ongoing" %}● Ongoing
+            {%- elif project.data.status == "paused" %}● Paused
+            {%- endif %}
+          </span>
+        </div>
         <a href="{{ project.url | url }}" class="project-card-title project-card-link" aria-label="{{ project.data.title }}">{{ project.data.title }}</a>
         <div class="project-card-meta">
           <span class="tape tape-r1">{{ project.data.year }}</span>
-          <span class="tape {% if loop.index % 3 == 0 %}tape-r3{% elif loop.index % 2 == 0 %}tape-r2{% else %}tape-r1{% endif %}">{{ project.data.status }}</span>
         </div>
         <div class="project-card-body">{{ project.data.summary }}</div>
         <div class="project-card-footer">
@@ -38,12 +50,6 @@ eleventyComputed:
             <a href="{{ ('/tags/' + t) | url }}" class="tag tag-{{ t }}" aria-label="Browse {{ t | tagName }} projects">{{ t | tagName }}</a>
             {%- endfor %}
           </div>
-          <span class="project-status project-status-{{ project.data.status }}" aria-label="Status: {{ project.data.status }}">
-            {%- if project.data.status == "complete" %}● Complete
-            {%- elif project.data.status == "ongoing" %}● Ongoing
-            {%- elif project.data.status == "paused" %}● Paused
-            {%- endif %}
-          </span>
         </div>
       </div>
       {%- endif %}
