@@ -6,6 +6,9 @@ summary: Replaced Google Home with a self-hosted Home Assistant instance on a sa
 projectTags:
   - open-source
   - home-lab
+skills:
+  - linux
+  - self-hosting
 year: 2024
 status: ongoing
 ---

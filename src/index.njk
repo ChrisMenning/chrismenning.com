@@ -63,16 +63,23 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
           <div class="panel-hazard-strip" aria-hidden="true"></div>
 
           <div class="panel-section">
-            <div class="panel-label">// sequence</div>
-            <div class="step-grid" aria-hidden="true" role="presentation">
-              <div class="step step-g"></div><div class="step step-g"></div>
-              <div class="step step-y"></div><div class="step step-y"></div>
-              <div class="step step-r"></div><div class="step"></div>
-              <div class="step step-g"></div><div class="step"></div>
-              <div class="step step-y"></div><div class="step"></div>
-              <div class="step step-g"></div><div class="step step-g"></div>
-              <div class="step"></div><div class="step step-y"></div>
-              <div class="step step-r"></div><div class="step step-g"></div>
+            <div class="panel-label">// stack</div>
+            <div class="skill-grid" role="region" aria-label="Skills overview">
+              {%- for group in skills %}
+              <div class="skill-group">
+                <div class="skill-group-label">{{ group.label }}</div>
+                <div class="skill-cells">
+                  {%- for skill in group.skills %}
+                  <span class="skill-cell skill-cell-{{ skill.level }}">{{ skill.label }}</span>
+                  {%- endfor %}
+                </div>
+              </div>
+              {%- endfor %}
+            </div>
+            <div class="skill-legend" aria-label="Legend">
+              <span class="skill-dot skill-dot-g" aria-hidden="true"></span><span>active</span>
+              <span class="skill-dot skill-dot-y" aria-hidden="true"></span><span>occasional</span>
+              <span class="skill-dot skill-dot-r" aria-hidden="true"></span><span>dormant</span>
             </div>
           </div>
 

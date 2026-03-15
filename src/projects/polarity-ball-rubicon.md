@@ -6,6 +6,10 @@ summary: The sequel to Polarity Ball. Expanded levels, 3DOF controller support, 
 projectTags:
   - software
   - vr
+skills:
+  - c-sharp
+  - unity
+  - vr
 year: 2018
 status: complete
 meta: https://www.meta.com/experiences/polarity-ball-rubicon/2275654505793837/

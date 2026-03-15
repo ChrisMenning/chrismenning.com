@@ -7,6 +7,10 @@ projectTags:
   - hardware
   - software
   - home-lab
+skills:
+  - lora
+  - linux
+  - self-hosting
 year: 2026
 status: ongoing
 ---

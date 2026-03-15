@@ -6,6 +6,8 @@ summary: Added MIDI input to a 1982 Yamaha CS01-II analog synthesizer using a Hi
 projectTags:
   - hardware
   - music
+skills:
+  - midi
 year: 2024
 status: complete
 ---

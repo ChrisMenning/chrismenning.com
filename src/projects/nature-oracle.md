@@ -10,6 +10,9 @@ projectTags:
 year: 2025
 status: complete
 github: https://github.com/ChrisMenning/nature-oracle
+skills:
+  - python
+  - raspberry-pi
 ---
 
 A daily briefing for a passive info display. The housing is a gutted Hanimex Vista Viewer II — a 1970s analog 35mm slide viewer. The LCD sits where the film slide used to go. You look into it and it tells you something about the world.

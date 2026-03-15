@@ -5,6 +5,8 @@ featured: true
 summary: One-man DAWless electronic music project. Electronic music that lingers in the space between threat and calm.
 projectTags:
   - music
+skills:
+  - midi
 year: 2026
 status: ongoing
 bandcamp: https://disasterpreparednessclub.bandcamp.com

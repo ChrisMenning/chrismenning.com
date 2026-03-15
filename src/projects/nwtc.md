@@ -6,6 +6,10 @@ summary: Website for Northeast Wisconsin Technical College, built on Kentico wit
 projectTags:
   - software
   - web
+skills:
+  - c-sharp
+  - dotnet
+  - web
 year: 2021
 status: ongoing
 website: https://www.nwtc.edu

@@ -8,6 +8,10 @@ projectTags:
   - software
   - open-source
   - music
+skills:
+  - cpp
+  - arduino
+  - midi
 year: 2021
 status: complete
 github: https://github.com/ChrisMenning/PeeWeeMonster2

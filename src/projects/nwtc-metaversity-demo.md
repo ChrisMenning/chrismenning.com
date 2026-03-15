@@ -6,6 +6,10 @@ summary: A custom VRChat world built for Northeast Wisconsin Technical College i
 projectTags:
   - software
   - vr
+skills:
+  - c-sharp
+  - unity
+  - vr
 year: 2023
 status: complete
 website: https://vrchat.com/home/world/wrld_38f7dcf4-d770-42ca-a5f4-61b69a0f93e7

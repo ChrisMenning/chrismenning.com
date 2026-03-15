@@ -6,6 +6,10 @@ summary: A VR physics game for Gear VR and Oculus Go. Simulated magnetism and cu
 projectTags:
   - software
   - vr
+skills:
+  - c-sharp
+  - unity
+  - vr
 year: 2018
 status: complete
 meta: https://www.meta.com/experiences/polarity-ball/1197064677075806/

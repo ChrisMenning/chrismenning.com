@@ -139,22 +139,59 @@ body {
 }
 
 /* ═══════════════════════════════
-   STEP SEQUENCER
+   SKILL GRID
    ═══════════════════════════════ */
-.step-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 3px;
+.skill-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
-.step {
-  aspect-ratio: 1;
+.skill-group {}
+.skill-group-label {
+  font-family: var(--f-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  color: var(--ghost);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+.skill-cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.skill-cell {
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
   border-radius: 1px;
-  border: 1px solid var(--panel-mid);
-  background: var(--panel-dark);
+  border: 1px solid;
+  line-height: 1.5;
 }
-.step-g { background: var(--led-green); border-color: #38b020; box-shadow: 0 0 4px var(--led-green); }
-.step-y { background: var(--gold);      border-color: var(--gold-burn); box-shadow: 0 0 4px var(--gold); }
-.step-r { background: var(--led-red);   border-color: #aa1808; box-shadow: 0 0 4px var(--led-red); }
+.skill-cell-g { color: var(--led-green); border-color: #38b020; }
+.skill-cell-y { color: var(--gold);      border-color: var(--gold-burn); }
+.skill-cell-r { color: var(--led-red);   border-color: #aa1808; }
+.skill-legend {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.55rem;
+  font-family: var(--f-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.09em;
+  color: var(--ghost);
+  align-items: center;
+}
+.skill-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.skill-dot-g { background: var(--led-green); }
+.skill-dot-y { background: var(--gold); }
+.skill-dot-r { background: var(--led-red); }
 
 /* ═══════════════════════════════
    LCD READOUT
@@ -662,7 +699,7 @@ h1.hud-name .gold { color: var(--gold); }
    ═══════════════════════════════ */
 @media (forced-colors: active) {
   .hud-bio p::first-letter { -webkit-text-stroke: 0; color: Highlight; }
-  .step-g, .step-y, .step-r { background: Highlight; box-shadow: none; }
+  .skill-cell-g, .skill-cell-y, .skill-cell-r { color: Highlight; border-color: Highlight; }
   .stripe::after, .hazard::after, .panel-footer-stripe::after { display: none; }
 }
 

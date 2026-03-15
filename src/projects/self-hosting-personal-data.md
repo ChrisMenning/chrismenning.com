@@ -6,6 +6,10 @@ summary: Migrated personal files, photos, and media off Google Drive, iCloud, Fa
 projectTags:
   - open-source
   - home-lab
+skills:
+  - linux
+  - self-hosting
+  - docker
 year: 2024
 status: ongoing
 ---

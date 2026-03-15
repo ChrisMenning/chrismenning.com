@@ -7,6 +7,10 @@ projectTags:
   - hardware
   - software
   - open-source
+skills:
+  - python
+  - raspberry-pi
+  - e-paper
 year: 2025
 status: ongoing
 github: https://github.com/ChrisMenning/ereader
