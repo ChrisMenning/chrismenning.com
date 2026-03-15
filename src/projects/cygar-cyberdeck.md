@@ -6,7 +6,7 @@ summary: Cigar box cyberdeck. Raspberry Pi, orange keyboard, dual screens, hazar
 projectTags:
   - hardware
   - open-source
-year: 2024
+year: 2025
 status: complete
 ---
 

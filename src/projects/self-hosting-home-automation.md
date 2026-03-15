@@ -4,7 +4,7 @@ order: 9
 featured: false
 summary: Replaced Google Home with a self-hosted Home Assistant instance on a salvaged Raspberry Pi 3B. Local control, no cloud, no data leaving the house.
 projectTags:
-  - hardware
+  - open-source
   - home-lab
 year: 2024
 status: ongoing

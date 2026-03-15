@@ -4,8 +4,7 @@ order: 8
 featured: true
 summary: Migrated personal files, photos, and media off Google Drive, iCloud, Facebook, and OneDrive onto a self-hosted Nextcloud server running on a Raspberry Pi 5.
 projectTags:
-  - hardware
-  - software
+  - open-source
   - home-lab
 year: 2024
 status: ongoing

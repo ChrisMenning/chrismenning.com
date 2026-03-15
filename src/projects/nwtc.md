@@ -6,7 +6,7 @@ summary: Website for Northeast Wisconsin Technical College, built on Kentico wit
 projectTags:
   - software
   - web
-year: 2022
+year: 2021
 status: ongoing
 website: https://www.nwtc.edu
 ---

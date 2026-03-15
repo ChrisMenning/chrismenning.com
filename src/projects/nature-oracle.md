@@ -7,7 +7,7 @@ projectTags:
   - hardware
   - software
   - open-source
-year: 2024
+year: 2025
 status: complete
 github: https://github.com/ChrisMenning/nature-oracle
 ---
