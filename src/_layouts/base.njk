@@ -48,5 +48,46 @@
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+(function () {
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbClose = document.getElementById('lightbox-close');
+
+  function open(img) {
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function close() {
+    lb.hidden = true;
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.project-figure img').forEach(function (img) {
+    img.addEventListener('click', function () { open(img); });
+  });
+
+  lbClose.addEventListener('click', close);
+
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb) close();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lb.hidden) close();
+  });
+}());
+</script>
+
 </body>
 </html>
