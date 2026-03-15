@@ -38,7 +38,9 @@ Meshtastic doesn't solve every problem. But a mesh of local nodes, running open-
 
 ## What's next
 
-The nodes are configured and running. The two T-Deck handhelds have been tested around the neighborhood and at various locations around Green Bay — range and reliability are solid. The solar repeater extends the mesh from a fixed point. I've connected to around 60 other nodes in the area as well. I was surprised to see so many others in town also using Meshtastic.
+The nodes are configured and running. The two T-Deck handhelds have been tested around the neighborhood and at various locations around Green Bay — range and reliability are solid. The solar repeater extends the mesh from a fixed point.
+
+When I first powered up the nodes I expected to be starting from scratch — maybe one of a handful of people in the area with this equipment. Instead, there were already nodes all over much of the city. Green Bay has an active Meshtastic presence that was already growing before I joined it. That reframed the whole project: I wasn't building a network, I was strengthening one.
 
 The next area of interest is building **info bots** — software that lives on a node and responds to queries from the mesh: weather conditions, status updates, local alerts. LoRa's bandwidth is narrow (this is not a video streaming protocol), but for short messages and structured data it's more than sufficient. It should also be structured as response only. Spamming messages at regular intervals is likely to upset the community.
 
