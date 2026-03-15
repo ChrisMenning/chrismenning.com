@@ -2,7 +2,7 @@
 title: Polarity Ball
 order: 4
 featured: false
-summary: A VR physics game for Gear VR and Oculus Go. Simulated magnetism and custom gravity, built in Unity and C#.
+summary: A VR physics game for Gear VR and Oculus Go. Court-based competitive play with simulated magnetism — built in Unity and C#.
 projectTags:
   - software
   - vr
@@ -15,7 +15,7 @@ status: complete
 meta: https://www.meta.com/experiences/polarity-ball/1197064677075806/
 ---
 
-A VR game for Gear VR and Oculus Go built in **Unity** and **C#** using the Oculus mobile SDK. The core mechanic is simulated magnetism — the player manipulates magnetic polarity to attract and repel a ball through environments with custom gravity fields. No two paths through a level feel the same once the physics start interacting with each other.
+A VR game for Gear VR and Oculus Go built in **Unity** and **C#** using the Oculus mobile SDK. The core mechanic is simulated magnetism played in a court — closer to racquetball or tennis than a navigation puzzle. Each player has a magnetic pole as their target and a polarity switch as their paddle. The ball is magnetic. You score by using polarity — attraction and repulsion — to direct the ball into your opponent's pole while defending your own. No two rallies play out the same once the physics start interacting.
 
 The most satisfying part of building it was getting Unity's physics engine to behave like a real magnetic system. Magnetism doesn't exist natively in Unity — you simulate it by calculating force vectors between objects based on distance and polarity, then applying them frame by frame. Getting that to feel physically convincing in VR, where your sense of space is heightened, required a lot of iteration.
 
@@ -39,7 +39,6 @@ The most satisfying part of building it was getting Unity's physics engine to be
 - **Platform:** Samsung Gear VR, Oculus Go
 - **Controls:** Touchpad
 - **Physics:** Custom magnetic force simulation — attraction and repulsion calculated per-frame using inverse-square force falloff applied via Unity's `Rigidbody` system
-- **Gravity:** Per-level custom gravity vectors, allowing walls and ceilings to become floors mid-level
 
 ## On building VR for mobile
 

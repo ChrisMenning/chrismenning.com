@@ -2,7 +2,7 @@
 title: Polarity Ball Rubicon
 order: 5
 featured: false
-summary: The sequel to Polarity Ball. Expanded levels, 3DOF controller support, and deeper magnetic physics — Gear VR and Oculus Go.
+summary: The sequel to Polarity Ball. Court-based magnetic physics with 3DOF controller support, toggleable gravity, and expanded level design — Gear VR and Oculus Go.
 projectTags:
   - software
   - vr
@@ -15,7 +15,7 @@ status: complete
 meta: https://www.meta.com/experiences/polarity-ball-rubicon/2275654505793837/
 ---
 
-The sequel to Polarity Ball, released October 18, 2018 for Gear VR and Oculus Go. Built in **Unity** and **C#** using the Oculus mobile SDK. Rubicon expanded on the original's magnetic physics with more complex level geometry, and added support for the Oculus Go 3DOF controller alongside the original touchpad controls — giving players a physical pointer in VR space for the first time in the series.
+The sequel to Polarity Ball, released October 18, 2018 for Gear VR and Oculus Go. Built in **Unity** and **C#** using the Oculus mobile SDK. Rubicon expanded on the original's court-based magnetic gameplay — each player controlling a polarity switch to attract or repel the ball toward their opponent's target pole — with more complex level geometry, toggleable gravity, and support for the Oculus Go 3DOF controller alongside the original touchpad controls.
 
 The name fits. Rubicon was the point of no return: more technically ambitious, harder to build, and a more committed statement about what the physics system could actually do.
 
@@ -46,14 +46,15 @@ The first Polarity Ball was controlled entirely by touchpad — you looked at th
 - **SDK:** Oculus Mobile SDK (Gear VR / Go)
 - **Platform:** Samsung Gear VR, Oculus Go
 - **Controls:** 3DOF Controller, Touchpad
-- **Physics:** Extended magnetic force simulation from the original — multi-body interactions, chained polarity effects, custom per-zone gravity
+- **Physics:** Extended magnetic force simulation from the original — multi-body interactions, chained polarity effects, toggleable gravity
+- **Gravity:** On/off toggle per level — changes the strategic geometry without reorienting the play space
 - **Input:** Dual-mode input system supporting both gaze/touchpad and 3DOF spatial controller in a single build
 
 ## On the physics
 
 Getting magnetism to work convincingly in Unity means writing your own force system. Unity has gravity and collisions out of the box, but magnetic attraction and repulsion are custom — you calculate a force vector between every relevant pair of objects each frame, scale it by an inverse-square falloff, and apply it to the rigidbody. Do that wrong and objects tunnel through each other or oscillate. Do it right and a ball moving through a magnetic field feels like it has weight and intention.
 
-That, combined with gravity that could be rotated or inverted per zone, meant levels could be designed in three dimensions in ways that feel genuinely impossible on a flat screen — and in VR, impossible-feeling geometry lands differently.
+That, combined with gravity that could be toggled on and off per level, meant court geometry could be designed in ways that feel genuinely impossible on a flat screen — and in VR, impossible-feeling geometry lands differently.
 
 ## On shadows in mobile VR
 
