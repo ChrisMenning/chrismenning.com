@@ -1,4 +1,4 @@
----
+﻿---
 title: NWTC Metaversity Demo
 order: 7
 featured: true
@@ -60,18 +60,18 @@ It's a concrete illustration of something VR forces you to confront: the quality
 
 ## What happened next
 
-Dan was impressed with the demo. The next logical step would have been to port the world to a format compatible with Microsoft's VR meeting experience \u2014 which would have made it deployable inside Teams, more palatable to institutional IT, and easier to integrate with NWTC's existing Microsoft infrastructure. I planned to pursue that path. It didn't happen.
+Dan was impressed with the demo. The next logical step would have been to port the world to a format compatible with Microsoft's VR meeting experience — which would have made it deployable inside Teams, more palatable to institutional IT, and easier to integrate with NWTC's existing Microsoft infrastructure. I planned to pursue that path. It didn't happen.
 
-Ultimately, NWTC chose not to invest in continued custom VR development. Instead, the college purchased off-the-shelf products suited to specific departments: Ovation for public speaking practice in the business college and Acadicus for the nursing program, and spatial tools for advanced manufacturing. That's a reasonable institutional decision \u2014 purpose-built software for defined use cases has a lower support burden than custom-built environments, and the Metaversity demo had proven the concept without creating a mandate to maintain it.
+Ultimately, NWTC chose not to invest in continued custom VR development. Instead, the college purchased off-the-shelf products suited to specific departments: Ovation for public speaking practice in the business college and Acadicus for the nursing program, and spatial tools for advanced manufacturing. That's a reasonable institutional decision — purpose-built software for defined use cases has a lower support burden than custom-built environments, and the Metaversity demo had proven the concept without creating a mandate to maintain it.
 
 The demo is still live and functional on VRChat. 
 
 ## Where immersive learning stands
 
-I'm less confident about the near-term trajectory of VR in education than I was when I built this. When the AI wave crested, funding and institutional attention that had been flowing toward the metaverse drained almost overnight. That's partly the attention economy doing what it does \u2014 tech media can only sustain one cycle of hype at a time \u2014 but it also reflects something real: VR hardware remained expensive, setup friction remained high, and the compelling use cases turned out to be narrower than the 2020\u20132022 discourse suggested.
+I'm less confident about the near-term trajectory of VR in education than I was when I built this. When the AI wave crested, funding and institutional attention that had been flowing toward the metaverse drained almost overnight. That's partly the attention economy doing what it does — tech media can only sustain one cycle of hype at a time — but it also reflects something real: VR hardware remained expensive, setup friction remained high, and the compelling use cases turned out to be narrower than the 2020\u20132022 discourse suggested.
 
-What I actually saw in the demo is that VR is genuinely valuable for spatial learning \u2014 things you can't teach adequately on a flat screen: folding a blueprint into its 3D form, handling an anatomical model, feeling the difference between magnetic attraction and repulsion at arm's length. Those use cases are real. But they're specific, not universal. The vision of VR as a general-purpose replacement for the classroom was always more about the platforms needing a market than about what educators actually needed.
+What I actually saw in the demo is that VR is genuinely valuable for spatial learning — things you can't teach adequately on a flat screen: folding a blueprint into its 3D form, handling an anatomical model, feeling the difference between magnetic attraction and repulsion at arm's length. Those use cases are real. But they're specific, not universal. The vision of VR as a general-purpose replacement for the classroom was always more about the platforms needing a market than about what educators actually needed.
 
-The most durable direction I see is hybrid and targeted deployment: VR for specific high-value scenarios \u2014 clinical simulation, spatial reasoning, exposure therapy, hazardous environment training \u2014 rather than as a default medium. The expensive custom-world approach I was building has largely given way to that model, which is probably the healthier one. It's less exciting as a vision, but it maps to how institutions actually operate and what students actually benefit from.
+The most durable direction I see is hybrid and targeted deployment: VR for specific high-value scenarios — clinical simulation, spatial reasoning, exposure therapy, hazardous environment training — rather than as a default medium. The expensive custom-world approach I was building has largely given way to that model, which is probably the healthier one. It's less exciting as a vision, but it maps to how institutions actually operate and what students actually benefit from.
 
 What concerns me about what's left of the field is where investment is concentrating. A meaningful portion of ongoing XR development is now funded by defense applications. That's not a reason to abandon the technology, but it's worth naming.
