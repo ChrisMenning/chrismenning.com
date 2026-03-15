@@ -869,6 +869,7 @@ h1.hud-name .gold { color: var(--gold); }
    ABOUT PAGE
    ═══════════════════════════════ */
 .about-hero-inner { max-width: calc(1020px + 4rem); }
+.constrained-inner { max-width: calc(1020px + 4rem); }
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 280px;
@@ -908,7 +909,7 @@ h1.hud-name .gold { color: var(--gold); }
 /* ═══════════════════════════════
    CONTACT PAGE
    ═══════════════════════════════ */
-.contact-layout { max-width: 800px; }
+.contact-layout { max-width: 1020px; margin: 0 auto; }
 .contact-intro {
   font-size: 1rem; font-weight: 300;
   color: var(--warm-gray); line-height: 1.85;
