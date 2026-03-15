@@ -13,6 +13,11 @@ status: ongoing
 
 Meshtastic is an open-source project that turns inexpensive LoRa radio hardware into an encrypted, off-grid mesh network. Nodes find each other automatically, relay messages across the mesh, and communicate without the internet, without cell towers, and without any central authority. Range between nodes is typically several kilometers in open terrain; a mesh of repeaters can cover a neighborhood or a city.
 
+<figure class="project-figure">
+  <img src="{{ '/img/Meshtastic/26-02-08%2016-24-29%209562.jpg' | url }}" alt="LILYGO T-Deck Plus Meshtastic node showing mesh network map" loading="lazy">
+  <figcaption>// LILYGO T-Deck Plus · 915MHz LoRa · GPS · Meshtastic firmware</figcaption>
+</figure>
+
 The appeal is not just technical. It's what the technology makes possible: communication infrastructure that is resilient, decentralized, and not subject to the decisions of any particular company or government. In an era where "the internet" and "the phone network" increasingly mean "Amazon's servers" and "AT&T's towers," a protocol you can run on a $40 device and a solar panel is worth understanding.
 
 ## What's here now
