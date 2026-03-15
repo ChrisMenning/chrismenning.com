@@ -867,6 +867,7 @@ h1.hud-name .gold { color: var(--gold); }
 /* ═══════════════════════════════
    ABOUT PAGE
    ═══════════════════════════════ */
+.about-hero-inner { max-width: calc(1020px + 4rem); }
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 280px;
