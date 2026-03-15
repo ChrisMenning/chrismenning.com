@@ -25,18 +25,46 @@
         <span class="nav-logo-name">Chris Menning</span>
       </a>
       <ul class="nav-links" role="list">
-        <li><a href="{{ '/projects/' | url }}">Projects</a></li>
+        <li class="nav-item-mega">
+          <a href="{{ '/projects/' | url }}" class="nav-mega-trigger" aria-haspopup="true" aria-expanded="false">
+            Projects <span class="nav-mega-caret" aria-hidden="true">&#9662;</span>
+          </a>
+          <div class="nav-mega-panel" hidden>
+            <div class="nav-mega-inner">
+              <div class="nav-mega-col nav-mega-col-all">
+                <div class="nav-mega-heading">Browse</div>
+                <a href="{{ '/projects/' | url }}" class="nav-mega-link nav-mega-link-all">All Projects</a>
+              </div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">By Discipline</div>
+                <a href="{{ '/tags/software/' | url }}" class="nav-mega-link">Software</a>
+                <a href="{{ '/tags/hardware/' | url }}" class="nav-mega-link">Hardware</a>
+                <a href="{{ '/tags/music/' | url }}" class="nav-mega-link">Music</a>
+                <a href="{{ '/tags/open-source/' | url }}" class="nav-mega-link">Open Source</a>
+                <a href="{{ '/tags/vr/' | url }}" class="nav-mega-link">VR</a>
+                <a href="{{ '/tags/nature/' | url }}" class="nav-mega-link">Nature</a>
+                <a href="{{ '/tags/home-lab/' | url }}" class="nav-mega-link">Home Lab</a>
+                <a href="{{ '/tags/web/' | url }}" class="nav-mega-link">Web</a>
+              </div>
+              <div class="nav-mega-col">
+                <div class="nav-mega-heading">By Skill</div>
+                <div class="nav-mega-skills">
+                  {%- for group in skillGroups %}
+                  <div class="nav-mega-skill-group">
+                    <div class="nav-mega-skill-label">{{ group.label }}</div>
+                    {%- for skill in group.skills %}
+                    <a href="{{ ('/skills/' + skill.id + '/') | url }}" class="nav-mega-link">{{ skill.label }}</a>
+                    {%- endfor %}
+                  </div>
+                  {%- endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
         <li><a href="{{ '/about/' | url }}">About</a></li>
         <li><a href="{{ '/contact/' | url }}">Contact</a></li>
       </ul>
-    </div>
-    <div class="nav-filter" aria-label="Browse by discipline">
-      <a href="{{ '/tags/software/' | url }}">Software</a>
-      <a href="{{ '/tags/hardware/' | url }}">Hardware</a>
-      <a href="{{ '/tags/music/' | url }}">Music</a>
-      <a href="{{ '/tags/open-source/' | url }}">Open Source</a>
-      <a href="{{ '/tags/vr/' | url }}">VR</a>
-      <a href="{{ '/tags/nature/' | url }}">Nature</a>
     </div>
   </nav>
 </header>
@@ -99,6 +127,41 @@
 
 <script>
 (function () {
+  // Mega menu
+  var megaItem = document.querySelector('.nav-item-mega');
+  if (megaItem) {
+    var megaTrigger = megaItem.querySelector('.nav-mega-trigger');
+    var megaPanel   = megaItem.querySelector('.nav-mega-panel');
+    var hoverTimer;
+
+    function openMega() {
+      clearTimeout(hoverTimer);
+      megaPanel.hidden = false;
+      megaTrigger.setAttribute('aria-expanded', 'true');
+    }
+    function closeMega() {
+      megaPanel.hidden = true;
+      megaTrigger.setAttribute('aria-expanded', 'false');
+    }
+    function closeMegaDelayed() {
+      hoverTimer = setTimeout(closeMega, 120);
+    }
+
+    megaItem.addEventListener('mouseenter', openMega);
+    megaItem.addEventListener('mouseleave', closeMegaDelayed);
+    megaTrigger.addEventListener('focus', openMega);
+    megaItem.addEventListener('focusout', function (e) {
+      if (!megaItem.contains(e.relatedTarget)) closeMega();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !megaPanel.hidden) {
+        closeMega();
+        megaTrigger.focus();
+      }
+    });
+  }
+
+  // Sort + filter (projects page only)
   var grid = document.querySelector('.project-grid');
   if (!grid) return;
 
@@ -186,7 +249,9 @@
     });
   });
 
-  document.addEventListener('click', closeAllDrops);
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.filter-drop')) closeAllDrops();
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeAllDrops();
   });

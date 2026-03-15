@@ -283,33 +283,68 @@ a.tag:hover { opacity: 0.75; }
 .nav-links a:focus-visible::after { transform: scaleX(1); }
 .nav-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
 
-/* discipline filter strip — second row of the nav */
-.nav-filter {
-  display: flex;
-  align-items: center;
-  gap: 0;
+/* ── Mega menu ── */
+.nav-item-mega { position: static; }
+.nav-mega-trigger {
+  display: flex; align-items: center; gap: 0.35rem;
+}
+.nav-mega-caret {
+  font-size: 0.6rem; line-height: 1;
+  transition: transform 0.18s;
+  display: inline-block;
+}
+.nav-mega-trigger[aria-expanded="true"] .nav-mega-caret { transform: rotate(180deg); }
+.nav-mega-panel {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: rgba(10,8,6,0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--panel-mid);
   border-top: 1px solid var(--panel-mid);
-  max-width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
+  z-index: 300;
 }
-.nav-filter::-webkit-scrollbar { display: none; }
-.nav-filter a {
-  font-family: var(--f-mono); font-size: 0.58rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ghost); text-decoration: none;
-  padding: 0.4rem 1.25rem;
-  white-space: nowrap;
-  border-right: 1px solid var(--panel-mid);
-  transition: color 0.15s, background 0.15s;
+.nav-mega-inner {
+  max-width: var(--container); margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex; gap: 3rem; align-items: flex-start;
 }
-.nav-filter a:hover,
-.nav-filter a:focus-visible {
-  color: var(--gold);
-  background: rgba(212,168,32,0.05);
-  outline: none;
+.nav-mega-col { flex: 1; }
+.nav-mega-col-all { flex: 0 0 auto; min-width: 120px; }
+.nav-mega-heading {
+  font-family: var(--f-mono); font-size: 0.52rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ghost);
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--panel-mid);
 }
-.nav-filter a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.nav-mega-link {
+  display: block;
+  font-family: var(--f-mono); font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--warm-gray); text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 0.12s;
+}
+.nav-mega-link:hover,
+.nav-mega-link:focus-visible { color: var(--gold); outline: none; }
+.nav-mega-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.nav-mega-link-all {
+  color: var(--parchment); font-size: 0.7rem;
+}
+.nav-mega-link-all:hover { color: var(--gold); }
+.nav-mega-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+.nav-mega-skill-group { display: flex; flex-direction: column; gap: 0; }
+.nav-mega-skill-label {
+  font-family: var(--f-mono); font-size: 0.48rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ghost); margin-bottom: 0.2rem;
+}
 
 /* ═══════════════════════════════
    HERO — HUD composition
