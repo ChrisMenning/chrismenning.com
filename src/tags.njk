@@ -31,7 +31,7 @@ eleventyComputed:
       {%- if tag in project.data.projectTags %}
       <div class="project-card" data-year="{{ project.data.year }}" data-title="{{ project.data.title | lower }}">
         <div class="project-card-num">
-          <span class="project-card-num-index">{{ project.data.order | padZero }} //</span>
+          <span class="project-card-num-index">{{ project.data.year }}</span>
           <span class="project-status project-status-{{ project.data.status }}" aria-label="Status: {{ project.data.status }}">
             {%- if project.data.status == "complete" %}● Complete
             {%- elif project.data.status == "ongoing" %}● Ongoing
@@ -40,9 +40,6 @@ eleventyComputed:
           </span>
         </div>
         <a href="{{ project.url | url }}" class="project-card-title project-card-link" aria-label="{{ project.data.title }}">{{ project.data.title }}</a>
-        <div class="project-card-meta">
-          <span class="tape tape-r1">{{ project.data.year }}</span>
-        </div>
         <div class="project-card-body">{{ project.data.summary }}</div>
         <div class="project-card-footer">
           <div class="tags">

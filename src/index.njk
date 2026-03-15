@@ -63,20 +63,6 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
           <div class="panel-hazard-strip" aria-hidden="true"></div>
 
           <div class="panel-section">
-            <div class="panel-label">// readout</div>
-            <div class="lcd" role="region" aria-label="Technical summary">
-              <span class="lcd-dim">LOC  // </span><span class="lcd-bright">Green Bay, WI</span><br>
-              <span class="lcd-dim">CODE // </span><span>Backend · Web · Data · Embedded</span><br>
-              <span class="lcd-dim">PLAT // </span><span>.NET · Salesforce · Unity · Pi</span><br>
-              <span class="lcd-dim">HW   // </span><span>Vintage synths · drum machines</span><br>
-              <span class="lcd-dim">DIY  // </span><span>Arduino · LoRa · e-paper</span><br>
-              <span class="lcd-dim">LAB  // </span><span class="lcd-bright">Nextcloud · Pi-hole · Home Assistant</span>
-            </div>
-          </div>
-
-          <div class="panel-rule" aria-hidden="true"></div>
-
-          <div class="panel-section">
             <div class="panel-label">// disciplines</div>
             <div class="tags" aria-label="Project disciplines">
               <a href="{{ '/tags/software/' | url }}" class="tag tag-software">Software</a>
@@ -91,22 +77,14 @@ description: Software developer, electronic musician, maker. Green Bay, WI.
 
           <div class="panel-section">
             <div class="panel-label">// stack</div>
-            <div class="skill-grid" role="region" aria-label="Skills overview">
+            <div class="skill-cells" role="list" aria-label="Core skills">
               {%- for group in skillGroups %}
-              <div class="skill-group">
-                <div class="skill-group-label">{{ group.label }}</div>
-                <div class="skill-cells">
-                  {%- for skill in group.skills %}
-                  <a href="{{ ('/skills/' + skill.id) | url }}" class="skill-cell skill-cell-{{ skill.level }}">{{ skill.label }}</a>
-                  {%- endfor %}
-                </div>
-              </div>
+                {%- for skill in group.skills %}
+                  {%- if skill.featured %}
+                  <a href="{{ ('/skills/' + skill.id) | url }}" class="skill-cell skill-cell-{{ skill.level }}" role="listitem">{{ skill.label }}</a>
+                  {%- endif %}
+                {%- endfor %}
               {%- endfor %}
-            </div>
-            <div class="skill-legend" aria-label="Legend">
-              <span class="skill-dot skill-dot-g" aria-hidden="true"></span><span>active</span>
-              <span class="skill-dot skill-dot-y" aria-hidden="true"></span><span>occasional</span>
-              <span class="skill-dot skill-dot-r" aria-hidden="true"></span><span>dormant</span>
             </div>
           </div>
         </div>

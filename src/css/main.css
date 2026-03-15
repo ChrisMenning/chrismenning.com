@@ -283,6 +283,34 @@ a.tag:hover { opacity: 0.75; }
 .nav-links a:focus-visible::after { transform: scaleX(1); }
 .nav-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
 
+/* discipline filter strip — second row of the nav */
+.nav-filter {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-top: 1px solid var(--panel-mid);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-filter::-webkit-scrollbar { display: none; }
+.nav-filter a {
+  font-family: var(--f-mono); font-size: 0.58rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ghost); text-decoration: none;
+  padding: 0.4rem 1.25rem;
+  white-space: nowrap;
+  border-right: 1px solid var(--panel-mid);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-filter a:hover,
+.nav-filter a:focus-visible {
+  color: var(--gold);
+  background: rgba(212,168,32,0.05);
+  outline: none;
+}
+.nav-filter a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+
 /* ═══════════════════════════════
    HERO — HUD composition
    ═══════════════════════════════ */
@@ -793,7 +821,7 @@ h1.hud-name .gold { color: var(--gold); }
   letter-spacing: 0.18em;
   margin-bottom: 0.4rem;
 }
-.project-card-num-index { color: var(--gold); opacity: 0.5; }
+.project-card-num-index { color: var(--ghost); }
 .project-card-link {
   font-family: var(--f-body); font-weight: 700;
   font-size: 1rem; text-transform: uppercase;
