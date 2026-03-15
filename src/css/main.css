@@ -232,6 +232,7 @@ body {
 .tag-home-lab    { color: #48a8a8; border-color: #083838; }
 .tag-web         { color: #c87858; border-color: #401808; }
 .tag-media       { color: #b888c8; border-color: #3a1848; }
+.tag-nature      { color: #80b840; border-color: #284018; }
 a.tag { text-decoration: none; transition: opacity 0.15s; position: relative; z-index: 1; }
 a.tag:hover { opacity: 0.75; }
 
@@ -979,6 +980,7 @@ a.skill-cell:hover { opacity: 0.75; }
   max-width: 1020px;
   margin: 0 auto;
 }
+.project-detail-layout > * { min-width: 0; }
 .project-content { max-width: 100%; }
 .project-content p {
   font-size: 1rem; font-weight: 300;
