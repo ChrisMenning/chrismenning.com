@@ -1062,6 +1062,20 @@ a.skill-cell:hover { opacity: 0.75; }
   background: var(--panel-dark);
   font-style: normal;
 }
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: var(--void);
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
 .project-content h2 {
   font-family: var(--f-body); font-weight: 700;
   font-size: 1.1rem; letter-spacing: 0.02em;

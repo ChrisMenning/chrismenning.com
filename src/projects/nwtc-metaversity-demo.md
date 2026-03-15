@@ -40,6 +40,13 @@ The tradeoff was the sandbox. VRChat's Udon VM is deliberately restricted: no ar
 
 An interactive drafting classroom with manipulable blueprints. The intent was to let students in technical programs engage with engineering drawings spatially — turning, examining, and reading blueprints in three dimensions rather than on a flat page. Furthermore, the instructor described folding a blueprint to visualize the 3D shape. So I made the blueprint foldable, and when folded into position the part is rendered in full 3D. Blueprint reading is a foundational skill in trades and technical programs, and the spatial qualities of VR make it a natural fit.
 
+<figure class="project-figure">
+  <div class="video-embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/8nhPo7mzbnM" title="Early blueprint reading classroom demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <figcaption>// Blueprint Reading Classroom · early prototype · foldable blueprint + 3D part render</figcaption>
+</figure>
+
 ## Anatomy Classroom
 
 A functioning model of the human heart. Students can pick it up, observe its structure and motion, and interact with it in ways that a textbook diagram or even a 3D web viewer can't replicate.
@@ -58,7 +65,21 @@ The more interesting problem was what happened once it was in VR. Matterport's d
 
 It's a concrete illustration of something VR forces you to confront: the quality bar is not the same as it is for flat-screen media. A 3D asset that looks fine in a viewport or a web viewer may be genuinely unusable in an immersive context. The medium doesn't forgive shortcuts that other contexts absorb without complaint.
 
+<figure class="project-figure">
+  <div class="video-embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/b9kPGDiLnAA" title="Matterport scan of the Eagle Event Center navigated in Unity" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <figcaption>// Eagle Event Center · Matterport scan imported into Unity · early navigation demo</figcaption>
+</figure>
+
 ## What happened next
+
+<figure class="project-figure">
+  <div class="video-embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/KIio0iI0-A4" title="What made the Metaversity demo a success" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <figcaption>// What Made it a Success · retrospective walkthrough in VR</figcaption>
+</figure>
 
 Dan was impressed with the demo. The next logical step would have been to port the world to a format compatible with Microsoft's VR meeting experience — which would have made it deployable inside Teams, more palatable to institutional IT, and easier to integrate with NWTC's existing Microsoft infrastructure. I planned to pursue that path. It didn't happen.
 
