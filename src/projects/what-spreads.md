@@ -5,6 +5,7 @@ featured: false
 summary: Notes on the mechanics of viral content from inside Know Your Meme and BuzzFeed, and why the lessons matter more now than they did then.
 projectTags:
   - media
+skills: []
 year: 2025
 status: complete
 ---

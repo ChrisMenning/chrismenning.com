@@ -231,6 +231,7 @@ body {
 .tag-open-source { color: var(--gold-burn); border-color: #4a2808; }
 .tag-home-lab    { color: #48a8a8; border-color: #083838; }
 .tag-web         { color: #c87858; border-color: #401808; }
+.tag-media       { color: #b888c8; border-color: #3a1848; }
 a.tag { text-decoration: none; transition: opacity 0.15s; position: relative; z-index: 1; }
 a.tag:hover { opacity: 0.75; }
 
