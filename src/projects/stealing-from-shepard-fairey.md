@@ -42,7 +42,7 @@ It felt fitting.
 
 ## The display
 
-This is the second of two color e-paper displays gifted by someone who'd never gotten around to using them. The first became the Tome Reader. This one had a 7-color palette — black, white, red, green, blue, yellow, and orange — which suited Fairey's work well. His prints lean on flat color, bold separations, and high contrast. The e-paper aesthetic amplified that rather than fighting it.
+This is the second of two e-paper displays gifted by someone who'd never gotten around to using them. The first became the Tome Reader. This one had a 7-color palette — black, white, red, green, blue, yellow, and orange — which suited Fairey's work well. His prints lean on flat color, bold separations, and high contrast. The e-paper aesthetic amplified that rather than fighting it.
 
 ## The build
 
