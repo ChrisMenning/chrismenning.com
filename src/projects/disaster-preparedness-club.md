@@ -32,6 +32,11 @@ No subscriptions. No cloud sync. No terms of service update that changes what th
 
 ## Music for a Crisis EP
 
+<figure class="project-figure">
+  <img src="{{ '/img/dpc/DPC EP Cover.gif' | url }}" alt="Music for a Crisis EP cover art — Disaster Preparedness Club" loading="lazy" style="object-fit: contain; max-height: 480px;">
+  <figcaption>Music for a Crisis EP — released January 2, 2026.</figcaption>
+</figure>
+
 Released January 2, 2026. A collection of synth-driven pieces written under pressure — emotional, conceptual, and practical. The record grew out of a deliberate return to limitation: a stripped-down setup, a focus on monophonic lines and momentum, and the goal of shaping a body of work that could function as a cohesive live set.
 
 The music sits somewhere between darkwave, 1980s horror and sci-fi film scores, EBM, and post-industrial electronic forms, favoring tension, restraint, and physical presence over excess or spectacle. Themes of anxiety, existential dread, and impending collapse run throughout — but the record resists stagnation. Determination, defiance, and moments of fragile hope push against the weight, keeping the music in motion.
