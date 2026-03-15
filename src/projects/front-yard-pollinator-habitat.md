@@ -13,9 +13,10 @@ A monoculture of Kentucky bluegrass isn't an ecosystem. It supports almost nothi
 
 In 2023, I converted it.
 
-<div class="project-media">
+<figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/Beginning%20-%202048-1536-max.jpg' | url }}" alt="The front yard at the beginning of the pollinator habitat installation" loading="lazy">
-</div>
+  <figcaption>The yard at the start — grass still in, edging just going in.</figcaption>
+</figure>
 
 The yard is about 536 square feet total. After carving out a 174 sq ft mulched setback (required by city ordinance) and 74 sq ft of Prairie Dropseed along the entrance walk, the remaining **288 square feet** became the pollinator habitat.
 
@@ -27,9 +28,10 @@ The compliance plan centered on the setback: a 3-foot-deep mulched border runnin
 
 The 74 sq ft entrance walk beds on either side of the front walk were planted with Prairie Dropseed — a native grass intended to fill in completely without mulch. In practice, I have also let clover, wood sorrel, and yarrow grow there as it wants to.
 
-<div class="project-media">
-  <img src="{{ '/img/pollinator-hab/yard-map.png' | url }}" alt="Yard layout map showing setback, dropseed, and pollinator habitat zones" loading="lazy">
-</div>
+<figure class="project-figure">
+  <img src="{{ '/img/pollinator-hab/yard-map.png' | url }}" alt="Yard layout map showing setback, dropseed, and pollinator habitat zones" loading="lazy" style="object-fit: contain; max-height: 560px;">
+  <figcaption>Yard layout — brown dotted line = Edgestone edging; dotted borders = property lines.</figcaption>
+</figure>
 
 ## First attempt: seed broadcast
 
@@ -93,12 +95,13 @@ What started as 18 species in a seed packet has grown to 39 identified species (
 
 The goal was continuous bloom from May through October — something always flowering across that window, which means continuous forage for pollinators. With 39 species spread across early, mid, and late bloomers, that coverage is largely achieved.
 
-<div class="project-media">
+<figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/2048-1536-max.jpg' | url }}" alt="Front yard pollinator habitat in bloom" loading="lazy">
-</div>
-<div class="project-media">
+</figure>
+
+<figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/1536-2048-max.jpg' | url }}" alt="Native wildflowers growing in the pollinator habitat" loading="lazy">
-</div>
+</figure>
 
 ## Neighbor reactions
 
@@ -116,9 +119,10 @@ A yard this small isn't going to save the monarch butterfly by itself. But it's 
 
 The cataloging instinct — wanting to know every species, track every bloom, notice what's thriving and what's struggling — is the same systems thinking that shows up in my software work. There are inputs, outputs, feedback loops, and emergent behavior. The habitat doesn't stay static; it changes every season as species establish, spread, or give way to their neighbors. That's the interesting part.
 
-<div class="project-media">
+<figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/2048-1536-max5.jpg' | url }}" alt="Pollinators visiting the native wildflower habitat" loading="lazy">
-</div>
-<div class="project-media">
+</figure>
+
+<figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/1536-2048-max1.jpg' | url }}" alt="Detail view of the front yard pollinator habitat" loading="lazy">
-</div>
+</figure>
