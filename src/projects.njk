@@ -22,28 +22,37 @@ description: Software, hardware, and music projects by Chris Menning.
       <button class="sort-btn sort-btn-active" data-sort="year" aria-pressed="true">// by year</button>
       <button class="sort-btn" data-sort="alpha" aria-pressed="false">// A–Z</button>
       <span class="toolbar-sep" aria-hidden="true">/</span>
-      <label for="filter-discipline" class="sort-toolbar-label">Filter</label>
-      <select id="filter-discipline" class="filter-select" aria-label="Filter by discipline">
-        <option value="">// discipline</option>
-        <option value="software">Software</option>
-        <option value="hardware">Hardware</option>
-        <option value="music">Music</option>
-        <option value="open-source">Open Source</option>
-        <option value="vr">VR</option>
-        <option value="nature">Nature</option>
-        <option value="home-lab">Home Lab</option>
-        <option value="web">Web</option>
-      </select>
-      <select id="filter-skill" class="filter-select" aria-label="Filter by skill">
-        <option value="">// skill</option>
-        {%- for group in skillGroups %}
-        <optgroup label="{{ group.label }}">
+      <span class="sort-toolbar-label">Filter</span>
+      <div class="filter-drop" data-filter="discipline">
+        <button class="sort-btn filter-drop-btn" aria-expanded="false" aria-haspopup="listbox" aria-label="Filter by discipline">
+          <span class="filter-drop-label">// discipline</span> <span class="filter-drop-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="filter-drop-panel" role="listbox" aria-label="Filter by discipline" hidden>
+          <button class="filter-opt filter-opt-active" role="option" aria-selected="true" data-val="">// all</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="software">Software</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="hardware">Hardware</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="music">Music</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="open-source">Open Source</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="vr">VR</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="nature">Nature</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="home-lab">Home Lab</button>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="web">Web</button>
+        </div>
+      </div>
+      <div class="filter-drop" data-filter="skill">
+        <button class="sort-btn filter-drop-btn" aria-expanded="false" aria-haspopup="listbox" aria-label="Filter by skill">
+          <span class="filter-drop-label">// skill</span> <span class="filter-drop-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="filter-drop-panel" role="listbox" aria-label="Filter by skill" hidden>
+          <button class="filter-opt filter-opt-active" role="option" aria-selected="true" data-val="">// all</button>
+          {%- for group in skillGroups %}
+          <div class="filter-opt-group">{{ group.label }}</div>
           {%- for skill in group.skills %}
-          <option value="{{ skill.id }}">{{ skill.label }}</option>
+          <button class="filter-opt" role="option" aria-selected="false" data-val="{{ skill.id }}">{{ skill.label }}</button>
           {%- endfor %}
-        </optgroup>
-        {%- endfor %}
-      </select>
+          {%- endfor %}
+        </div>
+      </div>
     </div>
     <div class="project-grid">
       {%- for project in collections.projects | sort(true, false, "data.year") %}

@@ -129,10 +129,11 @@
     cards.forEach(function (card) { grid.appendChild(card); });
   }
 
-  document.querySelectorAll('.sort-btn').forEach(function (btn) {
+  // Sort buttons (exclude filter-drop-btn which also carries sort-btn class)
+  document.querySelectorAll('.sort-btn:not(.filter-drop-btn)').forEach(function (btn) {
     btn.addEventListener('click', function () {
       activeSort = btn.dataset.sort;
-      document.querySelectorAll('.sort-btn').forEach(function (b) {
+      document.querySelectorAll('.sort-btn:not(.filter-drop-btn)').forEach(function (b) {
         var active = b === btn;
         b.classList.toggle('sort-btn-active', active);
         b.setAttribute('aria-pressed', active ? 'true' : 'false');
@@ -141,21 +142,54 @@
     });
   });
 
-  var discSel = document.getElementById('filter-discipline');
-  if (discSel) {
-    discSel.addEventListener('change', function () {
-      activeDiscipline = discSel.value;
-      applyAll();
+  // Custom filter dropdowns
+  function closeAllDrops() {
+    document.querySelectorAll('.filter-drop-btn').forEach(function (b) {
+      b.setAttribute('aria-expanded', 'false');
+    });
+    document.querySelectorAll('.filter-drop-panel').forEach(function (p) {
+      p.hidden = true;
     });
   }
 
-  var skillSel = document.getElementById('filter-skill');
-  if (skillSel) {
-    skillSel.addEventListener('change', function () {
-      activeSkill = skillSel.value;
-      applyAll();
+  document.querySelectorAll('.filter-drop').forEach(function (drop) {
+    var btn = drop.querySelector('.filter-drop-btn');
+    var panel = drop.querySelector('.filter-drop-panel');
+    var label = btn.querySelector('.filter-drop-label');
+    var filterKey = drop.dataset.filter;
+    var defaultLabel = label.textContent;
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      closeAllDrops();
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        panel.hidden = false;
+      }
     });
-  }
+
+    panel.querySelectorAll('.filter-opt').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        var val = opt.dataset.val;
+        panel.querySelectorAll('.filter-opt').forEach(function (o) {
+          o.classList.toggle('filter-opt-active', o === opt);
+          o.setAttribute('aria-selected', o === opt ? 'true' : 'false');
+        });
+        label.textContent = val ? opt.textContent.trim() : defaultLabel;
+        btn.classList.toggle('sort-btn-active', !!val);
+        if (filterKey === 'discipline') activeDiscipline = val;
+        if (filterKey === 'skill') activeSkill = val;
+        closeAllDrops();
+        applyAll();
+      });
+    });
+  });
+
+  document.addEventListener('click', closeAllDrops);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAllDrops();
+  });
 }());
 </script>
 
