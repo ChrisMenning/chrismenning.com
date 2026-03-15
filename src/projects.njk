@@ -17,14 +17,42 @@ description: Software, hardware, and music projects by Chris Menning.
   </div>
 
   <div class="page-body">
-    <div class="sort-toolbar" role="toolbar" aria-label="Sort order">
+    <div class="sort-toolbar" role="toolbar" aria-label="Sort and filter">
       <span class="sort-toolbar-label">Sort</span>
       <button class="sort-btn sort-btn-active" data-sort="year" aria-pressed="true">// by year</button>
       <button class="sort-btn" data-sort="alpha" aria-pressed="false">// A–Z</button>
+      <span class="toolbar-sep" aria-hidden="true">/</span>
+      <label for="filter-discipline" class="sort-toolbar-label">Filter</label>
+      <select id="filter-discipline" class="filter-select" aria-label="Filter by discipline">
+        <option value="">// discipline</option>
+        <option value="software">Software</option>
+        <option value="hardware">Hardware</option>
+        <option value="music">Music</option>
+        <option value="open-source">Open Source</option>
+        <option value="vr">VR</option>
+        <option value="nature">Nature</option>
+        <option value="home-lab">Home Lab</option>
+        <option value="web">Web</option>
+      </select>
+      <select id="filter-skill" class="filter-select" aria-label="Filter by skill">
+        <option value="">// skill</option>
+        {%- for group in skillGroups %}
+        <optgroup label="{{ group.label }}">
+          {%- for skill in group.skills %}
+          <option value="{{ skill.id }}">{{ skill.label }}</option>
+          {%- endfor %}
+        </optgroup>
+        {%- endfor %}
+      </select>
     </div>
     <div class="project-grid">
       {%- for project in collections.projects | sort(true, false, "data.year") %}
-      <div class="project-card" data-year="{{ project.data.year }}" data-title="{{ project.data.title | lower }}">
+      <div class="project-card"
+        data-year="{{ project.data.year }}"
+        data-title="{{ project.data.title | lower }}"
+        data-skills="{{ project.data.skills | join(' ') }}"
+        data-disciplines="{{ project.data.projectTags | join(' ') }}"
+      >
         <div class="project-card-num">
           <span class="project-card-num-index">{{ project.data.year }}</span>
           <span class="project-status project-status-{{ project.data.status }}" aria-label="Status: {{ project.data.status }}">

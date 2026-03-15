@@ -859,6 +859,7 @@ h1.hud-name .gold { color: var(--gold); }
 .sort-toolbar {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -876,6 +877,25 @@ h1.hud-name .gold { color: var(--gold); }
 }
 .sort-btn-active,
 .sort-btn:hover { color: var(--gold); border-color: var(--gold-burn); }
+.toolbar-sep {
+  color: var(--panel-light);
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  padding: 0 0.25rem;
+  user-select: none;
+}
+.filter-select {
+  font-family: var(--f-mono); font-size: 0.62rem;
+  letter-spacing: 0.1em; color: var(--ghost);
+  background: var(--panel-black); border: 1px solid var(--panel-mid);
+  border-radius: 1px; padding: 0.25rem 0.65rem;
+  cursor: pointer; transition: color 0.15s, border-color 0.15s;
+  appearance: none; -webkit-appearance: none;
+}
+.filter-select:hover,
+.filter-select:focus { color: var(--gold); border-color: var(--gold-burn); outline: none; }
+.filter-select option,
+.filter-select optgroup { background: var(--panel-dark); color: var(--warm-gray); }
 a.skill-cell { text-decoration: none; }
 a.skill-cell:hover { opacity: 0.75; }
 

@@ -101,24 +101,61 @@
 (function () {
   var grid = document.querySelector('.project-grid');
   if (!grid) return;
+
+  var activeSort = 'year';
+  var activeSkill = '';
+  var activeDiscipline = '';
+
+  function applyAll() {
+    var cards = Array.from(grid.querySelectorAll('.project-card'));
+    cards.forEach(function (card) {
+      var show = true;
+      if (activeSkill) {
+        var skills = (card.dataset.skills || '').split(' ').filter(Boolean);
+        if (skills.indexOf(activeSkill) === -1) show = false;
+      }
+      if (activeDiscipline) {
+        var disciplines = (card.dataset.disciplines || '').split(' ').filter(Boolean);
+        if (disciplines.indexOf(activeDiscipline) === -1) show = false;
+      }
+      card.hidden = !show;
+    });
+    cards.sort(function (a, b) {
+      if (activeSort === 'alpha') {
+        return (a.dataset.title || '').localeCompare(b.dataset.title || '');
+      }
+      return parseInt(b.dataset.year, 10) - parseInt(a.dataset.year, 10);
+    });
+    cards.forEach(function (card) { grid.appendChild(card); });
+  }
+
   document.querySelectorAll('.sort-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var mode = btn.dataset.sort;
+      activeSort = btn.dataset.sort;
       document.querySelectorAll('.sort-btn').forEach(function (b) {
         var active = b === btn;
         b.classList.toggle('sort-btn-active', active);
         b.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
-      var cards = Array.from(grid.querySelectorAll('.project-card'));
-      cards.sort(function (a, b) {
-        if (mode === 'alpha') {
-          return (a.dataset.title || '').localeCompare(b.dataset.title || '');
-        }
-        return parseInt(b.dataset.year, 10) - parseInt(a.dataset.year, 10);
-      });
-      cards.forEach(function (card) { grid.appendChild(card); });
+      applyAll();
     });
   });
+
+  var discSel = document.getElementById('filter-discipline');
+  if (discSel) {
+    discSel.addEventListener('change', function () {
+      activeDiscipline = discSel.value;
+      applyAll();
+    });
+  }
+
+  var skillSel = document.getElementById('filter-skill');
+  if (skillSel) {
+    skillSel.addEventListener('change', function () {
+      activeSkill = skillSel.value;
+      applyAll();
+    });
+  }
 }());
 </script>
 
