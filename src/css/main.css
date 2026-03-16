@@ -17,7 +17,7 @@
   --parchment:   #f0ebe0;
   --warm-gray:   #a09080;
   --dim-brown:   #8a7a68;
-  --ghost:       #706050;
+  --ghost:       #907868;
 
   --container:   1400px;
 
@@ -207,7 +207,7 @@ body {
   color: #58c880;
   letter-spacing: 0.07em;
 }
-.lcd-dim    { color: #244a28; }
+.lcd-dim    { color: #70a080; }
 .lcd-bright { color: #88ffb0; }
 
 /* ═══════════════════════════════
@@ -408,7 +408,7 @@ a.tag:hover { opacity: 0.75; }
   line-height: 2;
   animation: fade-in 1s ease both 0.8s;
 }
-.hud-catalog strong { color: var(--panel-light); }
+.hud-catalog strong { color: var(--ghost); }
 
 /* ── TOP-RIGHT STATUS ── */
 .hud-status {
@@ -433,7 +433,7 @@ a.tag:hover { opacity: 0.75; }
 .hud-eyebrow {
   font-family: var(--f-mono); font-size: 0.70rem;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); opacity: 0.65;
+  color: var(--gold);
   margin-bottom: 1rem;
   display: flex; align-items: center; gap: 0.75rem;
 }
@@ -631,7 +631,7 @@ h1.hud-name .gold { color: var(--gold); }
 .mini-card-num {
   font-family: var(--f-mono); font-size: 0.62rem;
   letter-spacing: 0.18em; color: var(--gold);
-  opacity: 0.5; margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 .mini-card-desc {
   font-size: 0.75rem; font-weight: 300;
@@ -794,7 +794,7 @@ h1.hud-name .gold { color: var(--gold); }
 .page-eyebrow {
   font-family: var(--f-mono); font-size: 0.68rem;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); opacity: 0.65;
+  color: var(--gold);
   margin-bottom: 0.75rem;
   display: flex; align-items: center; gap: 0.5rem;
 }
@@ -924,7 +924,7 @@ h1.hud-name .gold { color: var(--gold); }
 .sort-btn-active,
 .sort-btn:hover { color: var(--gold); border-color: var(--gold-burn); }
 .toolbar-sep {
-  color: var(--panel-light);
+  color: var(--ghost);
   font-family: var(--f-mono);
   font-size: 0.7rem;
   padding: 0 0.25rem;
@@ -1181,7 +1181,7 @@ a.skill-cell:hover { opacity: 0.75; }
 .contact-card-label {
   font-family: var(--f-mono); font-size: 0.62rem;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); opacity: 0.6; margin-bottom: 0.35rem;
+  color: var(--gold); margin-bottom: 0.35rem;
 }
 .contact-card-name {
   font-family: var(--f-body); font-weight: 700;
