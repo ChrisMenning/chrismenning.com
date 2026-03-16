@@ -111,7 +111,7 @@ body {
   background: var(--gold);
   color: var(--void);
   font-family: var(--f-mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -149,7 +149,7 @@ body {
 .skill-group {}
 .skill-group-label {
   font-family: var(--f-mono);
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: 0.14em;
   color: var(--ghost);
   margin-bottom: 0.3rem;
@@ -162,7 +162,7 @@ body {
 }
 .skill-cell {
   font-family: var(--f-mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.06em;
   padding: 2px 7px;
   border-radius: 1px;
@@ -177,7 +177,7 @@ body {
   gap: 0.65rem;
   margin-top: 0.55rem;
   font-family: var(--f-mono);
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: 0.09em;
   color: var(--ghost);
   align-items: center;
@@ -291,7 +291,7 @@ a.tag:hover { opacity: 0.75; }
   display: flex; align-items: center; gap: 0.35rem;
 }
 .nav-mega-caret {
-  font-size: 0.6rem; line-height: 1;
+  font-size: 0.7rem; line-height: 1;
   transition: transform 0.18s;
   display: inline-block;
 }
@@ -315,7 +315,7 @@ a.tag:hover { opacity: 0.75; }
 .nav-mega-col-all { flex: 0 0 auto; min-width: 100px; }
 .nav-mega-col-skills { flex: 2; min-width: 0; }
 .nav-mega-heading {
-  font-family: var(--f-mono); font-size: 0.49rem;
+  font-family: var(--f-mono); font-size: 0.65rem;
   letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--ghost);
   margin-bottom: 0.35rem;
@@ -324,7 +324,7 @@ a.tag:hover { opacity: 0.75; }
 }
 .nav-mega-link {
   display: block;
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.07em;
   color: var(--warm-gray); text-decoration: none;
   padding: 0.15rem 0;
@@ -344,7 +344,7 @@ a.tag:hover { opacity: 0.75; }
 }
 .nav-mega-skill-group { display: flex; flex-direction: column; gap: 0; }
 .nav-mega-skill-label {
-  font-family: var(--f-mono); font-size: 0.46rem;
+  font-family: var(--f-mono); font-size: 0.65rem;
   letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--ghost); margin-bottom: 0.1rem;
 }
@@ -520,7 +520,7 @@ h1.hud-name .gold { color: var(--gold); }
   border-bottom: 1px solid var(--panel-mid);
 }
 .panel-header-label {
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.25em; color: var(--ghost);
   text-transform: uppercase;
 }
@@ -547,7 +547,7 @@ h1.hud-name .gold { color: var(--gold); }
 .panel-section:last-child { margin-bottom: 0; }
 
 .panel-label {
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.22em; color: var(--ghost);
   text-transform: uppercase; margin-bottom: 0.45rem;
 }
@@ -629,7 +629,7 @@ h1.hud-name .gold { color: var(--gold); }
 .mini-card-link::after { content: ''; position: absolute; inset: 0; z-index: 0; }
 
 .mini-card-num {
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.18em; color: var(--gold);
   margin-bottom: 0.4rem;
 }
@@ -670,7 +670,7 @@ h1.hud-name .gold { color: var(--gold); }
   position: absolute; bottom: 1.5rem; left: 50%;
   transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.25em; text-transform: uppercase;
   color: var(--ghost); text-decoration: none;
   animation: fade-in 1.2s ease both 1s;
@@ -754,7 +754,7 @@ h1.hud-name .gold { color: var(--gold); }
 }
 @media (max-width: 560px) {
   .nav-logo-mark { display: none; }
-  .nav-links a { padding: 0 0.85rem; font-size: 0.56rem; }
+  .nav-links a { padding: 0 0.85rem; font-size: 0.65rem; }
   .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
 }
 
@@ -863,7 +863,7 @@ h1.hud-name .gold { color: var(--gold); }
 .project-card:has(.project-card-link:focus-visible) { outline: 2px solid var(--gold); outline-offset: -2px; }
 .project-card-num {
   display: flex; justify-content: space-between; align-items: center;
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.18em;
   margin-bottom: 0.4rem;
 }
@@ -892,7 +892,7 @@ h1.hud-name .gold { color: var(--gold); }
   justify-content: space-between; flex-wrap: wrap; gap: 8px;
 }
 .project-status {
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.15em; text-transform: uppercase;
 }
 .project-status-complete { color: var(--led-green); }
@@ -910,12 +910,12 @@ h1.hud-name .gold { color: var(--gold); }
   margin-bottom: 1.5rem;
 }
 .sort-toolbar-label {
-  font-family: var(--f-mono); font-size: 0.6rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.14em; color: var(--ghost);
   text-transform: uppercase; margin-right: 0.25rem;
 }
 .sort-btn {
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.1em; color: var(--ghost);
   background: transparent; border: 1px solid var(--panel-mid);
   border-radius: 1px; padding: 0.25rem 0.65rem;
@@ -933,7 +933,7 @@ h1.hud-name .gold { color: var(--gold); }
 .filter-drop { position: relative; }
 .filter-drop-btn { display: flex; align-items: center; gap: 0.3rem; }
 .filter-drop-caret {
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   transition: transform 0.15s;
   line-height: 1;
 }
@@ -951,7 +951,7 @@ h1.hud-name .gold { color: var(--gold); }
 }
 .filter-opt {
   display: block; width: 100%;
-  font-family: var(--f-mono); font-size: 0.6rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.1em; color: var(--warm-gray);
   background: transparent; border: none;
   padding: 0.3rem 0.75rem;
@@ -961,7 +961,7 @@ h1.hud-name .gold { color: var(--gold); }
 .filter-opt:hover { background: var(--panel-mid); color: var(--parchment); }
 .filter-opt-active { color: var(--gold); }
 .filter-opt-group {
-  font-family: var(--f-mono); font-size: 0.52rem;
+  font-family: var(--f-mono); font-size: 0.65rem;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--ghost); padding: 0.55rem 0.75rem 0.2rem;
   border-top: 1px solid var(--panel-mid); margin-top: 0.2rem;
@@ -1179,7 +1179,7 @@ a.skill-cell:hover { opacity: 0.75; }
 .contact-card:hover { background: var(--panel-mid); border-top-color: var(--gold); }
 .contact-card:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
 .contact-card-label {
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 0.35rem;
 }
@@ -1202,7 +1202,7 @@ a.skill-cell:hover { opacity: 0.75; }
   margin-top: 2px;
 }
 .contact-note-label {
-  font-family: var(--f-mono); font-size: 0.62rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
   letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--ghost); margin-bottom: 0.4rem;
 }
