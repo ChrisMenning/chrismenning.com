@@ -402,7 +402,7 @@ a.tag:hover { opacity: 0.75; }
 
 /* ── TOP-LEFT CATALOG REF ── */
 .hud-catalog {
-  position: absolute; top: 2rem; left: 2rem;
+  position: absolute; top: 1rem; left: 2rem;
   font-family: var(--f-mono); font-size: 0.65rem;
   letter-spacing: 0.2em; color: var(--ghost);
   line-height: 2;
@@ -412,7 +412,7 @@ a.tag:hover { opacity: 0.75; }
 
 /* ── TOP-RIGHT STATUS ── */
 .hud-status {
-  position: absolute; top: 2rem; right: 2rem;
+  position: absolute; top: 1rem; right: 2rem;
   font-family: var(--f-mono); font-size: 0.65rem;
   letter-spacing: 0.15em; text-align: right;
   line-height: 2;
@@ -426,7 +426,7 @@ a.tag:hover { opacity: 0.75; }
   grid-area: name;
   display: flex; flex-direction: column;
   justify-content: flex-end;
-  padding: 5rem 0 2rem;
+  padding: 7rem 0 2rem;
   animation: fade-up 0.7s ease both 0.15s;
 }
 
