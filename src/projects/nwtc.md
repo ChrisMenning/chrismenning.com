@@ -33,6 +33,14 @@ The project involved more than content management. Most of the meaningful work w
 
 I earned my Kentico developer certification during this project. The certification validated knowledge of the Kentico Xperience platform including the module APIs, widget development, content tree architecture, and deployment patterns.
 
+## On the team
+
+This is collaborative work. The dev side is a four-person team; the project management and content strategy on the public website comes from a webmaster on the marketing side who coordinates between the content team, the developers, and institutional stakeholders. That structure matters: the marketing-side PM owns the editorial vision and keeps the whole pipeline moving, while the dev team handles the technical implementation. The relationship works because both sides have clear ownership and a shared understanding of what the site is for.
+
+One moment stands out as a good example of how that team dynamic functions. While building a modal component, I had a working custom implementation. During code review, a teammate suggested scrapping it in favor of an existing accessibility library — the argument being that rolling our own meant taking on ongoing responsibility for ARIA behavior, focus management, and keyboard navigation that the library had already solved correctly. I pushed back mentally for a moment, then recognized they were right. "Working" and "correct" aren't the same thing when accessibility is in scope, and inheriting a maintained solution with a real a11y track record was the better call. I replaced my implementation with the library.
+
+I've heard since that this kind of response to feedback — actually processing it rather than defending the original decision — is something the team values. I'm glad it's legible. Taking in a critique and coming out the other side with a better answer feels like the baseline of how good technical collaboration should work.
+
 ## On working in a CMS at this scale
 
 A large institutional site has different constraints than a personal project. The audience is broad and non-technical. The content team needs to be able to publish without developer involvement. The data comes from external systems that change on their own schedule. The challenge isn't building features — it's building features that stay correct when the people using them and the systems feeding them are outside your control.
