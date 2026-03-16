@@ -1,7 +1,7 @@
 ---
 title: NWTC.edu
 order: 6
-featured: true
+featured: false
 summary: Website for Northeast Wisconsin Technical College, built on Kentico with custom PageBuilder and FormBuilder web parts and integrations into the college's LMS and ERP.
 projectTags:
   - software

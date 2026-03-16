@@ -1,7 +1,7 @@
 ---
 title: Meshtastic Off-Grid Mesh Network
 order: 14
-featured: true
+featured: false
 summary: Building a local LoRa mesh network using Meshtastic — solar-powered repeater nodes and handheld devices for off-grid, encrypted, peer-to-peer communication that doesn't depend on the internet or cell towers.
 projectTags:
   - hardware

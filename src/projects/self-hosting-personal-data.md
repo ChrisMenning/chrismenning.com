@@ -1,7 +1,7 @@
 ---
 title: Self-Hosting Personal Data
 order: 8
-featured: true
+featured: false
 summary: Migrated personal files, photos, and media off Google Drive, iCloud, Facebook, and OneDrive onto a self-hosted Nextcloud server running on a Raspberry Pi 5.
 projectTags:
   - open-source
