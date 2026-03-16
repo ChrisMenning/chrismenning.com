@@ -21,7 +21,7 @@ The world was never expanded to full production, but it works — and the three 
 
 ## The brief
 
-NWTC's CTO at the time, Dan Mincheff, had seen the VR games I'd shipped — Polarity Ball and Polarity Ball Rubicon — and knew I was capable of working in the medium. When COVID hit and most instruction moved remote, Dan commissioned a two-phase project: first, a structured R&D effort to evaluate existing metaverse and social VR platforms; then, if the research supported it, a working proof-of-concept.
+NWTC's CTO at the time had seen the VR games I'd shipped — Polarity Ball and Polarity Ball Rubicon — and knew I was capable of working in the medium. When COVID hit and most instruction moved remote, the college commissioned a two-phase project: first, a structured R&D effort to evaluate existing metaverse and social VR platforms; then, if the research supported it, a working proof-of-concept.
 
 The research phase covered the major social VR platforms available at the time — AltspaceVR, Mozilla Hubs, Engage, Rec Room, Horizon Worlds, and others. The criteria were practical: platform maturity, scripting and customization capability, support for educational use cases, hardware compatibility, and deployment friction. VRChat emerged as the strongest candidate, primarily because of Udon — the platform's scripting system, which allowed full Unity development workflows and C# via UdonSharp. It was the only platform that gave a developer enough control to build genuinely interactive environments rather than just decorated meeting rooms.
 
@@ -81,7 +81,7 @@ It's a concrete illustration of something VR forces you to confront: the quality
   <figcaption>// What Made it a Success · retrospective walkthrough in VR</figcaption>
 </figure>
 
-Dan was impressed with the demo. The next logical step would have been to port the world to a format compatible with Microsoft's VR meeting experience — which would have made it deployable inside Teams, more palatable to institutional IT, and easier to integrate with NWTC's existing Microsoft infrastructure. I planned to pursue that path. It didn't happen.
+The demo was well-received. The next logical step would have been to port the world to a format compatible with Microsoft's VR meeting experience — which would have made it deployable inside Teams, more palatable to institutional IT, and easier to integrate with NWTC's existing Microsoft infrastructure. I planned to pursue that path. It didn't happen.
 
 Ultimately, NWTC chose not to invest in continued custom VR development. Instead, the college purchased off-the-shelf products suited to specific departments: Ovation for public speaking practice in the business college and Acadicus for the nursing program, and spatial tools for advanced manufacturing. That's a reasonable institutional decision — purpose-built software for defined use cases has a lower support burden than custom-built environments, and the Metaversity demo had proven the concept without creating a mandate to maintain it.
 

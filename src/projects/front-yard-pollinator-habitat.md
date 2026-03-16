@@ -19,11 +19,11 @@ In 2023, I converted it.
   <figcaption>The yard at the start — plugs installed and grass removed.</figcaption>
 </figure>
 
-The yard is about 536 square feet total. After carving out a 174 sq ft mulched setback (required by city ordinance) and 74 sq ft of Prairie Dropseed along the entrance walk, the remaining **288 square feet** became the pollinator habitat.
+After carving out a mulched setback (required by city ordinance) and a strip of Prairie Dropseed along the entrance walk, the remaining **288 square feet** became the pollinator habitat.
 
 ## City compliance
 
-Green Bay has rules about this. Section 24-84(g)(2)(d) of the municipal code governs natural landscaping, and I submitted a formal proposal to comply with the city's [Planned Natural Landscapes policy](https://www.greenbaywi.gov/1356/Planned-Natural-Landscapes) before converting the lawn.
+Green Bay has rules about this. City ordinance governs natural landscaping, and I submitted a formal proposal to comply with the city's [Planned Natural Landscapes policy](https://www.greenbaywi.gov/1356/Planned-Natural-Landscapes) before converting the lawn.
 
 The compliance plan centered on the setback: a 3-foot-deep mulched border running along the front sidewalk and left side of the yard, edged with tan "Edgestone" brick. The ordinance specifies that the setback area should be "regularly cut turf grass, garden beds, trees, shrubs, mulch, wood chips, landscape stone, or other approved material." I planted Coneflower, Black-Eyed Susan, Bee Balm, and Aster within the front setback — a neatly spaced flower bed that satisfies the garden bed provision, inside a mulched border that satisfies the mulch provision. However, I later converted this to mostly Prairie Smoke.
 

@@ -21,15 +21,15 @@ The replacement runs entirely in my house, on hardware I own, with no cloud depe
 ## Hardware
 
 - **Raspberry Pi 3B** — salvaged from a Kano Computer Kit my niece had grown out of; reformatted and repurposed rather than discarded
-- **GoSund smart outlets** — the existing plugs I was already using on lamps
-- **SONOFF Zigbee 3.0 USB Dongle Plus-E** — Zigbee coordinator; turns the Pi into a Zigbee gateway
-- **Wireless Zigbee Smart Button (4-way scene controller)** — physical push-button control for triggering automations without reaching for a phone
+- **Smart outlets** — the existing plugs I was already using on lamps
+- **Zigbee USB dongle** — Zigbee coordinator; turns the Pi into a Zigbee gateway
+- **Zigbee scene controller** — physical push-button control for triggering automations without reaching for a phone
 
 ## Software
 
 **Home Assistant** — the standard open-source home automation platform. Everything runs locally: device state, automations, history. Nothing phones home.
 
-Getting the GoSund plugs working required registering them through the Tuya app first to provision them, then pulling them into Home Assistant via the Tuya local integration. It's a workaround for the fact that these devices were designed to be cloud-dependent — you have to meet them where they are before you can bring them local.
+Getting the smart plugs working required initial provisioning through the manufacturer's cloud app, then pulling them into Home Assistant via a local integration. It's a workaround for the fact that these devices were designed to be cloud-dependent — you have to meet them where they are before you can bring them local.
 
 The Zigbee dongle is handled by Home Assistant's Zigbee Home Automation (ZHA) integration, which provides local Zigbee control without any cloud bridge. The 4-way scene controller button maps to different lamp automations depending on which button is pressed.
 

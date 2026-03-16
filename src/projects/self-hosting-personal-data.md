@@ -27,7 +27,7 @@ I migrated my personal files, photos, and media off all of those platforms and o
 
 ## Software
 
-I first tried **NextcloudPi**, the installer specifically built for Raspberry Pi. It didn't work for me — persistent issues I couldn't resolve after significant time spent on them. I switched to **Nextcloud AIO** (All-In-One), a Docker-based installer that bundles Nextcloud with a collection of companion services. It's overbuilt for a single-user home server on a Pi — it includes more than I need and isn't optimized for the hardware — but it's the configuration that actually worked.
+I first tried an installer specifically built for Raspberry Pi. It didn't work for me — persistent issues I couldn't resolve after significant time spent on them. I switched to a Docker-based installer that bundles Nextcloud with a collection of companion services. It's overbuilt for a single-user home server on a Pi — it includes more than I need and isn't optimized for the hardware — but it's the configuration that actually worked.
 
 Getting there took months. I didn't document the process well as I went, which I regret. A lot of it was iterative troubleshooting: power problems, storage mounting, routing, backups, making sure upgrades don't break things.
 
