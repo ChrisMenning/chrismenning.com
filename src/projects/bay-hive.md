@@ -48,7 +48,7 @@ Bay Hive is a layered geospatial dashboard centered on a 15 km radius around Gre
 
 <figure class="project-figure">
   <img src="{{ '/img/bayhive/bay-hive-02-intel-bar.png' | url }}" alt="Bay Hive intelligence summary bar and layer controls panel showing habitat node counts, sightings totals, and layer toggle switches" loading="lazy">
-  <figcaption>// Intelligence summary bar and layer controls — habitat nodes · pollinator sightings · eBird observations · season phase</figcaption>
+  <figcaption>// This view shows pollinator activity heatmaps correlating with Pollinator Corridor and HomeGrown National Park sites</figcaption>
 </figure>
 
 ## Analysis overlays
@@ -79,7 +79,7 @@ The alerts engine runs entirely client-side against data already in memory and r
 
 <figure class="project-figure">
   <img src="{{ '/img/bayhive/bay-hive-03-alerts.png' | url }}" alt="Bay Hive alerts panel showing intelligence warnings about PFAS proximity, pesticide pressure, and habitat connectivity gaps" loading="lazy">
-  <figcaption>// Intelligence alerts panel — automatically computed warnings, opportunities, and connectivity analysis</figcaption>
+  <figcaption>// Multiple layers of pollinator sites and sightings are available</figcaption>
 </figure>
 
 ## Technical architecture
@@ -92,7 +92,7 @@ Everything else — map rendering ([MapLibre GL JS 3.6.2](https://maplibre.org/)
 
 <figure class="project-figure">
   <img src="{{ '/img/bayhive/bay-hive-04-land-cover.png' | url }}" alt="Bay Hive showing NLCD 2021 land cover raster overlays and the bee-crop field fringe agricultural pressure heatmap" loading="lazy">
-  <figcaption>// NLCD 2021 land cover overlays — individual classes isolated via a custom PNG pixel-filter proxy · bee-crop field fringe heatmap</figcaption>
+  <figcaption>// Intelligent alerting tracks hazards and opportunities across data sets.</figcaption>
 </figure>
 
 ## On hosting
