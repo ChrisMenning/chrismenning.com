@@ -491,7 +491,7 @@ h1.hud-name .gold { color: var(--gold); }
   font-family: var(--f-display); font-weight: 800;
   font-size: 6.5em; line-height: 0.68;
   float: left; margin-right: 0.04em; margin-top: 0;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px var(--gold);
 }
 .hud-bio p strong { color: var(--parchment); font-weight: 600; }
@@ -1134,7 +1134,7 @@ a.skill-cell:hover { opacity: 0.75; }
   font-family: var(--f-display); font-weight: 800;
   font-size: 6.5em; line-height: 0.68;
   float: left; margin-right: 0.04em; margin-top: 0;
-  color: transparent; -webkit-text-stroke: 1px var(--gold);
+  -webkit-text-fill-color: transparent; -webkit-text-stroke: 1px var(--gold);
 }
 .about-divider {
   font-family: var(--f-mono); font-size: 0.65rem;
