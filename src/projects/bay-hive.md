@@ -23,7 +23,7 @@ Then came the Monarch Waystation data. Then the USGS Protected Areas Database. T
 I volunteer weeding and maintaining the pollinator planting at NWTC (Northeast Wisconsin Technical College), and I keep my own [pollinator habitat in my front yard](/projects/front-yard-pollinator-habitat/). Both gave me a stake in understanding the larger picture — not just what's happening in a single yard or a single campus planting, but across the whole Green Bay area. This tool didn't exist before. I thought it should.
 
 <figure class="project-figure">
-  <img src="{{ '/img/bayhive/Screenshot%202026-03-19%20at%2011.33.29%20AM.png' | url }}" alt="Bay Hive map showing the Green Bay area with pollinator corridor sites, Monarch Waystations, and iNaturalist sighting overlays" loading="lazy">
+  <img src="{{ '/img/bayhive/bay-hive-01-map.png' | url }}" alt="Bay Hive map showing the Green Bay area with pollinator corridor sites, Monarch Waystations, and iNaturalist sighting overlays" loading="lazy">
   <figcaption>// Bay Hive — main map view · NE WI Pollinator Corridor · Monarch Waystations · biodiversity sightings</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ Bay Hive is a layered geospatial dashboard centered on a 15 km radius around Gre
 - **USDA NASS QuickStats** — county-level honey bee colony counts and crop acreage when an API key is configured
 
 <figure class="project-figure">
-  <img src="{{ '/img/bayhive/Screenshot%202026-03-19%20at%2011.35.36%20AM.png' | url }}" alt="Bay Hive intelligence summary bar and layer controls panel showing habitat node counts, sightings totals, and layer toggle switches" loading="lazy">
+  <img src="{{ '/img/bayhive/bay-hive-02-intel-bar.png' | url }}" alt="Bay Hive intelligence summary bar and layer controls panel showing habitat node counts, sightings totals, and layer toggle switches" loading="lazy">
   <figcaption>// Intelligence summary bar and layer controls — habitat nodes · pollinator sightings · eBird observations · season phase</figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ The alerts engine runs entirely client-side against data already in memory and r
 | Poor Nesting Habitat | Fires for corridor sites scoring below 25/100 on the NLCD-derived nesting suitability index |
 
 <figure class="project-figure">
-  <img src="{{ '/img/bayhive/Screenshot%202026-03-19%20at%2011.36.39%20AM.png' | url }}" alt="Bay Hive alerts panel showing intelligence warnings about PFAS proximity, pesticide pressure, and habitat connectivity gaps" loading="lazy">
+  <img src="{{ '/img/bayhive/bay-hive-03-alerts.png' | url }}" alt="Bay Hive alerts panel showing intelligence warnings about PFAS proximity, pesticide pressure, and habitat connectivity gaps" loading="lazy">
   <figcaption>// Intelligence alerts panel — automatically computed warnings, opportunities, and connectivity analysis</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ The NLCD pipeline is the technically interesting part. To isolate individual lan
 Everything else — map rendering ([MapLibre GL JS 3.6.2](https://maplibre.org/)), alerts computation, the IndexedDB caching layer, the timeline scrubber, the export engine — runs in the browser. No tracking, no analytics, no external JS beyond MapLibre.
 
 <figure class="project-figure">
-  <img src="{{ '/img/bayhive/Screenshot%202026-03-19%20at%2011.37.02%20AM.png' | url }}" alt="Bay Hive showing NLCD 2021 land cover raster overlays and the bee-crop field fringe agricultural pressure heatmap" loading="lazy">
+  <img src="{{ '/img/bayhive/bay-hive-04-land-cover.png' | url }}" alt="Bay Hive showing NLCD 2021 land cover raster overlays and the bee-crop field fringe agricultural pressure heatmap" loading="lazy">
   <figcaption>// NLCD 2021 land cover overlays — individual classes isolated via a custom PNG pixel-filter proxy · bee-crop field fringe heatmap</figcaption>
 </figure>
 
