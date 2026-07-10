@@ -12,7 +12,7 @@ year: 2024
 status: complete
 ---
 
-The Yamaha CS01-II is a monophonic analog synthesizer from 1982 — small, battery-powered, and built with a full-size keyboard in a surprisingly compact form factor. It has no native MIDI. Adding MIDI meant installing a retrofit board that reads the keyboard's key contacts directly and translates them into MIDI signals. That board is the **Highly Liquid UMR2**, a universal MIDI retrofit designed to work with a wide range of vintage keyboards.
+The Yamaha CS01-II is a monophonic analog synthesizer from 1982 — small, battery-powered, and built in a surprisingly compact form factor. It has no native MIDI. Adding MIDI meant installing a retrofit board that reads the keyboard's key contacts directly and translates them into MIDI signals. That board is the **Highly Liquid UMR2**, a universal MIDI retrofit designed to work with a wide range of vintage keyboards.
 
 <figure class="project-figure">
   <img src="{{ '/img/cs01II/2048-820-max.jpg' | url }}" alt="Yamaha CS01-II synthesizer with MIDI retrofit installed" loading="lazy">
