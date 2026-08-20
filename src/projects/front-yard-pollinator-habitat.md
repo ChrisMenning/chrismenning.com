@@ -1,5 +1,5 @@
 ---
-title: Front Yard Pollinator Habitat
+title: Front Yard Pollinator Habitat (Updated)
 order: 15
 featured: true
 summary: Converted 288 square feet of front lawn into a native wildflower pollinator habitat — navigating city ordinance compliance, a failed seed broadcast, and the obsessive joy of cataloging 39 native plant species.
@@ -16,7 +16,7 @@ In 2023, I converted it.
 
 <figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/Beginning%20-%202048-1536-max.jpg' | url }}" alt="The front yard at the beginning of the pollinator habitat installation" loading="lazy">
-  <figcaption>The yard at the start — plugs installed and grass removed.</figcaption>
+  <figcaption>The yard at the start: sheet mulch laid and plugs installed.</figcaption>
 </figure>
 
 After carving out a mulched setback (required by city ordinance) and a strip of Prairie Dropseed along the entrance walk, the remaining **288 square feet** became the pollinator habitat.
@@ -56,7 +56,7 @@ This is when I fell in love with the project. Picking out individual plants — 
 
 ## The plant catalog
 
-What started as 18 species in a seed packet has grown to 39 identified species (plus one prospective addition), spanning bloom times from late May through October and heights from half a foot to six feet.
+What started as 18 species in a seed packet has grown to 39 identified species, spanning bloom times from late May through October and heights from half a foot to six feet.
 
 | Common Name | Scientific Name | Bloom | Color | Height |
 |---|---|---|---|---|
@@ -99,8 +99,6 @@ What started as 18 species in a seed packet has grown to 39 identified species (
 | Wild Petunia | — | — | — | — |
 | Common Milkweed | — | — | — | — |
 | Wild Violets | — | Late May–mid June | purple | ≤0.5 ft |
-
-*Prospective addition: Golden Groundsel*
 
 The goal was continuous bloom from May through October — something always flowering across that window, which means continuous forage for pollinators. With 39 species spread across early, mid, and late bloomers, that coverage is largely achieved.
 
@@ -155,3 +153,13 @@ The cataloging instinct — wanting to know every species, track every bloom, no
 <figure class="project-figure">
   <img src="{{ '/img/pollinator-hab/yard-pics/2048-1536-max8.jpg' | url }}" alt="Front yard pollinator habitat looking toward the street" loading="lazy">
 </figure>
+
+## Update: August 19, 2026
+
+This year I built a companion site for the habitat: **[Butterfly12th.com](https://butterfly12th.com)**. It started from a practical problem — neighbors ask a lot of the same questions over the fence, and I wanted somewhere to point them. That became a FAQ. A photo gallery followed naturally, since the yard looks completely different every few weeks. I'm always out there taking pictures, why not post them?
+
+From there it grew past pure Q&A. I started building out a resources section — links and books on native plants and pollinators — partly as a deliberate push on my own community-oriented skills, since sharing what I've learned turns out to matter as much as the planting itself. Then I added an iNaturalist integration scoped to just the pollinator species and native plants documented in this yard, so the catalog above now has a living, browsable counterpart. I'm pretty proud of it, honestly, for what it is: a simple website about a flower garden.
+
+### Links
+
+- **[Butterfly12th.com](https://butterfly12th.com)** — companion site for this habitat: a neighbor FAQ, a photo gallery, a curated set of resources (links and books) on native plants and pollinators, and a live iNaturalist feed scoped to the species observed in this yard.
