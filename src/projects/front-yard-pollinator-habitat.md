@@ -1,5 +1,5 @@
 ---
-title: Front Yard Pollinator Habitat
+title: Front Yard Pollinator Habitat (Updated)
 order: 15
 featured: true
 summary: Converted 288 square feet of front lawn into a native wildflower pollinator habitat — navigating city ordinance compliance, a failed seed broadcast, and the obsessive joy of cataloging 39 native plant species.
@@ -156,7 +156,7 @@ The cataloging instinct — wanting to know every species, track every bloom, no
 
 ## Update: August 19, 2026
 
-This year I built a companion site for the habitat: **[Butterfly12th.com](https://butterfly12th.com)**. It started from a practical problem — neighbors ask a lot of the same questions over the fence, and I wanted somewhere to point them instead of repeating myself every time. That became a FAQ. A photo gallery followed naturally, since the yard looks completely different every few weeks and I wanted a record of that.
+This year I built a companion site for the habitat: **[Butterfly12th.com](https://butterfly12th.com)**. It started from a practical problem — neighbors ask a lot of the same questions over the fence, and I wanted somewhere to point them. That became a FAQ. A photo gallery followed naturally, since the yard looks completely different every few weeks. I'm always out there taking pictures, why not post them?
 
 From there it grew past pure Q&A. I started building out a resources section — links and books on native plants and pollinators — partly as a deliberate push on my own community-oriented skills, since sharing what I've learned turns out to matter as much as the planting itself. Then I added an iNaturalist integration scoped to just the pollinator species and native plants documented in this yard, so the catalog above now has a living, browsable counterpart. I'm pretty proud of it, honestly, for what it is: a simple website about a flower garden.
 
